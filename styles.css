@@ -1,0 +1,42 @@
+@import url(http://blog.socklabs.com/style-base.css);
+@import url(http://blog.socklabs.com/universal-blue.css);
+
+.asset-content h1,
+.asset-content h2,
+.asset-content h3,
+.asset-content h4,
+.asset-content h5 { font-weight: normal; }
+
+.asset-content h1 { font-size: 1.5em; }
+.asset-content h2 { font-size: 1.3em; }
+.asset-content h3 { font-size: 0.95em; text-transform: uppercase; margin: 0 0 5px 0; }
+.asset-content h4 { font-size: 1.0em; font-weight: bold; margin: 0 0 5px 0; }
+.asset-content h5 { font-size: 1.0em; font-weight: bold; margin: 0 0 5px 0; }
+
+.pullquote { float:right; font-size: 18px; font-family: serif; width: 250px; padding: 5px 0 5px 20px; }
+
+body { font-family: helvetica !important; }
+#content .asset-header h1#page-title { margin-bottom: 5px; }
+#content #alpha .elsewhere { margin-right: 20px; }
+
+.layout-one-column #alpha { width: 905px; margin-left: 25px; }
+.layout-one-column #alpha-inner { margin-left: -25px; }
+.mt-main-index.layout-one-column .elsewhere h3.widget-header { margin-left: 0px !important; }
+.mt-main-index.layout-one-column h3.widget-header { 
+  margin-left: 5px !important;
+  background-image: url(http://blog.socklabs.com/images/header-arrow-medium.gif); 
+}
+.mt-main-index.layout-one-column .widget-content { margin-left: 0px !important; }
+
+#beta-inner iframe, #gamma-inner iframe { margin-left: 15px; margin-bottom: 20px; }
+.mt-main-index h1#page-title { margin-top: -5px; }
+
+.asset-digg { float: right; }
+
+pre {
+white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
