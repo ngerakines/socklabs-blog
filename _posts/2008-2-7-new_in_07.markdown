@@ -1,0 +1,24 @@
+---
+id: 1467
+layout: post
+title: >
+    New in 0.7
+---
+
+Release 0.7 is almost ready and to prepare for it I've put together a small list of changes.
+
+<em>Better Content Handling</em> - The content handler has been signifigantly updated to allow for better support of images, filenames, urls and text. This is paving the way to let us associate dragged images/files with blogs or galleries, dragged text with blog posts, dragged urls with TypeLists and so on.
+
+<em>Quick Posting</em> - In addition to being able to handle images from your computer (Finder, iPhoto, etc), you can now drag blocks of text to create new blog entries. This lets you create 'Quick Posts' with your favorite editor ( like TextMate or Vim ) by selecting the text and dragging it directly to the application window. Creating new blog entries couldn't be easier.
+
+<em>Growl Notification</em> - In the 'General Preferences' pane there is now the option to enable notification using Growl. After creating new posts or uploading images it sends a signal to Growl to notify the user that it has completed its task.
+
+<em>Code Cleanup</em> - The overall application size and footprint has been reduced.
+
+This release will be available in the next few days.
+
+What I need from you:
+
+<em>Feedback</em> - If you find this application usefull either blog about it or let me know! I'd love to get an idea of how people are using and what they like or don't like about it.
+
+<em>Volunteers</em> - Technically this is an open source application that I've developing in my spare time. This is also my first cocoa application and I'm still learning how it works. If anyone would like to help out please contact me and I'll give you subversion access. What I really need help with is application design. I'd like to give the Preferences some real icons and to clean up the application logo.

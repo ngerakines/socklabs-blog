@@ -1,0 +1,16 @@
+---
+id: 1419
+layout: post
+title: >
+    Leo-pard
+---
+
+Last night was eventful. After work Carolyn and I went down to the Los Gatos Apple Store to pick up Leopard. We both have iPhones and took each of our $100 credits toward getting a family pack. We've got three extra licenses that we are going to distribute, for now one Melissa wants one and then I think we are going to pass the disk off to Mark Z. 
+
+Anyway, when we got to Los Gatos there were a ton of people walking the streets and at first my thought was that there was some sort of of Halloween thing going on. There was also a disturbingly high number of people out with pets in costumes. After a few minutes of looking around we also saw that the Apple Store looked as if there was a *huge* line around the corner and down the street. Well, thankfully the power was out and everyone that would of been inside the shops, stores and restaurants were just hanging out waiting for it to come back.
+
+We then decided to go to Valley Faire and deal with the stupid-small Apple Store there. When are they supposed to be done with the construction? I'm eager to see the new store. Even at 7:15 we were in the first 500 group and got t-shirts which is kind of cool. We made it home a little later and started installing.
+
+First thoughts: I really like it. Spaces is nice! What makes me happiest is the Yahoo integration. I've been begging for the ability to sync my Y! address book and mac os x address book. Mail and Calendar also had some sweet upgrades. I'm working on an OPML import script right now. The terminal application has also gotten several much needed upgrades. The configuration has been simplified and I love it.
+
+I'm happy. Leopard rocks. There were a few issues here and there though. After the initial reboot when I loaded iCal none of my calenders were visible. Also, at one point Finder wouldn't open new windows. After a quick reboot it seems to have resolved itself.

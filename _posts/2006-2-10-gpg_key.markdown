@@ -1,0 +1,11 @@
+---
+id: 775
+layout: post
+title: >
+    GPG Key
+---
+
+I've updated my GPG key so please update your keychains accordingly.
+
+<a href="http://blog.socklabs.com/wp-content/873F135A73C72E81A7F15869F4BE1DE234A491EE.gpgkey">873F 135A 73C7 2E81 A7F1  5869 F4BE 1DE2 34A4 91EE</a>
+

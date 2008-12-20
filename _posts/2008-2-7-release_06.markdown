@@ -1,0 +1,24 @@
+---
+id: 1466
+layout: post
+title: >
+    Release 0.6
+---
+
+Fence 0.6 is ready for public consumption. You may notice that the last public release was 0.3 and I've jumped up a bit. This is because there are major changes in the way the application works.
+
+Some of the issues have been cleaned up and features added. Mainly the grip and drag area has been fixed so now images can be dragged onto any area in the application (grey area and/or logo). iPhoto support was added which allows you to upload your favorite images from iphoto directly to your blog or gallery. There was also a grip issue that only let you grip the grey area around the logo to move the window, that has been fixed.
+
+The <em>Preferences</em> have had major changes and I'm trying to give it a more universal feel. Note that General, Weblog and Gallery configuration has been split into separate panels. I'll be adding new configuration options bit by bit as new features and ideas come along.
+
+One of the biggest additions is the ability to drag and upload images at once from not only the desktop or finder but from iPhoto as well. This allows users to easily create a TypePad gallery and upload an entire album from iPhoto to that gallery.
+
+I've got 3 things that I'd like to accomplish before hitting 1.0. The first is the ability create blog entries by highlighting text and dragging it onto the application window. I'd also like to start working with audio and video support. Lastly, I've got several ideas for small features that fall under an advanced configuration category.
+
+<a href="http://blog.socklabs.com/typepad-uploader/Fence-0.6.dmg">Download Fence-0.6.dmg</a>
+
+<a href="http://blog.socklabs.com/typepad-uploader/0.6/main_window.jpg"><img alt="main_window.jpg" src="http://blog.socklabs.com/typepad-uploader/0.6/main_window-thumb.jpg" width="224" height="118" /></a>
+
+<a href="http://blog.socklabs.com/typepad-uploader/0.6/general_prefs.jpg"><img alt="general_prefs.jpg" src="http://blog.socklabs.com/typepad-uploader/0.6/general_prefs-thumb.jpg" width="178" height="162" /></a>
+
+<a href="http://blog.socklabs.com/typepad-uploader/0.6/weblog_prefs.jpg"><img alt="weblog_prefs.jpg" src="http://blog.socklabs.com/typepad-uploader/0.6/weblog_prefs-thumb.jpg" width="164" height="92" /></a>

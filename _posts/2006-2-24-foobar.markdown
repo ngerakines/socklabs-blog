@@ -1,0 +1,12 @@
+---
+id: 834
+layout: post
+title: >
+    FooBar
+---
+
+This friday's <em>FooBar</em> had a good feel to it. I took a few quick pictures and posted to flickr and found that flickr has a pretty cool clustering feature. Check out <a href="http://flickr.com/photos/tags/foobar/clusters/">FooBar clusters</a> to see how it can take similarly tagged images and display them in 'clusters'.
+
+And of course, the pictures.
+
+<a href="http://www.flickr.com/photos/sock/103993925/" title="Photo Sharing"><img src="http://static.flickr.com/26/103993925_7ab5c66d28_t.jpg" width="100" height="75" alt="" /></a> <a href="http://www.flickr.com/photos/sock/103993720/" title="Photo Sharing"><img src="http://static.flickr.com/34/103993720_54ee4de1f4_t.jpg" width="100" height="75" alt="" /></a> <a href="http://www.flickr.com/photos/sock/103993417/" title="Photo Sharing"><img src="http://static.flickr.com/39/103993417_78de3753d7_t.jpg" width="100" height="75" alt="" /></a> <a href="http://www.flickr.com/photos/sock/103993133/" title="Photo Sharing"><img src="http://static.flickr.com/41/103993133_53dbc01c96_t.jpg" width="100" height="75" alt="" /></a> <a href="http://www.flickr.com/photos/sock/103990651/" title="Photo Sharing"><img src="http://static.flickr.com/26/103990651_aa37758a70_t.jpg" width="100" height="75" alt="" /></a>

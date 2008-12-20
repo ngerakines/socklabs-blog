@@ -1,0 +1,10 @@
+---
+id: 814
+layout: post
+title: >
+    Whats up?
+---
+
+Its amazing what a good <a href="http://www.technorati.com/watchlist">technorati watchlist</a> will find you. This morning I saw this very cool site called <a href="http://www.jeroenwijering.com/whatsup/"><em>Whats up</em></a>. It is an rss app that tracks different news feeds and the geographical areas they cover, displaying them on a map. Its a pretty cool application for this sort of thing. I can't wait until there is a desktop widget or screensaver.
+
+<a href="http://www.jeroenwijering.com/?item=What's_Up?">more information ...</a>

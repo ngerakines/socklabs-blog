@@ -1,0 +1,10 @@
+---
+id: 863
+layout: post
+title: >
+    Videocast 2006-03-21
+---
+
+This is today's video blog entry. See the tags for a content summary. I'm trying out a new encoding format made for the ipod video, comments appreciated.
+
+<a href="http://www.socklabs.com/podcasts/videocast-2006-03-21.m4v">download</a>

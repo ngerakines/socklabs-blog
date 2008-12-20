@@ -1,0 +1,10 @@
+---
+id: 860
+layout: post
+title: >
+    Webcam
+---
+
+After some playing and fiddling, I've got a webcam setup and working. Check out <a href="http://www.socklabs.com/webcam/">http://www.socklabs.com/webcam/</a>.
+
+I'm using <a href="http://www.optima-system.com/camspinner/">CamSpinner</a> to do the actual recording and work.

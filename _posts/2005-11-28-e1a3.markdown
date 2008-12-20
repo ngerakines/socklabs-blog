@@ -1,0 +1,8 @@
+---
+id: 55
+layout: post
+title: >
+    e1a3
+---
+
+Development of e1a3 continues and has made lots of progress. The object model is quite stable now and test coverage is right around 98%. I want to post some screenshots, but James and I have to go over a few things before that happens. Sooner or later we'll come up with a name for this thing too.

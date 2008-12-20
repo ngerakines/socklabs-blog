@@ -1,0 +1,12 @@
+---
+id: 51
+layout: post
+title: >
+    Podcasting 101
+---
+
+I have been looking around the net for a simple way to get a podcast off the ground. There were a few sites here and there that had some useful information, but I've put something together that is very simple and should help you get started.
+
+What I used: A powerbook running OS X 10.4, the built in microphone, the garageband app.
+
+It was pretty easy getting everything set up and started. Once the recording was done all I did was export the recording to itunes to convert it to an mp3 and then uploaded it to my site. Wordpress set the enclosures and all and before I knew it, I was done.

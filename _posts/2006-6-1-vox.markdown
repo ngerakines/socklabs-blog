@@ -1,0 +1,8 @@
+---
+id: 953
+layout: post
+title: >
+    VOX
+---
+
+At SixApart we've all been playing with VOX for some time now and have been building up our own internal communities and neighborhoods. Check out <a href="http://ngerakines.vox.com">http://ngerakines.vox.com</a>.

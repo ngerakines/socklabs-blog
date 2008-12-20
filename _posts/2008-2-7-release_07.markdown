@@ -1,0 +1,10 @@
+---
+id: 1468
+layout: post
+title: >
+    Release 0.7
+---
+
+Fence 0.7 is here with some new features and big changes. Check out the previous post for more information on what is different.
+
+<a href="http://blog.socklabs.com/typepad-uploader/Fence-0.7.dmg">Download Fence-0.7.dmg</a>

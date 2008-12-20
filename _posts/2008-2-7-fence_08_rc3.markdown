@@ -1,0 +1,8 @@
+---
+id: 1474
+layout: post
+title: >
+    Fence 0.8 rc3
+---
+
+<a href="http://blog.socklabs.com/typepad-uploader/Fence-0.8rc3.zip">Fence 0.8 rc3 (Fence-0.8rc3.zip)</a> is ready for download.

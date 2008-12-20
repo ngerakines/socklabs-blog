@@ -1,0 +1,19 @@
+---
+id: 724
+layout: post
+title: >
+    iLife 06
+---
+
+So this past Friday I picked up the family pack of iLife 06 at the Apple store off of Market street. I talked to some of my friends and we all decided to split it. We figure a 5 pack would put us right around 20$ each, and thats a hell of a lot better than each of us getting a single license. Yes yes, although the software doesn't do any sort of checks, we could of just bought a single copy and shared it. No no, we'll have none of that.
+
+For most users it might not be necessary to upgrade from the current version of iLife. The features that 06 has are relatively small in comparison. What it does offer is a cool set of power tools and enhancements.
+
+On the top of my list is GarageBand. What it boasts is a nice set of enhancements and changes to encourage podcasting. Before this release, if you wanted to record podcast episode you, it could only be done by recording a generic song and then importing it into iTunes. If you wanted to create the actual feed for the podcast, it had to be created either manually or with another application like <a href="http://www.potionfactory.com/">Podcast Maker</a>. With iLife 06, it becomes very easy to create and record podcasts along with all of the meta data that goes along with it, include images and image place holders.
+
+iPhoto wasn't neglected either. With the latest version of iPhoto the folks at apple started to shift toward sharing. With more social products like <a href="http://www.flickr.com/">flickr</a>, sharing and the social focus of sharing is becoming more and more popular. Apple got a clue and started putting more social features in. Now with iPhoto you can take an album and create an exportable image feed. Apple is calling this sort of image feed a <em>photocast</em>, although I think it sounds kinda lame. Moving forward with that idea, you can also import and watch image feeds. What is great about this, is now I can subscribe to all of my flickr feeds and import the pictures that my friends and family take. The only downside to all of this is that I have to have a full .mac membership to be able to export your images into feeds.
+
+The last major change in iLife 06 that I really like is the addition of iWeb. The newest member to iLife is a website publishing framework. The application allows users to create websites. According to iWeb a site consists of 6 different types of pages: A Welcome Page, an About Me page, Photos page, Movie page, Blog page and Podcast page. I think keeping it simple is really working for this application. I have to admit that I started creating a demo page and found it far too easy and addicting. I'm really loving how easy they have made it. Check out the demo here: <a href="http://iwebdemo.socklabs.com/">http://iwebdemo.socklabs.com/</a>. What I love about this is that you don't need a .mac account to use this. You can simply export the site you've made to a folder and then upload it to wherever you'd like.
+
+I'm very satisfied with iLife '06. They've made a really good choice when deciding to add iWeb and the enhancements to iPhoto and GarageBand are great. I'm sorry that I havn't really covered iMovie or iDVD, but I don't really use them.
+

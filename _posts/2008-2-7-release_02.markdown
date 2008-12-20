@@ -1,0 +1,10 @@
+---
+id: 1462
+layout: post
+title: >
+    Release 0.2
+---
+
+Release 0.2 is now available. This is a very minor cosmetic release with changes to the ui. The main window was shrunk and a smaller icon/logo used to allow a bigger grip and drag area. This also included two updates to the dock. The application icon in the doc is now the same icon used in the main window. The doc will also bounce once when the upload is complete, the start of application feedback.
+
+<a href="http://blog.socklabs.com/typepad-uploader/TypePad-Uploader-0.2.dmg">Download TypePad-Uploader-0.2.dmg</a>

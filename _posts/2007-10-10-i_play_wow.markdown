@@ -1,0 +1,10 @@
+---
+id: 1415
+layout: post
+title: >
+    I Play WoW
+---
+
+<p>A day or so ago my I Play WoW app hit 15,000 users! We've got an average of 1,300 active users and the app is really starting to grow. I even wrote a small widget (check the inner-right column on the main page) with the number of characters and guilds tracked.</p>
+
+<p>The list of features is really starting to grow as well.</p><p><ul id="undefined"><li>Characters, Guilds, Realms and Arena Teams all have individual profile pages with their own custom content and walls.</li><li>The amount of character data tracked has increased to include active guild ranks, arena teams, stats, etc.</li><li>The profile content has been updated and the entire application has a unified look and feel.</li><li>Users have a large number of options available to let them customize the look and feel of the application and how they interact with it.</li><li>There are a number of really cool social features to let users find other players easily.</li></ul></p>

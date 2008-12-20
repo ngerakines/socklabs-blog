@@ -1,0 +1,12 @@
+---
+id: 1437
+layout: post
+title: >
+    Release 0.5
+---
+
+Release 0.5 is ready for developer testing. Download it, install it and play around.
+
+This release is mainly for developers and testers. I'm looking for feedback on how you would like to use something like this. Please leave any and all ideas as comments to this release and I'll start making a roadmap based on feedback.
+
+<a href="http://blog.socklabs.com/wp-content/KeywordExtractor-0.5.tgz">Download MT-KeywordExtractor 0.5</a>

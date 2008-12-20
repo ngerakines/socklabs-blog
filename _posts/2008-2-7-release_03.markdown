@@ -1,0 +1,19 @@
+---
+id: 1464
+layout: post
+title: >
+    Release 0.3
+---
+
+<p>Release 0.3 is ready for public consumption. This release is a minor feature release with a few bug fixes and some minor cosmetic changes.</p>
+<code><pre>
+Change Log
+0.2 to 0.3
+ + Application UI has been improved with wider drop and grip area
+ + Image apperance has changed to remove transparency overlapping
+ + Users can select the option to upload to blogs or galleries
+ + The application autodiscovers blogs and galleries based on the username and password
+ + Notable code cleanup and performance increase
+</pre></code>
+<p><a href="http://blog.socklabs.com/typepad-uploader/TypePad-Uploader%200.3%20Installer.dmg">Download 'TypePad-Uploader 0.3 Installer.dmg'</a>
+</p>

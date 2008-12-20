@@ -1,0 +1,14 @@
+---
+id: 1455
+layout: post
+title: >
+    3.3 on its way
+---
+
+Recently SixApart has announced that Movable Type 3.3 is going to be released in the very near future. What this means for the CloudNine users is that version 3.0 of CloudNine will soon be available for you to use.
+
+CloudNine 3.0, asside from having category support, comes with tag support to allow you to create keyword clouds from the tags that you've used on your blog entries.
+
+Development on CloudNine was halted until the 3.3 release of Movable Type and now that it is available for the general public I'm really looking forward to getting feedback and feature requests for it.
+
+See also: <a href="http://www.sixapart.com/pronet/weblog/2006/05/whats_new_in_mt_33.html">ProNet: What's new in Movable Type 3.3?</a> and <a href="http://www.bloggingpro.com/archives/2006/05/26/movable-type-33-coming-soon/">Movable Type 3.3 Coming Soon</a>

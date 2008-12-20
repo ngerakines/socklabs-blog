@@ -1,0 +1,10 @@
+---
+id: 1574
+layout: post
+title: >
+    A quick and easy server demo in erlang
+---
+
+I wrote up this quick Erlang module to demonstrate how easy it is to have a process manage state for other functions and processes.
+
+<script src="http://gist.github.com/33346.js"></script>

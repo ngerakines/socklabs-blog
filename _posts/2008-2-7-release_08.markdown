@@ -1,0 +1,12 @@
+---
+id: 1443
+layout: post
+title: >
+    Keyword Extractor 0.8
+---
+
+Version 0.8 of MT-KeywordExtractor is available for download. This release includes some code cleanup and adjustments for MT 3.3. This plugin should compatable with MT 3.2 but hasn't been officially tested. Please let me know if it works for you.
+
+In this release the Technorati tag block option has been removed, and it also requires the perl module WWW::Yahoo::KeywordExtractor. It is no longer included with the plugin. Please install it via cpan shell or unarchive it into the extlib directory of the MT installation.
+
+<a href="http://blog.socklabs.com/keywordextractor/KeywordExtractor-0.8.tar.gz">Download MT-KeywordExtractor 0.8</a>

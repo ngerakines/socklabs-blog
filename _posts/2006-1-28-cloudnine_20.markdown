@@ -1,0 +1,12 @@
+---
+id: 745
+layout: post
+title: >
+    CloudNine 2.0
+---
+
+I've made some major changes to CategoryCloud and have renamed it to CloudNine. The latest release allows you to define much more control over the size of the cloud. This version also allows you to add color based weights. See the example used on the main page. Now as an items get bigger they colors change, adding more depth to the cloud.
+
+The next release will have support for entry clouds and date based archive clouds.
+
+<a href="/wp-content/CloudNine-2.0.tgz">Download CloudNine-2.0.tgz</a>

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
+	<head>
+		<title>{{ page.title }}</title>
+		<meta name="author" content="Nick Gerakines" />
+		<link rel="stylesheet" href="http://blog.socklabs.com/styles.css" type="text/css" />
+	</head>
+	<body class="mt-main-index layout-wt">
+		<div id="container">
+			<div id="container-inner">
+				{% include header.html %}
+				{% include naventries.html %}
+				<div id="content">
+					<div id="content-inner">
+						<div id="alpha">
+							<div id="alpha-inner">
+								<div class="entry-asset asset">
+									<div class="asset-header">
+										<h2 class="asset-name">
+											<a href="http://blog.socklabs.com{{ page.permalink }}">{{ page.title }}</a>
+										</h2>
+										<div class="asset-meta">
+											<span class="byline">By <a href="http://blog.socklabs.com/">Nick Gerakines</a> on {{ post.time }}</span>
+										</div>
+									</div>
+									<div class="asset-content">
+										<div class="asset-body">
+{{ content }}
+										</div>
+									</div>
+									<div class="asset-footer">
+										<script type="text/javascript" src="http://www.reddit.com/button.js?t=1"></script>
+										<script type="text/javascript">
+										if (typeof window.Delicious == "undefined") window.Delicious = {};
+										    Delicious.BLOGBADGE_DEFAULT_CLASS = 'delicious-blogbadge-line';
+										</script>
+										<script src="http://static.delicious.com/js/blogbadge.js"></script>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="beta">
+							<div id="beta-inner">
+								<div id="github-badge"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% include footer.html %}
+			</div>
+		</div>
+{% include bodyjs.html %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+---
+id: 35
+layout: post
+title: >
+    Day 1
+---
+
+Carolyn and I are waiting for our flight at 10 out of oakland to New Orleans. We have a layover in TN, but its not so bad. I'm playing with my new powerbook and in the process of importing several cds worth of backed-up images into iphoto.
+
+Things are so bad, I've had a lot on my mind. Maybe I'll spill about it a bit later. Carolyn is thinking that we should try to find some legitimate food or sustenance. We don't land in new orleans until 6:45 and by then we have to go strait to the car rental place.
+
+Its looking to be a great day. I've got a lot planned and I think we are going to have a lot of fun.
+
+----
+
+Ok, we've arrived in Nashville and I coughed up $7 to get online so I can check email and blog. The flight arrived early and we've got some time to kill. We watched an episode of <i>Lost</i> on the flight over from Oakland, we found it humorous.
+
+I've been installing perl modules off of <a href="http://search.cpan.org/">cpan</a> and found that the core of mac os X doesn't include things like wget.

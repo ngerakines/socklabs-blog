@@ -1,0 +1,10 @@
+---
+id: 1361
+layout: post
+title: >
+    Its J day
+---
+
+There had to be at least once mention of the JesusPhone, so here it is: iPhone. There, I'm done. It is over with.
+
+I've been really digging <a href="http://pownce.com/ngerakines/">pownce</a> lately. The site is ok but the desktop application is really slick. I am eager to see its development and growth over the next few months. My only gripe is that there are no API calls (json or otherwise) available to developers.

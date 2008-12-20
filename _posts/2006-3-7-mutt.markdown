@@ -1,0 +1,26 @@
+---
+id: 847
+layout: post
+title: >
+    Mutt
+---
+
+I've become sick and tired of Mail.app crashing and failing. Thunderbird doesn't do what I want, it feels bloated and slow. Entourage is a joke. For short while I used gmail, by forwarding everything to my gmail address, but I don't want to depend on a 3rd party like that.
+
+So yesterday I made the leap <em>back</em> to <a href="http://www.mutt.org/">mutt</a>. For almost 2 years I used mutt exclusively and was very happy. Over time, server changes, software and OS changes I moved away and tried to find greener pastures. I've used everything from Gmail, Yahoo Mail, Maill.app, Evolution, Thunderbird, Entourage and even Squirrelmail. None of them, however, compare to the simplicity and security that I have with mutt.
+
+The setup that I have may seem complex to some, but it does <em>exactly</em> what I need. Nothing more, nothing less, right on target.
+
+I use mutt as my mail application. I have a directory in my home dir called 'Mail' which stores all of my local mail. It also has subfolders for organization. I've decided to go with the maildir format instead of mbox, for a few reasons. Mainly locking and large file support (I get a lot of mail).
+
+Mutt is not meant to be a mail fetcher or checker. It simple reads email. In order to actively check for email I use fetchmail, procmail and postfix. I run a minimalist installation of postfix on my local machine which acts as a storage agent. I have a cron that runs fetchmail every 15 minutes which moves mail from my different email accounts to my local account. Then as postfix recieves new mail for my local account it pipes it through procmail which sorts, categorizes, tags and filters all of my mail into my inbox and sub folders.
+
+When I open up mutt I have all of my mail from the many different accounts already sorted, filtered and organized. It lets me spend less time dealing with email and spam and more time actually reading and responding.
+
+Responding is easy as well. I use a program called esmtp to connect to the different smtp servers associated with different email accounts to send mail when I am online.
+
+This setup is great for me. I can do all of my mail reading offline or online and all of my mail is archived locally under my control.
+
+I've included the config files that I used to get this setup. Sooner or later I'll post a walk through guide explaining how to setup mutt, fetchmail, procmail and postfix on your os x machine.
+
+

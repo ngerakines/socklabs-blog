@@ -1,0 +1,12 @@
+---
+id: 777
+layout: post
+title: >
+    OpenID
+---
+
+Thank you <a href="http://markpasc.org/">Mark</a> for giving me a rundown on OpenID and how to integrate it with MT. I'm happy to say that you can now login with an OpenID compatible account ( like LiveJournal or TypePad/TypeKey) to comment on this blog.
+
+With that said, I decided a few days ago to start placing heavy restrictions on comments and will allow comments on select posts.
+
+I'm learning more about <a href="http://openid.net/">OpenID</a> and FOAF and I have a few things planned for development.

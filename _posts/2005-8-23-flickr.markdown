@@ -1,0 +1,8 @@
+---
+id: 140
+layout: post
+title: >
+    Flickr
+---
+
+I've been playing with flickr lately and uploaded a bunch. Check them out at <a href="http://www.flickr.com/photos/sock/">http://www.flickr.com/photos/sock/</a>.

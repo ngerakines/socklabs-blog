@@ -1,0 +1,28 @@
+---
+id: 824
+layout: post
+title: >
+    
+---
+
+<blockquote>Support,
+
+I need the following perl modules installed:
+
+Module::Build
+XML::Simple
+Net::Delicious
+WWW::Search::Feedster
+Flickr::Tools
+Flickr::API
+Net::Flickr::API
+URI::Bookmark
+Rubric
+
+Cheers,
+
+# Nick</blockquote>
+
+<blockquote>Sorry Nick. We don't install oddball perl modules at the root level. There are already a great number of modules installed (you can see a list by checking the control panel) but if you need anything special, you have access to the compiler and shell so you can install them in your local user space and call them from there instead.</blockquote>
+
+Hmm, I have been wanting to get off of this shared hosting service anyway.. At least it was a really quick response.

@@ -1,0 +1,10 @@
+---
+id: 780
+layout: post
+title: >
+    Ratings
+---
+
+Here is a pretty nifty way of doing star ratings. All css and xhtml friendly.
+
+<a href="http://komodomedia.com/blog/index.php/2005/08/24/creating-a-star-rater-using-css/">http://komodomedia.com/blog/index.php/2005/08/24/creating-a-star-rater-using-css/</a>

@@ -1,0 +1,8 @@
+---
+id: 1572
+layout: post
+title: >
+    etap 0.3
+---
+
+[etap 0.3](http://github.com/ngerakines/etap) is out and available on GitHub. etap is a TAP testing library with growing support for more complex operations like behaviors and web requests. The [README](http://github.com/ngerakines/etap/tree/master/README.markdown) file has more information on installation and use and the included tests provide a solid example of how to use the library.

@@ -1,0 +1,10 @@
+---
+id: 44
+layout: post
+title: >
+    Resume
+---
+
+I've done my tri-monthly resume update, this is nothing out of the ordinary. I try to keep my resume up to date. 
+
+<a href='/wp-content/resume.txt' title=''>View my resume.</a>
