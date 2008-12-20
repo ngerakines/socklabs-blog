@@ -6,7 +6,7 @@ title: Archives
 <ul>
 {% for post in site.posts %}
 <li>
-	<a href="http://blog.socklabs.com{{ post.url }}">{{ post.title }}</a>
+	{{ post.date | date_to_string }} <a href="http://blog.socklabs.com{{ post.url }}">{{ post.title }}</a>
 </li>
 {% endfor %}
 </ul>
