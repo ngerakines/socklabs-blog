@@ -1,0 +1,220 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rel="http://purl.org/vocab/relationship/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:tipjar="http://xmlns.com/foaf/0.1/" xmlns:bio="http://purl.org/vocab/bio/0.1/" xmlns:wot="http://xmlns.com/wot/0.1/" xmlns:openid="http://openid.net/xmlns/1.0/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#" xmlns:cc="http://web.resource.org/cc/" xmlns:zodiac="http://www.ideaspace.net/users/wkearney/schema/astrology/0.1#" xmlns:pet="http://purl.org/stuff/pets/">
+	<foaf:PersonalProfileDocument rdf:about="">
+		<foaf:maker rdf:nodeID="nkg"/>
+		<foaf:primaryTopic rdf:nodeID="nkg"/>
+	</foaf:PersonalProfileDocument>
+	<rdf:Description rdf:about="">
+		<dc:description>Friend-of-a-Friend Description of Nick Gerakines</dc:description>
+		<dc:creator>Nick Gerakines</dc:creator>
+		<dc:date>2006-09-22</dc:date>
+		<cc:license rdf:resource="http://creativecommons.org/licenses/nc/1.0"/>
+	</rdf:Description>
+	<foaf:Person rdf:nodeID="nkg">
+		<foaf:name>Nicholas Gerakines</foaf:name>
+		<foaf:firstname>Nicholas</foaf:firstname>
+		<foaf:surname>Gerakines</foaf:surname>
+		<foaf:nick>Nick</foaf:nick>
+		<foaf:depiction rdf:resource="http://blog.socklabs.com/images/userpic.gif"/>
+		<foaf:mbox rdf:resource="mailto:nick@socklabs.com"/>
+		<foaf:mbox_sha1sum>d65f12af343d181f43d785772dd714bb0d1cb6a3</foaf:mbox_sha1sum>
+		<foaf:mbox_sha1sum>cafe39ddadac4ffe74c968e5292dad0fcb1e43ac</foaf:mbox_sha1sum>
+		<foaf:mbox_sha1sum>8a7066b6e4b28865cd0630af2ec801ebb33c984b</foaf:mbox_sha1sum>
+		<foaf:mbox_sha1sum>e19a94da917d4a85ce67e9b8b0e0e85acd95b170</foaf:mbox_sha1sum>
+		<foaf:aimChatID>snipersock</foaf:aimChatID>
+		<foaf:icqChatID>283865036</foaf:icqChatID>
+		<foaf:yahooChatID>sock2152</foaf:yahooChatID>
+		<foaf:birthDate>1983-10-22</foaf:birthDate>
+		<foaf:phone rdf:resource="tel:4159631165"/>
+		<foaf:homepage rdf:resource="http://www.socklabs.com/" dc:title="socklabs"/>
+		<foaf:weblog rdf:resource="http://blog.socklabs.com/" dc:title="Nick's Blog"/>
+		<foaf:weblog rdf:resource="http://www.pleonast.com/nickg" dc:title="nickg"/>
+		<foaf:workplaceHomepage rdf:resource="http://del.icio.us/"/>
+		<vCard:ADR rdf:parseType="Resource">
+			<vCard:Street>2821 Mission College Blvd</vCard:Street>
+			<vCard:Locality>Santa Clara</vCard:Locality>
+			<vCard:Region>California</vCard:Region>
+			<vCard:Pcode>95054</vCard:Pcode>
+			<vCard:Country xml:lang="en">USA</vCard:Country>
+			<rdf:type rdf:resource="http://www.w3.org/2001/vcard-rdf/3.0#work"/>
+		</vCard:ADR>
+		<vCard:ADR rdf:parseType="Resource">
+			<vCard:Street>660 4th Street #122</vCard:Street>
+			<vCard:Locality>San Francisco</vCard:Locality>
+			<vCard:Region>California</vCard:Region>
+			<vCard:Pcode>94107</vCard:Pcode>
+			<vCard:Country xml:lang="en">USA</vCard:Country>
+			<rdf:type rdf:resource="http://www.w3.org/2001/vcard-rdf/3.0#home"/>
+		</vCard:ADR>
+		<bio:event>
+			<bio:Birth>
+				<bio:date>1983-10-22</bio:date>
+				<bio:place>Baton Rouge, LA, USA</bio:place>
+			</bio:Birth>
+		</bio:event>
+		<bio:event>
+			<bio:Marriage>
+				<bio:date>2006-02-03</bio:date>
+				<bio:place>San Francisco City Hall, San Francisco, California, USA</bio:place>
+			</bio:Marriage>
+		</bio:event>
+		<bio:olb>22, married, dad, career in technology as perl developer</bio:olb>
+		<bio:keywords>perl, programming, technology, dadhood, parenting, freemasonry, new orleans, mountain view, california, louisiana, apple</bio:keywords>
+		<foaf:gender>male</foaf:gender>
+		<foaf:geekcode> GCS d+(-) s: a-- C+++()$@ UL+++$ P++++$ L++$ E--- !W+++$@ !N o+ K-? !w-- !O- M++ V- PS+ PE++ Y++ PGP !t 5+ !X R tv-- b+ DI !D G+ e- h- r++ y++ </foaf:geekcode>
+		<zodiac:Sign>Libra</zodiac:Sign>
+		<foaf:myersBriggs>INTP</foaf:myersBriggs>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>sock</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="Flickr" rdf:resource="http://www.flickr.com/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://www.flickr.com/people/sock"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>snipersock</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="del.icio.us" rdf:resource="http://del.icio.us/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://del.icio.us/snipersock"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>ngerakines</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="Vox" rdf:resource="http://www.vox.com/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://ngerakines.vox.com/"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>nickg</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="Pleonast" rdf:resource="http://www.pleonast.com/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://www.pleonast.com/nickg"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>snipersock</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="CPAN" rdf:resource="http://search.cpan.org/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://search.cpan.org/~sock"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>sock</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="Perl Monks" rdf:resource="http://www.perlmonks.org/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://perlmonks.org/?node_id=305754"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:holdsAccount>
+			<foaf:OnlineAccount>
+				<foaf:accountName>3413129</foaf:accountName>
+				<foaf:accountServiceHomepage dc:title="LinkedIn" rdf:resource="http://www.linkedin.com/"/>
+				<rdf:type rdf:resource="http://xmlns.com/foaf/0.1/OnlineAccount"/>
+				<dc:identifier rdf:resource="http://www.linkedin.com/pub/1/187/235#"/>
+			</foaf:OnlineAccount>
+		</foaf:holdsAccount>
+		<foaf:currentProject>
+			<foaf:Project>
+				<foaf:name>CloudNine</foaf:name>
+				<dc:title>CloudNine</dc:title>
+				<foaf:homepage rdf:resource="http://blog.socklabs.com/cloudnine/"/>
+				<dc:description>CloudNine is an open source Movable Type plugin to create weighted keyword clouds on category and tag selections.</dc:description>
+				<dc:identifier rdf:resource="http://blog.socklabs.com/cloudnine/"/>
+			</foaf:Project>
+		</foaf:currentProject>
+		<foaf:pastProject rdf:resource="http://www.infanttracker.com/" rdfs:label="InfantTracker"/>
+		<foaf:pastProject rdf:resource="http://dev.socklabs.com/projects/pathfinder" rdfs:label="Pathfinder"/>
+		<foaf:pastProject rdf:resource="http://www.calodge194.com/" rdfs:label="The Ca Lodge no194 website."/>
+		<foaf:pastProject rdf:resource="http://search.cpan.org/~sock" rdfs:label="Perl Modules and CPAN contributions."/>
+		<foaf:pastProject rdf:resource="http://blog.socklabs.com/typepad-uploader/" rdfs:label="Fence is an open source cocoa atom api client."/>
+		<foaf:knows rdf:resource="#ceg"/>
+		<foaf:knows rdf:resource="#vpg"/>
+		<foaf:knows rdf:resource="#brent"/>
+		<foaf:knows rdf:resource="#jimgerakines" />
+		<foaf:knows rdf:resource="#joegerakines" />
+		<foaf:knows rdf:resource="#terriegerakines"/>
+		<foaf:knows rdf:resource="#egradman"/>
+		<foaf:knows rdf:resource="#estokes"/>
+		<rel:spouseOf rdf:resource="#ceg"/>
+		<rel:parentOf rdf:resource="#vpg"/>
+		<pet:hasPet>
+			<pet:Pet>
+				<foaf:name>Picasso</foaf:name>
+				<pet:hasProfile rdf:resource="#picasso"/>
+			</pet:Pet>
+		</pet:hasPet>
+	</foaf:Person>
+	<foaf:Person rdf:ID="ceg">
+		<foaf:name>Carolyn Gerakines</foaf:name>
+		<foaf:mbox_sha1sum>e348d1491b2829ed6b2ba04428a9d5c3d843c4df</foaf:mbox_sha1sum>
+		<rdfs:seeAlso rdf:resource="http://carolyn.socklabs.com/foaf.rdf"/>
+		<foaf:weblog rdf:resource="http://carolyn.socklabs.com/"/>
+	</foaf:Person>
+	<foaf:Person rdf:ID="vpg">
+		<foaf:name>Vanessa Gerakines</foaf:name>
+		<foaf:mbox_sha1sum>ea6cd33978e4e9fc2508fbf4cdbc68cd6ac2b420</foaf:mbox_sha1sum>
+		<rdfs:seeAlso rdf:resource="http://vanessa.gerakines.net/foaf.rdf"/>
+	</foaf:Person>
+	<foaf:Person rdf:ID="egradman">
+		<foaf:name>Eric Gradman</foaf:name>
+		<foaf:mbox_sha1sum>9a7057f659f47a13fae004f8e203398046b37d58</foaf:mbox_sha1sum>
+		<rdfs:seeAlso rdf:resource="http://new.exothermia.net/foaf.rdf"/>
+		<foaf:weblog rdf:resource="http://exothermia.net/ccc"/>
+	</foaf:Person>
+	<foaf:Person rdf:ID="mpaschal">
+		<foaf:name>Mark Paschal</foaf:name>
+		<rdfs:seeAlso rdf:resource="http://markpasc.org/index.foaf"/>
+		<foaf:weblog rdf:resource="http://markpasc.org"/>
+		<foaf:weblog rdf:resource="http://www.livejournal.com/users/markpasc/"/>
+	</foaf:Person>
+	<foaf:Person rdf:ID="estokes">
+		<foaf:name>Emily Stokes</foaf:name>
+		<rdfs:seeAlso rdf:resource="http://harmonee13.livejournal.com/data/foaf"/>
+		<foaf:weblog rdf:resource="http://harmonee13.livejournal.com/"/>
+	</foaf:Person>
+	<foaf:Person rdf:ID="joegerakines">
+		<foaf:name>Joe Gerakines</foaf:name>
+		<rdfs:seeAlso rdf:resource="http://gerky.livejournal.com/data/foaf"/>
+		<foaf:weblog rdf:resource="http://gerky.livejournal.com/"/>
+	</foaf:Person>
+	<foaf:Person rdf:ID="terriegerakines">
+		<foaf:name>Terrie Gerakines</foaf:name>
+		<foaf:mbox_sha1sum>9a4edc63ae78a1d4a6470d1a1ad760fb355241bf</foaf:mbox_sha1sum>
+	</foaf:Person>
+	<foaf:Person rdf:ID="bengerakines">
+		<foaf:name>Ben Gerakines</foaf:name>
+		<foaf:mbox_sha1sum>8978395e3583282162f49a83fa65f62c2a2919f3</foaf:mbox_sha1sum>
+	</foaf:Person>
+	<foaf:Person rdf:ID="charliegerakines">
+		<foaf:name>Charles Gerakines</foaf:name>
+		<foaf:mbox_sha1sum>caccf08747efe20f29bd1a015c0e417f1fc5557c</foaf:mbox_sha1sum>
+	</foaf:Person>
+	<pet:Pet rdf:nodeID="picasso">
+		<foaf:name>Picasso</foaf:name>
+		<foaf:gender>Male</foaf:gender>
+		<pet:fedBy>
+			<foaf:Person>
+				<foaf:name>Carolyn Gerakines</foaf:name>
+			</foaf:Person>
+		</pet:fedBy>
+		<pet:hasID>474F2E216D</pet:hasID>
+		<pet:primaryColor>Brown</pet:primaryColor>
+		<pet:secondaryColors>Black</pet:secondaryColors>
+		<pet:species rdf:resource="http://purl.org/stuff/pets/Cat"/>
+		<pet:order rdf:resource="http://purl.org/stuff/pets/Mammal"/>
+		<pet:furStyle>short-haired</pet:furStyle>
+		<pet:favoriteFood>muffins</pet:favoriteFood>
+		<pet:favoriteFood>tiramisu</pet:favoriteFood>
+		<pet:favoriteFood>sushi</pet:favoriteFood>
+		<pet:likes>his little pink ball, electrical wires, the bathtub</pet:likes>
+		<pet:dislikes>other cats</pet:dislikes>
+	</pet:Pet>
+</rdf:RDF>
+

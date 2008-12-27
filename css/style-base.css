@@ -95,7 +95,7 @@ body {
 }
 
 #container-inner {
-    width: 940px;
+    width: 1024px;
     min-height: 100%;
     margin: 0 auto;
     text-align: left;
@@ -169,7 +169,7 @@ body {
 }
 
 .layout-wt #beta {
-    width: 190px;
+    width: 240px;
 }
 
 
