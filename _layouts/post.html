@@ -24,14 +24,10 @@
 {{ content }}
 										</div>
 									</div>
-									<div class="asset-footer">
-										<script type="text/javascript" src="http://www.reddit.com/button.js?t=1"></script>
-										<script type="text/javascript">
-										if (typeof window.Delicious == "undefined") window.Delicious = {};
-										    Delicious.BLOGBADGE_DEFAULT_CLASS = 'delicious-blogbadge-line';
-										</script>
-										<script src="http://static.delicious.com/js/blogbadge.js"></script>
-									</div>
+									<div id="disqus_thread"></div> 
+									<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script> 
+									<noscript><a href="http://socklabs-blog.disqus.com/?url=ref">View the discussion thread.</a></noscript> 
+									<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a> 
 								</div>
 							</div>
 						</div>
@@ -47,5 +43,19 @@
 			</div>
 		</div>
 {% include bodyjs.html %}
+    <script type="text/javascript">
+    //<![CDATA[
+        (function() {
+            var links = document.getElementsByTagName('a');
+            var query = '?';
+            for(var i = 0; i < links.length; i++) {
+                if(links[i].href.indexOf('#disqus_thread') >= 0) {
+                    query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+                }
+            }
+            document.write('<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>'); 
+        })();
+    //]]>
+    </script>
 </body>
 </html>
