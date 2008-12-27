@@ -34,6 +34,7 @@ title: Socklabs
 												{{ post.content }}
 											</div>
 										</div>
+										<p><a href="http://blog.socklabs.com{{ post.url }}#comments">Comments</a></p>
 										<div class="asset-footer"></div>
 									</div>
 								{% endfor %}
@@ -55,6 +56,17 @@ title: Socklabs
 										</ul>
 									</div>
 								</div>
+								<div class="widget-comments widget">
+                                    <h3 class="widget-header">
+                                        Recent Comments
+                                    </h3>
+                                    <div class="widget-content">
+                                        <div id="dsq-recentcomments" class="dsq-widget">
+                                            <script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/recent_comments_widget.js?num_items=3&avatar_size=32&excerpt_length=100"></script>
+                                        </div>
+                                        <p><a href="http://disqus.com">Powered by Disqus</a></p>
+                                    </div>
+                                </div>
 								<div id="github-badge"></div>
 							</div>
 						</div>
