@@ -17,7 +17,7 @@ Nick Gerakines is the author of the book "[Facebook Application Development](htt
 
 I maintain and contribute to numerous projects on GitHub. A short list of active, archived and forked projects of mine can be seen on my GitHub userpage, [ngerakines.github.com](http://ngerakines.github.com/). I've also posted most of the documentation for those projects as well.
 
-<h1>Erlang Presentations</h1>
+<h1>Community Involvement</h1>
 
 In September of 2008 I spoke at the [CUFP](http://cufp.galois.com/) conference in Victoria BC about developing [Erlang at Yahoo](http://cufp.galois.com/2008/abstracts.html). The presentation lasted just under 30 minutes and was presented with Mark Zweifel about our experiences using Erlang in the Delicious production system.
 
@@ -31,4 +31,4 @@ I've also given several presentations about Erlang to several groups including t
 
 <h1>CPAN Contributions</h1>
 
-My [CPAN author page](http://search.cpan.org/~sock/) lists a number of my CPAN contributions and works. Some of them haven't been updated in a while, however I do regularly run through the associated test suites to make sure they still work.
+My [CPAN author page](http://search.cpan.org/~sock/) lists a number of my CPAN contributions and works. Some of them haven't been updated in a while, however I do regularly run through the associated test suites to make sure they still work. Many of these modules can be found on GitHub.

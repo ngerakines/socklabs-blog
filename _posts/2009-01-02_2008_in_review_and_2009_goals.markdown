@@ -1,0 +1,25 @@
+---
+layout: post
+title: 2008 in Review & 2009 Goals
+---
+
+2008 was a great year of activity and excitement. I've got the sneaking suspicion that 2009 is going to be no less busy.
+
+ * Finished and published my first book!
+ * Spoke at CUFP and met a lot of really smart people.
+ * Gave several tech-talks and presentations.
+ * Learned how to develop apps for the iPhone.
+ * Migrated I Play WoW from a Perl app to an Erlang app.
+ * Learned about CouchDB.
+ * Learned Git.
+ * Accepted a lead position at EA.
+
+This is what I'd like to accomplish in 2009.
+
+ * Finish my second book.
+ * Do more tech-talks and presentations.
+ * Have a 100 day streak of open source commits on GitHub.
+ * Write more technical articles and entries.
+ * Learn Python.
+ * Hit level 80 with Korale and get into tier 9.
+ * Grow I Play WoW to 75,000 monthly active users.
