@@ -1,0 +1,20 @@
+---
+layout: post
+title: Welcoming Toby
+---
+
+Over the holiday break, Carolyn and I decided that we'd like to adopt another cat. When Picasso first arrived, he came with another cat, Melee, that died soon afterward from FIP. It was kind of rough, especially with Carolyn being pregnant at the time, and we've been a one cat household since then.
+
+On Friday we went to the [Silicon Valley Human Society](http://www.hssv.org/) and looked around. We had a good time, although it was slightly depressing to see how many animals go through the place. There was a Volunteer cat petter (what a title eh?) that showed us around and let us interact with some of the cats that were in the cages. While we were looking around there were two that caught my eye. Toby was one and a cat named Artimas was another. We got to hold and pet both with Tom there. Vanessa really loved it.
+
+While we were in the cages, we found out that black cats get adopted far less than other cats. It struck me as really odd but the guy continued to say that a lot of people just don't adopt black cats. Some out of superstition, others for weirder reasons.
+
+I certainly didn't have any reservations going into the place about the type or color of cat that I'd like to adopt. I'm pretty sure that Carolyn didn't either. Our only concern was that it would coexist well with Picasso and Vanessa. 
+
+Before we left, we made an appointment for Sunday to come in and interview. When we came in we found that Artimas was being adopted right then. He really is a beautiful cat and we were both happy to see him leave. Thankfully Toby was still there. The entire process took about 2 hours and before we knew it, we were on our way home.
+
+I suspect it'll be a little while before Picasso and Toby start to get along. Right now we have Toby in our bedroom and plan on having him there for a week or so before we start to let him see the rest of the house. Sadly, Toby was brought to the SVHS from a San Jose shelter and has spent most of his life in cages. It might take them some getting used to having each other around and determining territories. 
+
+<a href="http://www.flickr.com/photos/sock/3168422769/" title="IMG_3659 by nickgerakines, on Flickr"><img src="http://farm2.static.flickr.com/1157/3168422769_665e78c191.jpg" width="500" height="333" alt="IMG_3659" /></a>
+
+<a href="http://www.flickr.com/photos/sock/3169228752/" title="IMG_3695 by nickgerakines, on Flickr"><img src="http://farm2.static.flickr.com/1195/3169228752_0df0051d64.jpg" width="500" height="333" alt="IMG_3695" /></a>
