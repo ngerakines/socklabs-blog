@@ -1,0 +1,20 @@
+---
+layout: post
+title: Erlang and Nginx, a proof of concept
+---
+
+I was doing some writing this evening and out of the blue, I was struck with the urge to create what would be the "mod\_erlang" Apache module. I've heard of several really cool stories of using c/c++ apps as entry points to Erlang grids and it sounded like a really cool idea to pursue.
+
+Then I remembered what developing Apache modules was like and was immediately discouraged.
+
+Meanwhile, I was also thinking about nginx and the several nginx vs X articles that I've read recently and was curious about nginx's support for plugins and extensions. Low and behold nginx has a pretty nifty extension/module framework and minutes later I was digging through the documentation.
+
+The idea of using a solid c or c++ application for managing the tear down and build up of HTTP requests and using Erlang to actually process the request sounds like a win. I think Erlang is an ideal language and platform for building back-end minded services and application tiers and have been pushing this belief heavily. Using an application like nginx, apache2 or a home-brew interface to provide an entry/access point into and Erlang grid is what I'm going for with this project.
+
+[http://github.com/ngerakines/erlang_nginx/tree/master](http://github.com/ngerakines/erlang_nginx/tree/master)
+
+Right now, it's in the early development stages and exists only as a proof of concept. The features that I'm developing toward include the ability to break down a request into it's URI, headers and body and pass that into an Erlang grid's handler process as defined by a configuration variable. The request would wait for a specific amount of time for a message to be sent back that would include the status code, headers and response body that would be displayed to the user.
+
+Another interesting path would be to compose whatever body is needed by the cnode/application. An example would be having the response from the grid be a tuple representing the type of response and components of the response and having the cnode/application create the json, xml or protocol buffers response bdoy based on that message.
+
+I'm open to your thoughts, questions and comments. I don't claim to be a stellar c developer, so please help me and this project by not only taking a look at the code and contributing, but also telling me what I did wrong and why you changed what you did. As development continues, I'll probably use I Play WoW as a guinea pig and will post results as I can.
