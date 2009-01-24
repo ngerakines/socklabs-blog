@@ -12,4 +12,6 @@ Using the etap\_report module is simple. It exports the create/0 function which 
     $ erl -eval 'etap_report:create()' -s init stop
     $ open protobuffs_report.html
 
+An example can be found here: [http://ngerakines.github.com/erlang\_protobuffs/coverage/protobuffs\_report.html](http://ngerakines.github.com/erlang_protobuffs/coverage/protobuffs_report.html)
+
 Just remember: [When do I test?](http://whendoitest.com/)
