@@ -29,6 +29,19 @@ I've also given several presentations about Erlang to several groups including t
 
 [I Play WoW](http://www.facebook.com/apps/application.php?id=2359644980) is a Facebook applications that creates a bridge between the social worlds of Facebook and the World of Warcraft. It allows users to claim World of Warcraft characters to find and interact with other Facebook users that have done the same. I've gotten tremendous feedback from users and its been a lot of fun. At first the project was written in Perl using the Catalyst web framework over MySQL and Memcached. It was then ported to Erlang and is powered by MochiWeb, CouchDB, Erltl and MySQL.
 
+ * [Official About Page](http://ngerakines.backpackit.com/pub/1630079)
+
+I Play WoW has been recognized several times on prominent blogs, websites and the official World of Warcraft forum.
+
+ * [I Play WoW on Facebook](http://www.wowinsider.com/2008/07/08/i-play-wow-on-facebook/) \(wowinsider.com\)
+ * [Facebook apps for techies](http://www.download.com/8301-2007_4-9807964-12.html) \(download.com\)
+ * [I Play WoW Review](http://www.facebookherald.com/2008/03/12/review-i-play-wow-app/) \(facebookherald.com\)
+ * [Facebook](http://www.sidetrackedheros.com/index.php?option=com_content&task=view&id=57&Itemid=1) \(sidetrackedheros.com\)
+ * [I Play WoW Facebook app](http://forums.worldofwarcraft.com/thread.html;jsessionid=7C1D4BF16143D726A647FB464FB6B15E?topicId=4976287868&sid=1) \(worldofwarcraft.com\)
+ * [I Play WoW on Facebook](http://www.poplife.biz/?p=84974) \(poplife.biz\)
+ * [I Play WoW Facebook app reaches 100,000 users](http://www.wowinsider.com/2009/01/16/i-play-wow-facebook-app-reaches-100-000-users/) \(wowinsider.com\)
+ * [15 Minutes of Fame: I Play WoW for Facebook](http://www.wowinsider.com/2009/02/04/15-minutes-of-fame-i-play-wow-for-facebook/) \(wowinsider.com\)
+
 <h1>CPAN Contributions</h1>
 
 My [CPAN author page](http://search.cpan.org/~sock/) lists a number of my CPAN contributions and works. Some of them haven't been updated in a while, however I do regularly run through the associated test suites to make sure they still work. Many of these modules can be found on GitHub.
