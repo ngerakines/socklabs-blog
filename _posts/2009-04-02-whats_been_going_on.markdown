@@ -1,0 +1,14 @@
+---
+layout: post
+title: What's been going on lately?
+---
+
+Things were getting dusty around here so it's time for me to give a nice life update.
+
+The big news is that we are moving! We found a nice 3 bedroom place just a few miles down from where we live in Mountain View. Carolyn and I are both really excited about moving into a bigger space. Not only will we get a 3rd bathroom but I'll also get an office. It's very exciting.
+
+Vanessa is growing up pretty quickly and starts pre-school in August. Granted, it is a few months away but still very exciting.
+
+We've been extremely busy at work and the progress has been amazing. Without going into too much detail, I've got a really solid Erlang team hacking on some really cool technologies here at EA. Some of the open source technologies we are using include  [log\_roller](http://github.com/JacobVorreuter/log_roller), [erlang\_protobuffs](http://github.com/ngerakines/erlang_protobuffs) and [stateless\_server](http://github.com/ngerakines/stateless_server). I sincerely hope that we'll be able to disclose more on our official blog soon.
+
+Erlang-Factory is drawing near and that's going to be a lot of fun. I'm looking forward to meeting a lot of the people there. If you plan on attending or will be in the area please drop me a line.
