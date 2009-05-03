@@ -1,9 +1,9 @@
 ---
 layout: post
-title: Erlang Factory, Day 1
+title: Erlang Factory
 ---
 
-Erlang-Factory is over and it was great. I'm so happy to see the many project and community leaders coming together to introduce their projects and get involved with each other's work. There were 6 tracks throughout the 2 day conference that included "Erlang Case Studies", "Test-Driven Development", "Enterprise Integration", "Cool Applications and Features", "Give me a break from Erlang" and "Erlang and the Web". My own presentation about test driven development in Erlang went quite well -- I'll post a link to the video once it's up.
+[Erlang-Factory](http://www.erlang-factory.com/) is over and it was great. I'm so happy to see the many project and community leaders coming together to introduce their projects and get involved with each other's work. There were 6 tracks throughout the 2 day conference that included "Erlang Case Studies", "Test-Driven Development", "Enterprise Integration", "Cool Applications and Features", "Give me a break from Erlang" and "Erlang and the Web". My own presentation about test driven development in Erlang went quite well -- I'll post a link to the video once it's up.
 
 On day one keynotes by Robert Virding and Ezra Zygmuntowicz opened up the conference with the idea that there isn't a one true way to work on your projects with Erlang. Robert's talk on the why and how Erlang was designed the way it was, was really interesting. Ezra's talk about blending Ruby and Erlang gave some insight as to how Erlang can play very nicely with and compliment web languages like Ruby.
 
