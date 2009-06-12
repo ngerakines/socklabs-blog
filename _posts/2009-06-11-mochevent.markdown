@@ -1,0 +1,10 @@
+---
+layout: post
+title: Mochevent
+---
+
+This past weekend I started a small work-related project called mochevent. It's purpose is to offload the work HTTP request build up, tear down and socket handling onto a c application. As requests come in, the request method, uri, headers and body are dispatched off to an Erlang process on a remote node to do whatever heavy lifting is required to fulfill the request. The Erlang node then sends the results back to the cnode to then be massaged into to an HTTP response which gets sent to the client.
+
+The application is based on the the proof of concept application developed by  Richard Jones and posted to [http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-3/](http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-3/). The goal is to get it as small and tight as possible so we are really looking at performance and memory footprint when looking to improve the application.
+
+The project can be found on GitHub as [mochevent](http://www.github.com/ngerakines/mochevent) and contributions are welcome and encouraged. This is looking like we will be using it in an official capacity at work so keep watching for feature additions, improvements and bug fixes.
