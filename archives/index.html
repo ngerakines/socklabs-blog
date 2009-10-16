@@ -1,12 +1,12 @@
 ---
-layout: page
-title: Archives
+layout: default
+title: Nick Gerakines
 ---
-
-<ul>
-{% for post in site.posts %}
-<li>
-	{{ post.date | date_to_string }} <a href="http://blog.socklabs.com{{ post.url }}">{{ post.title }}</a>
-</li>
-{% endfor %}
-</ul>
+<div id="home">
+  <h1>Blog Archives</h1>
+  <ul class="posts">
+  {% for post in site.posts %}
+    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</div>

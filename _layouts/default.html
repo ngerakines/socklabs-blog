@@ -1,33 +1,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" id="sixapart-standard">
-	<head>
-		<title>{{ page.title }}</title>
-		<meta name="author" content="Nick Gerakines" />
-{% include style.html %}
-	</head>
-	<body class="mt-main-index layout-wt">
-		<div id="container">
-			<div id="container-inner">
-				{% include header.html %}
-				{% include navhome.html %}
-				<div id="content">
-					<div id="content-inner">
-						<div id="alpha">
-							<div id="alpha-inner">
-								{{ content }}
-							</div>
-						</div>
-						<div id="beta">
-							<div id="beta-inner">
-								<div id="github-badge"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				{% include footer.html %}
-			</div>
-		</div>
-{% include bodyjs.html %}
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+   <title>{{ page.title }}</title>
+   <meta name="author" content="Nick Gerakines" />
+   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
+</head>
+<body>
+<div class="site">
+  <div class="title">
+    <a href="/">Nick Gerakines</a>
+    <a class="extra" href="/">home</a>
+  </div>
+  {{ content }}
+  {% include footer.html %}
+</div>
+{% include scripts.html %}
 </body>
 </html>
