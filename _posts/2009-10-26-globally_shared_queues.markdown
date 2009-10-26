@@ -1,0 +1,16 @@
+---
+layout: post
+title: Globally Shared Queues
+---
+
+In the Erlang apps that I've written, there seems to be a recurring issue. I'll build an application made to run  across several nodes but there could be some sort of shared process or functionality that is only meant to run on a single node. This could be something like a queue, application specific cache or connection to an external service.
+
+The most recent case is for an application called I Play Warhammer. When processing Warhammer Online characters, the application encounters many hundreds to thousands of them a minute and I want to be able to keep a queue of the incoming data processing actions to not overload the application during peak game usage. If the queue gets out of control, I want to be able to quickly destroy it. If the node that it's running on goes down, it needs to be started on another node. The data in the queue doesn't have to be durable, but the service that is the queue has to survive within the grid.
+
+With that, I wrote a small proof of concept behavior called ets\_queue. The first use of this module is allow developers to create workers based on the behavior defined by the module. The idea is that the worker module exports the functions init/1 and process/1 that define which queue they work against and how to process data.
+
+The second use of this module is to create a durable process that manages the actual queue based on an ordered\_set ets table. Each time the queue/2 and dequeue/1 functions are called, the bootstrap\_queue/1 function is called that either creates a queue server process or returns the globally registered pid for that process.
+
+<script type="text/javascript" src="http://gist.github.com/218872.js"></script>
+
+This is the best way that I've found one can tackle this sort of problem. I'm actively looking for better solutions and alternatives so please let me know if you have one.

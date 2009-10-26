@@ -1,21 +1,13 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="Nick Gerakines" />
-   <link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
-</head>
-<body>
-<div class="site">
-  <div class="title">
-    <a href="/">Nick Gerakines</a>
-    <a class="extra" href="/">home</a>
-  </div>
-  {{ content }}
-  {% include footer.html %}
-</div>
-{% include scripts.html %}
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>{{ site.title }}</title>
+  </head>
+  <body>
+	{% include logo.html %}
+    {{ content }}
+	<div class="clear"></div>
+	{% include footer.html %}
+  </body>
 </html>

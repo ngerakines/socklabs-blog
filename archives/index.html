@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Nick Gerakines
 ---
-<div id="home">
-  <h1>Blog Archives</h1>
-  <ul class="posts">
-  {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-  {% endfor %}
-  </ul>
+<div id="content">
+	<div id="posts">
+		{% for post in site.posts %}
+			<h3><a alt="{{ post.title }}" href="{{ post.url }}">{{ post.title }}</a></h3>
+			<em id="sub_h3">{{ post.date | date_to_long_string }}</em>
+		{% endfor %}
+	</div>
+	{% include sidebar.html %}
 </div>

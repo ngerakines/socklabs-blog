@@ -7,7 +7,7 @@
     <rdf:Description rdf:about="">
         <dc:description>Friend-of-a-Friend Description of Nick Gerakines</dc:description>
         <dc:creator>Nick Gerakines</dc:creator>
-        <dc:date>2008-12-25</dc:date>
+        <dc:date>2009-12-26</dc:date>
         <cc:license rdf:resource="http://creativecommons.org/licenses/nc/1.0"/>
     </rdf:Description>
     <foaf:Person rdf:nodeID="nkg">
@@ -109,8 +109,6 @@
         <foaf:currentProject rdf:resource="http://www.github.com/ngerakines/etap"/>
         <foaf:currentProject rdf:resource="http://www.github.com/ngerakines/ngerakines.github.com"/>
         <foaf:currentProject rdf:resource="http://www.github.com/ngerakines/socklabs-blog"/>
-        <foaf:currentProject rdf:resource="http://www.github.com/ngerakines/xxx"/>
-        <foaf:currentProject rdf:resource="http://www.github.com/ngerakines/xxx"/>
         <foaf:pastProject rdf:resource="http://www.github.com/ngerakines/erlang_geohash"/>
         <foaf:pastProject rdf:resource="http://www.github.com/ngerakines/erlang_twitter"/>
         <foaf:pastProject rdf:resource="http://www.github.com/ngerakines/erlang_wowarmory"/>

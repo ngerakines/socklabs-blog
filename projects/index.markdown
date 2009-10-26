@@ -1,21 +1,20 @@
 ---
-layout: page
+layout: default
 title: Projects
 ---
-
-<h1>Book: Facebook Application Development</h1>
+<h3>Book: Facebook Application Development</h3>
 
 Nick Gerakines is the author of the book "[Facebook Application Development](http://www.amazon.com/dp/0470246669/socklabs-20)" (John Wiley & Sons, Inc, published 2008). The book is part of the Wrox Professional Series and covers all aspects of Facebook application development. The book is packed with example projects and source code to give readers a very hands-on guide.
 
-<h1>GitHub Projects</h1>
+<h3>GitHub Projects</h3>
 
 I maintain and contribute to numerous projects on GitHub. A short list of active, archived and forked projects of mine can be seen on my GitHub userpage, [ngerakines.github.com](http://ngerakines.github.com/). I've also posted most of the documentation for those projects as well.
 
-<h1>Community Involvement</h1>
+<h3>Community Involvement</h3>
 
 In September of 2008 I spoke at the [CUFP](http://cufp.galois.com/) conference in Victoria BC about developing [Erlang at Yahoo](http://cufp.galois.com/2008/abstracts.html). The presentation lasted just under 30 minutes and was presented with Mark Zweifel about our experiences using Erlang in the Delicious production system.
 
-<h1>I Play WoW</h1>
+<h3>I Play WoW</h3>
 
 [I Play WoW](http://www.facebook.com/apps/application.php?id=2359644980) is a Facebook applications that creates a bridge between the social worlds of Facebook and the World of Warcraft. It allows users to claim World of Warcraft characters to find and interact with other Facebook users that have done the same. I've gotten tremendous feedback from users and its been a lot of fun. At first the project was written in Perl using the Catalyst web framework over MySQL and Memcached. It was then ported to Erlang and is powered by MochiWeb, CouchDB, Erltl and MySQL.
 
