@@ -15,8 +15,8 @@ There are a few reasons why I decided to create this site.
  * I didn't like the fact that CAN doesn't use the GitHub API and instead uses user feeds.
  * I think Erlang is better suited to support concurrent data processing applications than Ruby is.
 
-The site is currently live at [http://www.calendaraboutnothing.com/](http://www.calendaraboutnothing.com/). It tried duplicating all of the CAN functionality (and also added a few features of my own) and feedback is welcome.
+The site is currently live at [http://www.calenderlaboutnothing.com/](http://www.calenderlaboutnothing.com/). It tried duplicating all of the CAN functionality (and also added a few features of my own) and feedback is welcome.
 
-To use the site you will need a GitHub account. Just go to http://www.calendaraboutnothing.com/~\[YourGitHubUserName\] to activate tracking for your GitHub and it'll start polling your information.
+To use the site you will need a GitHub account. Just go to http://www.calenderlaboutnothing.com/~\[YourGitHubUserName\] to activate tracking for your GitHub and it'll start polling your information.
 
 Both projects are open source under the MIT.
