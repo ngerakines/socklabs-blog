@@ -10,3 +10,9 @@ I'm currently at the Erlang User Conference in Stockholm, Sweden. Jacob and I ar
 [Jacob Vorreuter](http://jacobvorreuter.com/) was next with a presentation on Erlang parse transforms and the internals of Erlang forms and compile-time syntax. Jake [has a bunch of stuff on GitHub](http://github.com/JacobVorreuter) that uses and compliments his presentation too.
 
 [Michael Truog](http://okeuday.livejournal.com/) gave a talk on [Cloudi](http://cloudi.org/), an application framework for Erlang cloud computing. 
+
+*...*
+
+[Jared Flatow](http://twitter.com/jmflatow) and Ville Tuulos gave a really good presentation on [Disco](http://discoproject.org/) and the newer project, Discodex. The discodb data storage format that they are using for immutable data storage and indexing looks awesome. The idea of immutable data storage at first seems scary but makes a lot of sense in some cases. I don't think the idea really lends itself to web services as we think of them, but it is a really powerful concept.
+
+[Ulf Wiger](http://ulf.wiger.net/weblog/) talked about Erlang and the cloud. Acknowledging that he's part of the "old guard", he gave a really interesting perspective on telecommunications use and what the cloud really is.
