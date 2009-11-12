@@ -1,0 +1,12 @@
+---
+layout: post
+title: 2009 Erlang User Conference
+---
+
+I'm currently at the Erlang User Conference in Stockholm, Sweden. Jacob and I arrived pretty late last night from a long 28 hour day, but I'm really excited to be here. Stockholm is a beautiful city and I can't wait to get out there and see some of the sights. There are some really great presentations today and a lot of faces that look familiar.
+
+[Rusty Klaphous](http://rklophaus.com/) gave a great presentation on [Nitrogen](http://nitrogenproject.com/) and [Riak](http://riak.basho.com/). I've been skeptical of Nitrogen for a while but seeing it in action was great. His presentation was pretty meta because it was through [slideblast.com](http://slideblast.com/) which was made with Nitrogen/Riak and the presentation went through the source code for it.
+
+[Jacob Vorreuter](http://jacobvorreuter.com/) was next with a presentation on Erlang parse transforms and the internals of Erlang forms and compile-time syntax. Jake [has a bunch of stuff on GitHub](http://github.com/JacobVorreuter) that uses and compliments his presentation too.
+
+[Michael Truog](http://okeuday.livejournal.com/) gave a talk on [Cloudi](http://cloudi.org/), an application framework for Erlang cloud computing. 
