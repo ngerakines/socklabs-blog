@@ -9,10 +9,14 @@ I'm currently at the Erlang User Conference in Stockholm, Sweden. Jacob and I ar
 
 [Jacob Vorreuter](http://jacobvorreuter.com/) was next with a presentation on Erlang parse transforms and the internals of Erlang forms and compile-time syntax. Jake [has a bunch of stuff on GitHub](http://github.com/JacobVorreuter) that uses and compliments his presentation too.
 
-[Michael Truog](http://okeuday.livejournal.com/) gave a talk on [Cloudi](http://cloudi.org/), an application framework for Erlang cloud computing. 
-
-*...*
-
 [Jared Flatow](http://twitter.com/jmflatow) and Ville Tuulos gave a really good presentation on [Disco](http://discoproject.org/) and the newer project, Discodex. The discodb data storage format that they are using for immutable data storage and indexing looks awesome. The idea of immutable data storage at first seems scary but makes a lot of sense in some cases. I don't think the idea really lends itself to web services as we think of them, but it is a really powerful concept.
 
 [Ulf Wiger](http://ulf.wiger.net/weblog/) talked about Erlang and the cloud. Acknowledging that he's part of the "old guard", he gave a really interesting perspective on telecommunications use and what the cloud really is.
+
+Rickard Cardell gave an interesting talk on using different backends with mnesiaex, one of which was the [erlang_couchdb](http://github.com/ngerakines/erlang_couchdb) module that I wrote. 
+
+Later in the afternoon, [Tom Preston-Werner](http://tom.preston-werner.com/) and [Scott Chacon](http://schacon.github.com/) talked about Git, GitHub and BERT. The idea behind BERT, BERP and ERNIE is pretty slick and although the entire concept is based on Erlang terms and data types, they don't actually use an Erlang client or API. Regardless, the talk was pretty good and got an interesting conversation going afterwards.
+
+At the end of the day, Kenneth Lundin gave an Erlang/OTP update which had some great bits of information. A very interesting update is the inclusion of NIFs. The idea of being able to extend an Erlang module with c is a long overdue feature. What struck my interest the most is that the Ericsson team will be exposing the Erlang source tree through GIT, likely on GitHub.
+
+We stayed until 10:30pm or so and finally left after some great presentations and a lot of really good conversation. I'm planning on skipping the tutorials and hackathon tomorrow in favor of going out into the city and wandering around. We were about a dozen times to go see the Vasa museum and the royal palace.
