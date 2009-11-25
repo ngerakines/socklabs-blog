@@ -1,0 +1,50 @@
+---
+layout: post
+title: Lets create some Erlang standards, part one
+---
+
+Have an open source Erlang project? Is it on GitHub? Jacob and I have been working on a project that aims to make it easier to install, remove and contribute to open source Erlang applications on GitHub. The project is called *epm* and it stands for the Erlang Package Manager. The goal is to create a simple, non-intrusive way to find, view information on, install and remove Erlang applications that are kept in Git repositories. You can read more about epm on the project page for it; this post isn't necessarily about it.
+
+Working on it got me thinking about the state of Open Source Erlang. What I want to do now is try to define some common behaviors and best practices for developers to follow when developing and release Erlang applications. This is part one of several blog posts that discuss some Erlang best practices and standards that I'd like to see take shape in the Erlang open source community.
+
+# Use a simple build system
+
+I can't stress this one enough and seems to cause people the most trouble time after time. I'm not trying to sell one way over another, just trying to get people to use common sense here.
+
+As a developer of open source software, you are allowing other developers to benefit from the work you've put into a library or application. It probably builds off of some other open source software which you had to install to use. You may not think this at first, but the usefulness of your library or application is based on more than just the code; It also spans it's documentation, availability, and freshness and integration difficulty. The first barrier to getting developers to use your code may not be a search on Google or Yahoo, but how easy (or difficult) it is for them to install it and start writing code that uses it.
+
+Erlang provides the ability to compile source code in several flavors. You can use `erlc ...`, `erl -make ...` and within the shell the compile and make commands. All of the other packages, frameworks, sdks and toolchains wrap around one of those three. Why make it any more complicated? Plainly speaking there isn't much extra required to create a build system that can build, test and install your code other than simple bash scripts.
+
+There are lots of great examples on using `make` with a `Makefile`, here is one from etap:
+
+    LIBDIR=$(shell erl -eval 'io:format("~s~n", [code:lib_dir()])' -s init stop -noshell)
+	VERSION=0.3.4
+	
+	all:
+		mkdir -p ebin
+		(cd src;$(MAKE))
+	
+	test: all
+		(cd t;$(MAKE))
+		(cd t;$(MAKE) test)
+	
+	install:
+		mkdir -p $(prefix)/$(LIBDIR)/etap-$(VERSION)/ebin
+		for i in ebin/*.beam; do install $$i $(prefix)/$(LIBDIR)/etap-$(VERSION)/$$i ; done
+
+In the above example Makefile, the `make` command responds to "all", "test" and "install". The "all" and "test" targets get ponied off to their own Makefile files in the src and t directories. The install target uses the `LIBDIR` variable that uses the erl command to retrieve the Erlang libs path and attempts to copy the beam files to an application directory contained therein.
+
+It's likely that the src/Makefile file looks something similar to this:
+
+	all:
+		for i in *.erl; do erlc -o ../ebin $i; done
+
+In summary, you are doing it wrong if...
+
+ * Building can't be done immediately after a fresh checkout of the code, assuming code dependencies are handled.
+ * Building requires more than 1 command and can't be performed from memory.
+ * Installing can't be done to a user set location or prefix
+ * The build system doesn't have a test phase.
+
+> My thoughts on using rake: Rake works and there are some projects that use it well. The problem is the dependencies that come with it. To build a project that uses rake, it means you've got to have ruby, rake installed and whatever other dependencies used installed. That's not a problem for most developers, but for some of us, it's more than 3 commands and we have to look up what to do. If there is a problem and the developer has to debug or fix something, it just compounds the frustration and makes your library or package more and more unappealing.
+
