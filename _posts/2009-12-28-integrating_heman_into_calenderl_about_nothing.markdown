@@ -1,0 +1,9 @@
+---
+layout: post
+title: Lets create some Erlang standards, part one
+---
+
+A while ago I started a project called [Heman](http://github.com/ngerakines/heman). The goal was to create a way to use Erlang to measure and assess application health. Application health is a score used to determine how your application is doing. This could be as general as it's immediate resource consumption or it's general activities but can also be embed to give you detailed information on it's internals and inner workings.
+
+This evening I started integrating heman into [calenderl about nothing](http://www.calenderlaboutnothing.com/). It is a good way to put it to practical use and also flesh out some use cases and conditions. You can see the updated [cerlan code base](http://github.com/ngerakines/cerlan) as well as the stats system on [calenderlaboutnothing.com](http://calenderlaboutnothing.com:7816/).
+
