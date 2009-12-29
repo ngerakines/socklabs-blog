@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Lets create some Erlang standards, part one
+title: Integrating Heman into CalendERL About Nothing
 ---
 
 A while ago I started a project called [Heman](http://github.com/ngerakines/heman). The goal was to create a way to use Erlang to measure and assess application health. Application health is a score used to determine how your application is doing. This could be as general as it's immediate resource consumption or it's general activities but can also be embed to give you detailed information on it's internals and inner workings.
