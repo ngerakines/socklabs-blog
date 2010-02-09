@@ -1,4 +1,5 @@
 sinatra
 rack
+rdiscount
 jekyll
 rack-jekyll
