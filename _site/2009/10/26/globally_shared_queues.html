@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Globally Shared Queues</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h2>
+			<em id="sub_h2">26 October 2009</em>
+		 	<p>In the Erlang apps that I've written, there seems to be a recurring issue. I'll build an application made to run  across several nodes but there could be some sort of shared process or functionality that is only meant to run on a single node. This could be something like a queue, application specific cache or connection to an external service.</p>
+
+<p>The most recent case is for an application called I Play Warhammer. When processing Warhammer Online characters, the application encounters many hundreds to thousands of them a minute and I want to be able to keep a queue of the incoming data processing actions to not overload the application during peak game usage. If the queue gets out of control, I want to be able to quickly destroy it. If the node that it's running on goes down, it needs to be started on another node. The data in the queue doesn't have to be durable, but the service that is the queue has to survive within the grid.</p>
+
+<p>With that, I wrote a small proof of concept behavior called ets_queue. The first use of this module is allow developers to create workers based on the behavior defined by the module. The idea is that the worker module exports the functions init/1 and process/1 that define which queue they work against and how to process data.</p>
+
+<p>The second use of this module is to create a durable process that manages the actual queue based on an ordered_set ets table. Each time the queue/2 and dequeue/1 functions are called, the bootstrap_queue/1 function is called that either creates a queue server process or returns the globally registered pid for that process.</p>
+
+<script type="text/javascript" src="http://gist.github.com/218872.js"></script>
+
+
+<p>This is the best way that I've found one can tackle this sort of problem. I'm actively looking for better solutions and alternatives so please let me know if you have one.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

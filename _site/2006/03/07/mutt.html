@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Mutt
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Mutt
+" href="/2006/03/07/mutt.html">Mutt
+</a></h2>
+			<em id="sub_h2">07 March 2006</em>
+		 	<p>I've become sick and tired of Mail.app crashing and failing. Thunderbird doesn't do what I want, it feels bloated and slow. Entourage is a joke. For short while I used gmail, by forwarding everything to my gmail address, but I don't want to depend on a 3rd party like that.</p>
+
+<p>So yesterday I made the leap <em>back</em> to <a href="http://www.mutt.org/">mutt</a>. For almost 2 years I used mutt exclusively and was very happy. Over time, server changes, software and OS changes I moved away and tried to find greener pastures. I've used everything from Gmail, Yahoo Mail, Maill.app, Evolution, Thunderbird, Entourage and even Squirrelmail. None of them, however, compare to the simplicity and security that I have with mutt.</p>
+
+<p>The setup that I have may seem complex to some, but it does <em>exactly</em> what I need. Nothing more, nothing less, right on target.</p>
+
+<p>I use mutt as my mail application. I have a directory in my home dir called 'Mail' which stores all of my local mail. It also has subfolders for organization. I've decided to go with the maildir format instead of mbox, for a few reasons. Mainly locking and large file support (I get a lot of mail).</p>
+
+<p>Mutt is not meant to be a mail fetcher or checker. It simple reads email. In order to actively check for email I use fetchmail, procmail and postfix. I run a minimalist installation of postfix on my local machine which acts as a storage agent. I have a cron that runs fetchmail every 15 minutes which moves mail from my different email accounts to my local account. Then as postfix recieves new mail for my local account it pipes it through procmail which sorts, categorizes, tags and filters all of my mail into my inbox and sub folders.</p>
+
+<p>When I open up mutt I have all of my mail from the many different accounts already sorted, filtered and organized. It lets me spend less time dealing with email and spam and more time actually reading and responding.</p>
+
+<p>Responding is easy as well. I use a program called esmtp to connect to the different smtp servers associated with different email accounts to send mail when I am online.</p>
+
+<p>This setup is great for me. I can do all of my mail reading offline or online and all of my mail is archived locally under my control.</p>
+
+<p>I've included the config files that I used to get this setup. Sooner or later I'll post a walk through guide explaining how to setup mutt, fetchmail, procmail and postfix on your os x machine.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

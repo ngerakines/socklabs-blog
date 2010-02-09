@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Tag clouds in Erlang with ErlyWeb
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Tag clouds in Erlang with ErlyWeb
+" href="/2008/04/10/tag_clouds_in_erlang_with_erly.html">Tag clouds in Erlang with ErlyWeb
+</a></h2>
+			<em id="sub_h2">10 April 2008</em>
+		 	<p><strong>Updated</strong> This article was updated to incorporate several changes to the tagcloud.erl module. Thanks Ulf!</p>
+
+<p>There are plenty of ways to render <a href="http://en.wikipedia.org/wiki/Tag_cloud">tag clouds</a> and Erlang is no exception. With these two small modules you render tag clouds in <a href="http://erlyweb.org/">ErlyWeb</a>. The logic is pretty simple and could be applied to any other tempting system with little effort.</p>
+
+<p><strong>Listing 1-1: The tagcloud.erl module.</strong></p>
+
+<pre><code>-module(tagcloud).
+-export([create_cloud/1, tag_size/4]).
+
+create_cloud([]) -&gt; [];
+create_cloud(Tags) -&gt;
+    AlphaSortedTags = lists:keysort(2, Tags),
+    Counts = [C || {C, _} &lt;- Tags],
+    Max = lists:max(Counts),
+    Min = lists:min(Counts),
+    Diff = Max - Min,
+    Dist = Diff / 3,
+    [{Name, Count, tagcloud:tag_size(Count, Min, Max, Dist)} || {Count, Name} &lt;- AlphaSortedTags].
+
+tag_size(Count, Min, Max, Dist) -&gt;
+    if
+        Count == Min -&gt; smallest;
+        Count == Max -&gt; largest;
+        Count &gt; Min + (Dist * 2) -&gt; large;
+        Count &gt; Min + Dist -&gt;  medium;
+        true -&gt; small
+    end.
+</code></pre>
+
+<p>In the tagcloud module, the main function used to generate the cloud is create_cloud/1. That function takes a list of tuples representing tags and their counts. The list is then sorted and the largest and smallest values extracted from the list. It is here that we also calculate the spread and distance between tags.</p>
+
+<p>For each tag the size of the tag is calculated. Based on the max, min and distance values, an atom representing the tag size is associated with the tag and a new list is returned. At first this was done with a separate function that iterated through the list of tags and determined the size. Ulf Wiger pointed out a better way to do this is through a simple list comprehension. Now, the tags are sent through a list comprehension that calls a function to determine the tag size and the final list is returned to the function caller.</p>
+
+<pre><code>1&gt; RawTags = [{15, "erlang"}, {9, "perl"}, {12, "erlyweb"}, {17, "yaws"}].
+[{15, "erlang"}, {9, "perl"}, {12, "erlyweb"}, {17, "yaws"}].
+2&gt; Tags = tagcloud:create_cloud(RawTags).
+[{"erlang",15,large},
+ {"erlyweb",12,medium},
+ {"perl",9,smallest},
+ {"yaws",17,largest}]
+</code></pre>
+
+<p>Now we can feed in the processed list of tags into the display_tag_cloud/1 function as part of the tagcloudt.et template file. The template does nothing more than apply the style that has already been calculated based on the size atom by iterating through the list of tags and associating a css class to each.</p>
+
+<p><strong>Listing 1-1: The tagcloudt.et template.</strong></p>
+
+<pre><code>&lt;%@ display_tag_cloud(Tags) %&gt;
+&lt;% tag_style() %&gt;
+&lt;div style="padding: 5px;"&gt;&lt;% tag_cloud(Tags) %&gt;&lt;/div&gt;
+&lt;%@ tag_cloud(Tags) %&gt;&lt;% tag_cloud_tag(Tags) %&gt;
+&lt;%@ tag_cloud_tag([]) %&gt;
+&lt;%@ tag_cloud_tag([{Name, Count, Size} | Tags]) %&gt;
+ &lt;a href="http://blog.socklabs.com/tag/&lt;% Name %&gt;" class="&lt;% Size %&gt;Tag"&gt;&lt;% Name %&gt;&lt;/a&gt;&lt;% tag_cloud_tag(Tags) %&gt;
+&lt;%@ tag_style() %&gt;
+&lt;style&gt;
+.smallestTag { font-size: xx-small; }
+.smallTag { font-size: small; }
+.mediumTag { font-size: medium; }
+.largeTag { font-size: large; }
+.largestTag { font-size: xx-large; }
+&lt;/style&gt;
+</code></pre>
+
+<p>Just add the template file with the rest of your ErlyWeb templates. You can call the display_tag_cloud from any of your templates.</p>
+
+<pre><code>...
+Tags:&lt;br/&gt;
+&lt;% tagcloudt:display_tag_cloud(Tags) %&gt;
+...
+</code></pre>
+
+<p>It couldn't be easier.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Lets create some Erlang standards, part one</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h2>
+			<em id="sub_h2">24 November 2009</em>
+		 	<p>Have an open source Erlang project? Is it on GitHub? Jacob and I have been working on a project that aims to make it easier to install, remove and contribute to open source Erlang applications on GitHub. The project is called <a href="http://github.com/JacobVorreuter/epm">epm</a> and it stands for the Erlang Package Manager. The goal is to create a simple, non-intrusive way to find, view information on, install and remove Erlang applications that are kept in Git repositories. You can read more about epm on the project page for it; this post isn't necessarily about it.</p>
+
+<p>Working on it got me thinking about the state of Open Source Erlang. What I want to do now is try to define some common behaviors and best practices for developers to follow when developing and release Erlang applications. This is part one of several blog posts that discuss some Erlang best practices and standards that I'd like to see take shape in the Erlang open source community.</p>
+
+<h1>Use a simple build system</h1>
+
+<p>I can't stress this one enough and seems to cause people the most trouble time after time. I'm not trying to sell one way over another, just trying to get people to use common sense here.</p>
+
+<p>As a developer of open source software, you are allowing other developers to benefit from the work you've put into a library or application. It probably builds off of some other open source software which you had to install to use. You may not think this at first, but the usefulness of your library or application is based on more than just the code; It also spans it's documentation, availability, and freshness and integration difficulty. The first barrier to getting developers to use your code may not be a search on Google or Yahoo, but how easy (or difficult) it is for them to install it and start writing code that uses it.</p>
+
+<p>Erlang provides the ability to compile source code in several flavors. You can use <code>erlc ...</code>, <code>erl -make ...</code> and within the shell the compile and make commands. All of the other packages, frameworks, sdks and toolchains wrap around one of those three. Why make it any more complicated? Plainly speaking there isn't much extra required to create a build system that can build, test and install your code other than simple bash scripts.</p>
+
+<p>There are lots of great examples on using <code>make</code> with a <code>Makefile</code>, here is one from <a href="http://github.com/ngerakines/etap">etap</a>:</p>
+
+<pre><code>LIBDIR=$(shell erl -eval 'io:format("~s~n", [code:lib_dir()])' -s init stop -noshell)
+VERSION=0.3.4
+
+all:
+    mkdir -p ebin
+    (cd src;$(MAKE))
+
+test: all
+    (cd t;$(MAKE))
+    (cd t;$(MAKE) test)
+
+install:
+    mkdir -p $(prefix)/$(LIBDIR)/etap-$(VERSION)/ebin
+    for i in ebin/*.beam; do install $$i $(prefix)/$(LIBDIR)/etap-$(VERSION)/$$i ; done
+</code></pre>
+
+<p>In the above example Makefile, the <code>make</code> command responds to "all", "test" and "install". The "all" and "test" targets get ponied off to their own Makefile files in the src and t directories. The install target uses the <code>LIBDIR</code> variable that uses the erl command to retrieve the Erlang libs path and attempts to copy the beam files to an application directory contained therein.</p>
+
+<p>It's likely that the src/Makefile file looks something similar to this:</p>
+
+<pre><code>all:
+    for i in *.erl; do erlc -o ../ebin $i; done
+</code></pre>
+
+<p>In summary, you are doing it wrong if...</p>
+
+<ul>
+<li>Building can't be done immediately after a fresh checkout of the code, assuming code dependencies are handled.</li>
+<li>Building requires more than 1 command and can't be performed from memory.</li>
+<li>Installing can't be done to a user set location or prefix</li>
+<li>The build system doesn't have a test phase.</li>
+</ul>
+
+
+<p><em>My thoughts on using rake</em>: Rake works and there are some projects that use it well. The problem is the dependencies that come with it. To build a project that uses rake, it means you've got to have ruby, rake installed and whatever other dependencies used installed. That's not a problem for most developers, but for some of us, it's more than 3 commands and we have to look up what to do. If there is a problem and the developer has to debug or fix something, it just compounds the frustration and makes your library or package more and more unappealing.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

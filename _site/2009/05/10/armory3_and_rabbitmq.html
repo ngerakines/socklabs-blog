@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Armory3, a proof of concept RabbitMQ application</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Armory3, a proof of concept RabbitMQ application" href="/2009/05/10/armory3_and_rabbitmq.html">Armory3, a proof of concept RabbitMQ application</a></h2>
+			<em id="sub_h2">10 May 2009</em>
+		 	<p>I've been having a lot of fun with <a href="http://www.rabbitmq.com/">RabbitMQ</a> lately, the most recent accomplishment being porting the armory2 module to use a RabbitMQ queue instead of an ets table.</p>
+
+<p>With that said, this is the result of that work. The <a href="http://github.com/ngerakines/erlang_wowarmory/commits/master/src/armory3.erl">armory3</a> module is an extension of the armory module in the <a href="http://github.com/ngerakines/erlang_wowarmory">erlang_wowarmory</a> project on GitHub. It is a distributed World of Warcraft Armory character and guild retrieval and processing library. The obvious benefit of doing it this way is that you've got the power of a RabbitMQ application powering your queue and work list, allowing you to gut the complexity of queue processing from your application. The downside is that if RabbitMQ goes down or there is some sort of unexpected hiccup along the way, you may feel some pain.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

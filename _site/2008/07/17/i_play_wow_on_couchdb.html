@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | I Play WoW on CouchDB
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="I Play WoW on CouchDB
+" href="/2008/07/17/i_play_wow_on_couchdb.html">I Play WoW on CouchDB
+</a></h2>
+			<em id="sub_h2">17 July 2008</em>
+		 	<p><a href="http://www.facebook.com/apps/application.php?id=2359644980">I Play WoW</a> was originally built as a <a href="http://search.cpan.org/dist/Catalyst/">Catalyst</a> application with Memcached and MySQL as a data store and caching layer. It worked perfectly on my little server until the 30,000th user or so and started to choke on memory. Then I moved it to a dedicated machine and bumped it to 2g of ram and it was happily chugging along until the 60,000th user where it started to choke again.</p>
+
+<p>Around that time I rewrote the entire thing into an Erlang application. Doing so was a real interesting crash course in not only building multi-part Erlang applications but also about migrating data into them. The entire userbase was ported over from MySQL to mnesia (fragmented) and all was good.</p>
+
+<p>In fact things are still good. After doing so I saw that app use increased, there were far fewer errors and crashes and I even downgraded the server to a 512 meg slice (<a href="https://manage.slicehost.com/customers/new?referrer=506856932">I love SliceHost</a>) and it barely uses 10% of the system's resources.</p>
+
+<p>Lately I rewrote the image gallery functionality of the site away from Facebook's native image/gallery stuff into a distributed, Amazon S3-backed Erlang app (open source and <a href="http://github.com/ngerakines/s3imagehost">on GitHub</a> I might add).</p>
+
+<p>My interest in <a href="http://incubator.apache.org/couchdb/">CouchDB</a> has also been ignited. I've been reading a ton of information on it and I'd really love to get my hands dirty. I think that CouchDB would be perfect for some of the features that I'm planning to push soon. I'm still in the planning-phase right now, but I'm moving very quickly toward moving chunks of data over to it.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ <title>Socklabs</title>
+ <link href="http://blog.socklabs.com/atom.xml" rel="self"/>
+ <link href="http://blog.socklabs.com/"/>
+ <updated>2010-02-08T20:56:52-08:00</updated>
+ <id>http://blog.socklabs.com/</id>
+ <author>
+   <name>Nick Gerakines</name>
+   <email>nick@gerakines.net</email>
+ </author>
+ 
+ <entry>
+   <title>Integrating Heman into CalendERL About Nothing</title>
+   <link href="http://blog.socklabs.com/2009/12/28/integrating_heman_into_calenderl_about_nothing.html"/>
+   <updated>2009-12-28T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/12/28/integrating_heman_into_calenderl_about_nothing</id>
+   <content type="html">&lt;p&gt;A while ago I started a project called &lt;a href=&quot;http://github.com/ngerakines/heman&quot;&gt;Heman&lt;/a&gt;. The goal was to create a way to use Erlang to measure and assess application health. Application health is a score used to determine how your application is doing. This could be as general as it's immediate resource consumption or it's general activities but can also be embed to give you detailed information on it's internals and inner workings.&lt;/p&gt;
+
+&lt;p&gt;This evening I started integrating heman into &lt;a href=&quot;http://www.calenderlaboutnothing.com/&quot;&gt;calenderl about nothing&lt;/a&gt;. It is a good way to put it to practical use and also flesh out some use cases and conditions. You can see the updated &lt;a href=&quot;http://github.com/ngerakines/cerlan&quot;&gt;cerlan code base&lt;/a&gt; as well as the stats system on &lt;a href=&quot;http://calenderlaboutnothing.com:7816/&quot;&gt;calenderlaboutnothing.com&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Lets create some Erlang standards, part one</title>
+   <link href="http://blog.socklabs.com/2009/11/24/lets_create_some_erlang_standards_part_one.html"/>
+   <updated>2009-11-24T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/11/24/lets_create_some_erlang_standards_part_one</id>
+   <content type="html">&lt;p&gt;Have an open source Erlang project? Is it on GitHub? Jacob and I have been working on a project that aims to make it easier to install, remove and contribute to open source Erlang applications on GitHub. The project is called &lt;a href=&quot;http://github.com/JacobVorreuter/epm&quot;&gt;epm&lt;/a&gt; and it stands for the Erlang Package Manager. The goal is to create a simple, non-intrusive way to find, view information on, install and remove Erlang applications that are kept in Git repositories. You can read more about epm on the project page for it; this post isn't necessarily about it.&lt;/p&gt;
+
+&lt;p&gt;Working on it got me thinking about the state of Open Source Erlang. What I want to do now is try to define some common behaviors and best practices for developers to follow when developing and release Erlang applications. This is part one of several blog posts that discuss some Erlang best practices and standards that I'd like to see take shape in the Erlang open source community.&lt;/p&gt;
+
+&lt;h1&gt;Use a simple build system&lt;/h1&gt;
+
+&lt;p&gt;I can't stress this one enough and seems to cause people the most trouble time after time. I'm not trying to sell one way over another, just trying to get people to use common sense here.&lt;/p&gt;
+
+&lt;p&gt;As a developer of open source software, you are allowing other developers to benefit from the work you've put into a library or application. It probably builds off of some other open source software which you had to install to use. You may not think this at first, but the usefulness of your library or application is based on more than just the code; It also spans it's documentation, availability, and freshness and integration difficulty. The first barrier to getting developers to use your code may not be a search on Google or Yahoo, but how easy (or difficult) it is for them to install it and start writing code that uses it.&lt;/p&gt;
+
+&lt;p&gt;Erlang provides the ability to compile source code in several flavors. You can use &lt;code&gt;erlc ...&lt;/code&gt;, &lt;code&gt;erl -make ...&lt;/code&gt; and within the shell the compile and make commands. All of the other packages, frameworks, sdks and toolchains wrap around one of those three. Why make it any more complicated? Plainly speaking there isn't much extra required to create a build system that can build, test and install your code other than simple bash scripts.&lt;/p&gt;
+
+&lt;p&gt;There are lots of great examples on using &lt;code&gt;make&lt;/code&gt; with a &lt;code&gt;Makefile&lt;/code&gt;, here is one from &lt;a href=&quot;http://github.com/ngerakines/etap&quot;&gt;etap&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LIBDIR=$(shell erl -eval 'io:format(&quot;~s~n&quot;, [code:lib_dir()])' -s init stop -noshell)
+VERSION=0.3.4
+
+all:
+    mkdir -p ebin
+    (cd src;$(MAKE))
+
+test: all
+    (cd t;$(MAKE))
+    (cd t;$(MAKE) test)
+
+install:
+    mkdir -p $(prefix)/$(LIBDIR)/etap-$(VERSION)/ebin
+    for i in ebin/*.beam; do install $$i $(prefix)/$(LIBDIR)/etap-$(VERSION)/$$i ; done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the above example Makefile, the &lt;code&gt;make&lt;/code&gt; command responds to &quot;all&quot;, &quot;test&quot; and &quot;install&quot;. The &quot;all&quot; and &quot;test&quot; targets get ponied off to their own Makefile files in the src and t directories. The install target uses the &lt;code&gt;LIBDIR&lt;/code&gt; variable that uses the erl command to retrieve the Erlang libs path and attempts to copy the beam files to an application directory contained therein.&lt;/p&gt;
+
+&lt;p&gt;It's likely that the src/Makefile file looks something similar to this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;all:
+    for i in *.erl; do erlc -o ../ebin $i; done
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In summary, you are doing it wrong if...&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Building can't be done immediately after a fresh checkout of the code, assuming code dependencies are handled.&lt;/li&gt;
+&lt;li&gt;Building requires more than 1 command and can't be performed from memory.&lt;/li&gt;
+&lt;li&gt;Installing can't be done to a user set location or prefix&lt;/li&gt;
+&lt;li&gt;The build system doesn't have a test phase.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;em&gt;My thoughts on using rake&lt;/em&gt;: Rake works and there are some projects that use it well. The problem is the dependencies that come with it. To build a project that uses rake, it means you've got to have ruby, rake installed and whatever other dependencies used installed. That's not a problem for most developers, but for some of us, it's more than 3 commands and we have to look up what to do. If there is a problem and the developer has to debug or fix something, it just compounds the frustration and makes your library or package more and more unappealing.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>2009 Erlang User Conference</title>
+   <link href="http://blog.socklabs.com/2009/11/12/EUC2009.html"/>
+   <updated>2009-11-12T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/11/12/EUC2009</id>
+   <content type="html">&lt;p&gt;I'm currently at the Erlang User Conference in Stockholm, Sweden. Jacob and I arrived pretty late last night from a long 28 hour day, but I'm really excited to be here. Stockholm is a beautiful city and I can't wait to get out there and see some of the sights. There are some really great presentations today and a lot of faces that look familiar.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://rklophaus.com/&quot;&gt;Rusty Klaphous&lt;/a&gt; gave a great presentation on &lt;a href=&quot;http://nitrogenproject.com/&quot;&gt;Nitrogen&lt;/a&gt; and &lt;a href=&quot;http://riak.basho.com/&quot;&gt;Riak&lt;/a&gt;. I've been skeptical of Nitrogen for a while but seeing it in action was great. His presentation was pretty meta because it was through &lt;a href=&quot;http://slideblast.com/&quot;&gt;slideblast.com&lt;/a&gt; which was made with Nitrogen/Riak and the presentation went through the source code for it.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jacobvorreuter.com/&quot;&gt;Jacob Vorreuter&lt;/a&gt; was next with a presentation on Erlang parse transforms and the internals of Erlang forms and compile-time syntax. Jake &lt;a href=&quot;http://github.com/JacobVorreuter&quot;&gt;has a bunch of stuff on GitHub&lt;/a&gt; that uses and compliments his presentation too.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://twitter.com/jmflatow&quot;&gt;Jared Flatow&lt;/a&gt; and Ville Tuulos gave a really good presentation on &lt;a href=&quot;http://discoproject.org/&quot;&gt;Disco&lt;/a&gt; and the newer project, Discodex. The discodb data storage format that they are using for immutable data storage and indexing looks awesome. The idea of immutable data storage at first seems scary but makes a lot of sense in some cases. I don't think the idea really lends itself to web services as we think of them, but it is a really powerful concept.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ulf.wiger.net/weblog/&quot;&gt;Ulf Wiger&lt;/a&gt; talked about Erlang and the cloud. Acknowledging that he's part of the &quot;old guard&quot;, he gave a really interesting perspective on telecommunications use and what the cloud really is.&lt;/p&gt;
+
+&lt;p&gt;Rickard Cardell gave an interesting talk on using different backends with mnesiaex, one of which was the &lt;a href=&quot;http://github.com/ngerakines/erlang_couchdb&quot;&gt;erlang_couchdb&lt;/a&gt; module that I wrote.&lt;/p&gt;
+
+&lt;p&gt;Later in the afternoon, &lt;a href=&quot;http://tom.preston-werner.com/&quot;&gt;Tom Preston-Werner&lt;/a&gt; and &lt;a href=&quot;http://schacon.github.com/&quot;&gt;Scott Chacon&lt;/a&gt; talked about Git, GitHub and BERT. The idea behind BERT, BERP and ERNIE is pretty slick and although the entire concept is based on Erlang terms and data types, they don't actually use an Erlang client or API. Regardless, the talk was pretty good and got an interesting conversation going afterwards.&lt;/p&gt;
+
+&lt;p&gt;At the end of the day, Kenneth Lundin gave an Erlang/OTP update which had some great bits of information. A very interesting update is the inclusion of NIFs. The idea of being able to extend an Erlang module with c is a long overdue feature. What struck my interest the most is that the Ericsson team will be exposing the Erlang source tree through GIT, likely on GitHub.&lt;/p&gt;
+
+&lt;p&gt;We stayed until 10:30pm or so and finally left after some great presentations and a lot of really good conversation. I'm planning on skipping the tutorials and hackathon tomorrow in favor of going out into the city and wandering around. We were about a dozen times to go see the Vasa museum and the royal palace.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>CalendERL About Nothing</title>
+   <link href="http://blog.socklabs.com/2009/11/01/calenderl_about_nothing.html"/>
+   <updated>2009-11-01T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/11/01/calenderl_about_nothing</id>
+   <content type="html">&lt;p&gt;Recently I create a site called &lt;a href=&quot;http://www.calenderlaboutnothing.com/&quot;&gt;CalendERL About Nothing&lt;/a&gt;. I've used the original &lt;a href=&quot;http://www.calendaraboutnothing.com/&quot;&gt;Calendar About Nothing&lt;/a&gt; for a long time and played with the idea of rewriting it in Erlang. I finally made the leap and as a result the &lt;a href=&quot;http://github.com/ngerakines/cerlan&quot;&gt;cerlan&lt;/a&gt; and &lt;a href=&quot;http://github.com/ngerakines/githubby&quot;&gt;githubby&lt;/a&gt; projects were born.&lt;/p&gt;
+
+&lt;p&gt;If you don't know what CAN is, it is a site that tracks your GitHub commits and creates a calendar based on your activity. Each day that you commit to a public project, you get a big red &quot;X&quot;. The more you commit, the more &quot;X&quot;s are displayed and you can build streaks. A streak is simply a set of more than one days where you've made commits. The site will track your current streak, assuming you've made a commit that day, and your longest streak. You can use &lt;a href=&quot;http://www.calenderlaboutnothing.com/~ngerakines&quot;&gt;my calender&lt;/a&gt; as an example.&lt;/p&gt;
+
+&lt;p&gt;There are a few reasons why I decided to create this site.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I love a good challenge.&lt;/li&gt;
+&lt;li&gt;There aren't enough open source Erlang sites out in the wild.&lt;/li&gt;
+&lt;li&gt;I've been looking for a good excuse to write a GitHub API client library in Erlang.&lt;/li&gt;
+&lt;li&gt;I didn't like the fact that CAN doesn't use the GitHub API and instead uses user feeds.&lt;/li&gt;
+&lt;li&gt;I think Erlang is better suited to support concurrent data processing applications than Ruby is.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The site is currently live at &lt;a href=&quot;http://www.calenderlaboutnothing.com/&quot;&gt;http://www.calenderlaboutnothing.com/&lt;/a&gt;. It tried duplicating all of the CAN functionality (and also added a few features of my own) and feedback is welcome.&lt;/p&gt;
+
+&lt;p&gt;To use the site you will need a GitHub account. Just go to http://www.calenderlaboutnothing.com/~[YourGitHubUserName] to activate tracking for your GitHub and it'll start polling your information.&lt;/p&gt;
+
+&lt;p&gt;Both projects are open source under the MIT.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Globally Shared Queues</title>
+   <link href="http://blog.socklabs.com/2009/10/26/globally_shared_queues.html"/>
+   <updated>2009-10-26T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/10/26/globally_shared_queues</id>
+   <content type="html">&lt;p&gt;In the Erlang apps that I've written, there seems to be a recurring issue. I'll build an application made to run  across several nodes but there could be some sort of shared process or functionality that is only meant to run on a single node. This could be something like a queue, application specific cache or connection to an external service.&lt;/p&gt;
+
+&lt;p&gt;The most recent case is for an application called I Play Warhammer. When processing Warhammer Online characters, the application encounters many hundreds to thousands of them a minute and I want to be able to keep a queue of the incoming data processing actions to not overload the application during peak game usage. If the queue gets out of control, I want to be able to quickly destroy it. If the node that it's running on goes down, it needs to be started on another node. The data in the queue doesn't have to be durable, but the service that is the queue has to survive within the grid.&lt;/p&gt;
+
+&lt;p&gt;With that, I wrote a small proof of concept behavior called ets_queue. The first use of this module is allow developers to create workers based on the behavior defined by the module. The idea is that the worker module exports the functions init/1 and process/1 that define which queue they work against and how to process data.&lt;/p&gt;
+
+&lt;p&gt;The second use of this module is to create a durable process that manages the actual queue based on an ordered_set ets table. Each time the queue/2 and dequeue/1 functions are called, the bootstrap_queue/1 function is called that either creates a queue server process or returns the globally registered pid for that process.&lt;/p&gt;
+
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://gist.github.com/218872.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This is the best way that I've found one can tackle this sort of problem. I'm actively looking for better solutions and alternatives so please let me know if you have one.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Learning Python</title>
+   <link href="http://blog.socklabs.com/2009/10/16/learning-python.html"/>
+   <updated>2009-10-16T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/10/16/learning-python</id>
+   <content type="html">&lt;p&gt;I wrote my first Python/Django app a few days ago, &quot;Top Rupture Games&quot;. It was a fun little project for a few reasons. First of all, I've been wanting to play with Rupture data for a little while know and had some time over the weekend to see what I could do with it. Second, I've been itching to play with Python, and subsequently Django, ever since being introduced to it over at Mythic a few months ago. Lastly, I wanted to create a Rupture client library, even if it's just a proof of concept, in Python.&lt;/p&gt;
+
+&lt;p&gt;Out of this venture came two new projects on GitHub. The first is &lt;a href=&quot;http://github.com/ngerakines/pyRupture&quot;&gt;pyRupture&lt;/a&gt;, a native Python library/module for interfacing with Rupture. It uses the Python Protocol Buffers library/modules to make API calls against Rupture. It only supports the API calls that I needed for the rupture-stats project, but it's really easy to extend.&lt;/p&gt;
+
+&lt;p&gt;The second is &lt;a href=&quot;http://github.com/ngerakines/rupture-stats&quot;&gt;rupture-stats&lt;/a&gt;, a Django project that uses pyRupture to compute and display a list of the top games on Rupture and render a graph of recent gaming activity. You can see a demo of it in action at &lt;a href=&quot;http://67.207.133.142/&quot;&gt;http://67.207.133.142/&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Without going into too many details, the flow of creating and sorting games by popularity isn't that complex. Every n minutes the app pulls the recent game activity feed and creates an internal list of recently played games. Then, it goes through the process of fetching the feeds for each of those games and aggregates the number of game sessions by day. Once it has that list, it removes any games that have either no recent activity and stores the computed information. The games are ranked via a &quot;score&quot; which is the total number of game sessions over a 21 day period and they are displayed on render.&lt;/p&gt;
+
+&lt;p&gt;To generate the graphs, I used the Google Charts API with a list of the number of game sessions over the past n days, filling any any days that didn't have any with 0s.&lt;/p&gt;
+
+&lt;p&gt;Both projects are open source under the MIT.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Aion Online</title>
+   <link href="http://blog.socklabs.com/2009/10/15/aion-online.html"/>
+   <updated>2009-10-15T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/10/15/aion-online</id>
+   <content type="html">&lt;p&gt;I've been getting a lot of fun out of Aion Online lately. I've got a level &lt;a href=&quot;http://na.aiononline.com/characters/Fregion/Korale&quot;&gt;18 Eleyos Cleric&lt;/a&gt; on Fregion. The game graphics are amazing and really blow the others out of the water. I think it's built on the CryEngine engine.&lt;/p&gt;
+
+&lt;p&gt;I'm not sure what it is exactly that I like about Aion though. It could be simply that it's an MMORPG that isn't WoW. The lore is also pretty neat, although way underdeveloped when compared to WoW. It'd be cool to make an &quot;I Play Aion&quot; Facebook application but I'm not really sure that I have the time. If I did, I'd probably want to experiment writing it in Django.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>SitterCity, First Impressions</title>
+   <link href="http://blog.socklabs.com/2009/06/28/sittercity_first_impressions.html"/>
+   <updated>2009-06-28T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/06/28/sittercity_first_impressions</id>
+   <content type="html">&lt;p&gt;With Vanessa's grandmother moving to another state, Carolyn and I started looking for babysitter for Vanessa with &lt;a href=&quot;http://www.sittercity.com/&quot;&gt;sittercity.com&lt;/a&gt;. I'm not sure where she heard about it, but I'm leaning toward believing that it was from another website or blog.&lt;/p&gt;
+
+&lt;p&gt;After looking through it briefly, we signed up at the annual membership level  ($95.88 USD per year) and posted a job. We weren't really looking for a full time nanny or daily babysitting, but rather someone to watch Vanessa for a few hours either once a week or every other week. Really, Carolyn and I want to get out a bit more now that Vanessa is getting older. For those of you that know me, I really miss going to the movies with her.&lt;/p&gt;
+
+&lt;p&gt;Browsing and searching for babysitters on sittercity.com easy. Childcare provides have profiles that lists a bio, their schedule, reviews, information on who they are and where they are from as well as any related skills. When you join, you can specify your zip code and all of the profile searching and browsing is centered on that location. In addition, if you need a childcare provider then you post a &quot;job&quot; and the babysitters are notified via email.&lt;/p&gt;
+
+&lt;p&gt;Posting a job is rather simple. The usual title, description, location and rate fields are given and then it goes into the details of when and how often the work lasts and continues to. It also goes into the childcare details like how many children, their age(s) and whatever requirements you may have for the caretaker.&lt;/p&gt;
+
+&lt;p&gt;We had tentatively decided beforehand what was going to disqualify people immediately. The criteria used to reject applicants included:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Schedule conflicts or unideal availability.&lt;/li&gt;
+&lt;li&gt;Already having a full-time nanny job.&lt;/li&gt;
+&lt;li&gt;The ability to compose full sentences and use correct grammar when communicating.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The job was actually posted on a Monday night and by morning, we had over 30 applications for it. I was blown away. For the next few days the number climbed to over 50 and by then we were already making plans on interviewing some of them. By the following Saturday, we had the list filtered down to 10 or so babysitters that we wanted to meet and introduce to Vanessa. We chose to meet at a nearby park, a nice neutral location, and setup 30-45 minute windows for each of them.&lt;/p&gt;
+
+&lt;p&gt;Some of them couldn't make it that so we ended up with 8 people planned. Also, one of them canceled at the last minute so that that took us down to a reasonable 7. Still, we had a pretty full day of interviews. Carolyn and I had a list of questions and a good idea of what we wanted to learn about them. What I wasn't prepared for was how many of them flaked out and just plain didn't show up at all. Only 3 of the 7 people we were expecting actually came. Carolyn and I were puzzled. It's worth saying that the people who didn't show up had, at some point, actually confirmed the time and location. These people acknowledged the time and place but just didn't go. It may be needless to say that those who flaked out did not get rescheduled or contacted again.&lt;/p&gt;
+
+&lt;p&gt;For the three that did show up, the interviews weren't bad. One of them is a definite and is starting next week. Another seems like a good fit and we will keep on call as a backup. The third we didn't feel strongly for. Mainly because she didn't engage Vanessa and her transportation situation sounded a bit flaky.&lt;/p&gt;
+
+&lt;p&gt;The two that we have are only available for the summer and are off to school in the Fall. That means that we'll have to do another babysitter search in September/October, but that's not so bad. We have a good idea of what to look for when we go through the next round.&lt;/p&gt;
+
+&lt;p&gt;In the end, I'm really happy with &lt;a href=&quot;http://www.sittercity.com/&quot;&gt;sittercity.com&lt;/a&gt; and we found a babysitter through it fairly quickly with lots and lots of options. I'm really glad that we signed up and I recommend it. There were some hickups but it wasn't with the site itself. And the best news is that next week, I'll finally get to see Star Trek.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Mochevent</title>
+   <link href="http://blog.socklabs.com/2009/06/11/mochevent.html"/>
+   <updated>2009-06-11T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/06/11/mochevent</id>
+   <content type="html">&lt;p&gt;This past weekend I started a small work-related project called mochevent. It's purpose is to offload the work HTTP request build up, tear down and socket handling onto a c application. As requests come in, the request method, uri, headers and body are dispatched off to an Erlang process on a remote node to do whatever heavy lifting is required to fulfill the request. The Erlang node then sends the results back to the cnode to then be massaged into to an HTTP response which gets sent to the client.&lt;/p&gt;
+
+&lt;p&gt;The application is based on the the proof of concept application developed by  Richard Jones and posted to &lt;a href=&quot;http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-3/&quot;&gt;http://www.metabrew.com/article/a-million-user-comet-application-with-mochiweb-part-3/&lt;/a&gt;. The goal is to get it as small and tight as possible so we are really looking at performance and memory footprint when looking to improve the application.&lt;/p&gt;
+
+&lt;p&gt;The project can be found on GitHub as &lt;a href=&quot;http://www.github.com/ngerakines/mochevent&quot;&gt;mochevent&lt;/a&gt; and contributions are welcome and encouraged. This is looking like we will be using it in an official capacity at work so keep watching for feature additions, improvements and bug fixes.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Armory3, a proof of concept RabbitMQ application</title>
+   <link href="http://blog.socklabs.com/2009/05/10/armory3_and_rabbitmq.html"/>
+   <updated>2009-05-10T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/05/10/armory3_and_rabbitmq</id>
+   <content type="html">&lt;p&gt;I've been having a lot of fun with &lt;a href=&quot;http://www.rabbitmq.com/&quot;&gt;RabbitMQ&lt;/a&gt; lately, the most recent accomplishment being porting the armory2 module to use a RabbitMQ queue instead of an ets table.&lt;/p&gt;
+
+&lt;p&gt;With that said, this is the result of that work. The &lt;a href=&quot;http://github.com/ngerakines/erlang_wowarmory/commits/master/src/armory3.erl&quot;&gt;armory3&lt;/a&gt; module is an extension of the armory module in the &lt;a href=&quot;http://github.com/ngerakines/erlang_wowarmory&quot;&gt;erlang_wowarmory&lt;/a&gt; project on GitHub. It is a distributed World of Warcraft Armory character and guild retrieval and processing library. The obvious benefit of doing it this way is that you've got the power of a RabbitMQ application powering your queue and work list, allowing you to gut the complexity of queue processing from your application. The downside is that if RabbitMQ goes down or there is some sort of unexpected hiccup along the way, you may feel some pain.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Erlang Factory</title>
+   <link href="http://blog.socklabs.com/2009/05/01/erlang_factory.html"/>
+   <updated>2009-05-01T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/05/01/erlang_factory</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.erlang-factory.com/&quot;&gt;Erlang-Factory&lt;/a&gt; is over and it was great. I'm so happy to see the many project and community leaders coming together to introduce their projects and get involved with each other's work. There were 6 tracks throughout the 2 day conference that included &quot;Erlang Case Studies&quot;, &quot;Test-Driven Development&quot;, &quot;Enterprise Integration&quot;, &quot;Cool Applications and Features&quot;, &quot;Give me a break from Erlang&quot; and &quot;Erlang and the Web&quot;. My own presentation about test driven development in Erlang went quite well -- I'll post a link to the video once it's up.&lt;/p&gt;
+
+&lt;p&gt;On day one keynotes by Robert Virding and Ezra Zygmuntowicz opened up the conference with the idea that there isn't a one true way to work on your projects with Erlang. Robert's talk on the why and how Erlang was designed the way it was, was really interesting. Ezra's talk about blending Ruby and Erlang gave some insight as to how Erlang can play very nicely with and compliment web languages like Ruby.&lt;/p&gt;
+
+&lt;p&gt;On day one, I went to these talks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;EUnit How to: Tips, Tricks and News by Richard Carlsson&lt;/li&gt;
+&lt;li&gt;Integrating OS package management and Erlang by Paul Mineiro&lt;/li&gt;
+&lt;li&gt;Mixing Erlang and Ruby with Erlectricity by Tom Preston-Werner&lt;/li&gt;
+&lt;li&gt;Test-Driven Development with Erlang by myself&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Day one ended with the Birds of a Feather Sessions followed by an Erlounge at the Palo Alto Gordon Biersch but I couldn't attend.&lt;/p&gt;
+
+&lt;p&gt;The day two keynotes where by Damien Katz and Ulf Wiger, both were really really good. Damien's talk shifted and instead of talking about the technical traits of couchdb, he gave a telling and personal story about what its like to put it all on the line to do something you enjoy. His presentation was different because it told the story about how things were kind of crappy before he became &quot;that guy working on the stuff he enjoyed.&quot; It was inspirational.&lt;/p&gt;
+
+&lt;p&gt;On day two, I went to these talks:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CouchDB from 10,000 feet - An introduction to CouchDB by Jan Lehnardt&lt;/li&gt;
+&lt;li&gt;CouchDB Apps by Chris Anderson&lt;/li&gt;
+&lt;li&gt;Everything you wanted to know about Dynomite but was affraid to ask by Cliff Moon&lt;/li&gt;
+&lt;li&gt;CouchDB Case Studies by Tim Dysinger and Nitin Borwankar&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;The closing session for day two was really about reaching out to the users, enthusiasts and developers out in the wild to see what they were interested in and wanted. Things like unified package management and better documentation came up.&lt;/p&gt;
+
+&lt;p&gt;All of the material from my presentation can be found in my &lt;a href=&quot;http://github.com/ngerakines/erlang-factory&quot;&gt;erlang-factory&lt;/a&gt; repository on GitHub.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>What's been going on lately?</title>
+   <link href="http://blog.socklabs.com/2009/04/02/whats_been_going_on.html"/>
+   <updated>2009-04-02T00:00:00-07:00</updated>
+   <id>http://blog.socklabs.com/2009/04/02/whats_been_going_on</id>
+   <content type="html">&lt;p&gt;Things were getting dusty around here so it's time for me to give a nice life update.&lt;/p&gt;
+
+&lt;p&gt;The big news is that we are moving! We found a nice 3 bedroom place just a few miles down from where we live in Mountain View. Carolyn and I are both really excited about moving into a bigger space. Not only will we get a 3rd bathroom but I'll also get an office. It's very exciting.&lt;/p&gt;
+
+&lt;p&gt;Vanessa is growing up pretty quickly and starts pre-school in August. Granted, it is a few months away but still very exciting.&lt;/p&gt;
+
+&lt;p&gt;We've been extremely busy at work and the progress has been amazing. Without going into too much detail, I've got a really solid Erlang team hacking on some really cool technologies here at EA. Some of the open source technologies we are using include  &lt;a href=&quot;http://github.com/JacobVorreuter/log_roller&quot;&gt;log_roller&lt;/a&gt;, &lt;a href=&quot;http://github.com/ngerakines/erlang_protobuffs&quot;&gt;erlang_protobuffs&lt;/a&gt; and &lt;a href=&quot;http://github.com/ngerakines/stateless_server&quot;&gt;stateless_server&lt;/a&gt;. I sincerely hope that we'll be able to disclose more on our official blog soon.&lt;/p&gt;
+
+&lt;p&gt;Erlang-Factory is drawing near and that's going to be a lot of fun. I'm looking forward to meeting a lot of the people there. If you plan on attending or will be in the area please drop me a line.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>I Play WoW Scaling</title>
+   <link href="http://blog.socklabs.com/2009/02/06/i_play_wow_scaling.html"/>
+   <updated>2009-02-06T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/02/06/i_play_wow_scaling</id>
+   <content type="html">&lt;p&gt;Having too much traffic is a great problem and I'm fortunate enough to be facing it at the moment. Over the past few weeks, thanks in part to &lt;a href=&quot;http://www.wowinsider.com/2009/01/16/i-play-wow-facebook-app-reaches-100-000-users/&quot;&gt;several really&lt;/a&gt; &lt;a href=&quot;http://www.wowinsider.com/2009/02/04/15-minutes-of-fame-i-play-wow-for-facebook/&quot;&gt;great articles&lt;/a&gt; on &lt;a href=&quot;http://www.wowinsider.com/&quot;&gt;WoW Insider&lt;/a&gt; about I Play WoW, &lt;a href=&quot;http://www.facebook.com/apps/application.php?id=2359644980&quot;&gt;I Play WoW&lt;/a&gt; traffic and use has been increasing significantly and I've been starting to notice that increase in traffic in a few different ways.&lt;/p&gt;
+
+&lt;p&gt;The first has been in queue length. The big feature of the site is the ability to import your World of Warcraft characters and display them on your profile. After you've done that, actions like &quot;dinging&quot; and refreshing your character's data become available. All of these operations require requests to be made to fetch data from the World of Warcraft Armory.&lt;/p&gt;
+
+&lt;p&gt;What's great is that this information is freely available and I applaud and thank Blizzard for making it so. What isn't so great is that this can be a lot of traffic coming from my servers to theirs and it often comes in spikes and bursts. To avoid hammering them and drastically reducing my karma, I've implemented queues and throttling when fetching data. Using the &lt;a href=&quot;http://github.com/ngerakines/erlang_wowarmory&quot;&gt;erlang_wowarmory&lt;/a&gt; module, items consisting of the request type and meta-data about the request get stuffed into request queues that exist on all of the nodes used by the Facebook application. This works really well and has saved me lots of time, money and energy by having a stable and reliable armory data processing system. The caveat with this is that with lots of traffic come large queues.&lt;/p&gt;
+
+&lt;p&gt;The issue that I'm seeing is that during peak traffic hours, I may see the queues go up to 2,000+ items. Around the time of the first WoW Insider post the queues got up to 6,000+ items. These queues get processed and in due time everything resolves itself without issue. The real problem is three-fold.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;User's data doesn't get processed immediately and they complain. (Rightfully so, in my opinion)&lt;/li&gt;
+&lt;li&gt;When a user's data doesn't get processed immediately then they tend to think something went wrong (regardless of how clear your messaging is) and try it again, adding more data to the queue.&lt;/li&gt;
+&lt;li&gt;Some requests are more important than others. Characters should always be processed first, regardless of how large the queue is. Next come guilds, followed by everything else.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;There are two, complimenting, solutions to this problem that I've got my eye on. The first is to implement a better queueing system that is less tolerant of duplicate items. The second is to add more crawling capacity to the system.&lt;/p&gt;
+
+&lt;p&gt;The first solution can be seen through the development of the &lt;a href=&quot;http://github.com/ngerakines/erlang_wowarmory/tree/master/src/armory2.erl&quot;&gt;armory2 module&lt;/a&gt; as part of the &lt;a href=&quot;http://github.com/ngerakines/erlang_wowarmory&quot;&gt;erlang_wowarmory project&lt;/a&gt;. What I've done here is taken what I've learned about how things are queued and made several key changes. The first big change is the actual queue data structure itself. At first, I was using the 'queue' module that comes in the standard library to manage the FIFO queue. It worked really well and efficiently for small queues but as they start to hit 3,000 to 5,000 items, I'm concerned about efficiency.&lt;/p&gt;
+
+&lt;p&gt;Now and ets table is used to manage the queue. The queue manager creates and owns an ordered_set ets table that operates as a first-in/first-out queue based on the item type. When an item is dequeued, it attempts to find character items first, then guilds and then everything else ordered by when it was inserted into the queue. This is working really well so far and I'm pleased with the results.&lt;/p&gt;
+
+&lt;p&gt;Another change in the armory2 module is the way queues are distributed. In the armory module, each node would start a gen_server process that would store a local queue and would have a linked process that dequeues items and processes them. I'm experimenting with a different model right now that uses the global module to have a single queue manager that owns the ets table used to keep the entire queue. If at any point a crawler attempts to dequeue something and discovers that the master isn't running, it will attempt to start the master on the local node and the queue is recreated.&lt;/p&gt;
+
+&lt;p&gt;The second solution to the problem is essentially &quot;grow with hardware&quot;. The reason that this applies here is that I can't increase the actual number of networks requests currently being made on each node. The current throttling model prevents each IP address (slice) from making more than one request against the World of Warcraft Armory per second. There isn't anything that I can do to resolve this. The only real solution here is to add more nodes and crawlers to the grid. Thankfully, Erlang makes this &lt;strong&gt;stupid&lt;/strong&gt; simple. I found this out the hard [read as: easy] way when the WoW Insider article was published.&lt;/p&gt;
+
+&lt;p&gt;I'm using &lt;a href=&quot;https://manage.slicehost.com/customers/new?referrer=16c66b4122426a4a3a8c27e2495c20ff&quot;&gt;SliceHost&lt;/a&gt; to host my application and two of the nodes have regular backups made daily and weekly. Each of my slices are the most basic available which keeps cost down for me. When I needed to bring the additional nodes to handle the increase in traffic, it was just a matter of creating new slices based on the backups (saves time in configuration) and running &lt;code&gt;/etc/init.d/ipwcore start&lt;/code&gt; and &lt;code&gt;/etc/init.d/ipwfbfe start&lt;/code&gt;. When the nodes came up they detected the other nodes using &lt;code&gt;net_adm:world()&lt;/code&gt; and starting taking traffic on immediately. I should mention that I also added them to pound, the load balancer that I use.&lt;/p&gt;
+
+&lt;p&gt;My experiences scaling the I Play WoW Erlang Facebook application have been great. With good design and a little bit of homework it's easy to take on problems that have traditionally been show stoppers. All of the crawling code that I've referenced in this entry is open source under the MIT license and can be found on GitHub. With the 3 additional slices/nodes (I run both an ipwcore and ipwfbfe node on each slice) things have been running very smoothly.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>WoWInsider's 15 Minutes of Fame</title>
+   <link href="http://blog.socklabs.com/2009/02/05/wowinsiders_15_minutes_of_fame.html"/>
+   <updated>2009-02-05T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/02/05/wowinsiders_15_minutes_of_fame</id>
+   <content type="html">&lt;p&gt;Recently I was featured on WoW Insider in their &lt;a href=&quot;http://www.wowinsider.com/category/15-minutes-of-fame/&quot;&gt;15 minutes of fame column&lt;/a&gt;. It was a great chance to talk about and express some of my thoughts and ideas on I Play WoW, social networks, World of Warcraft and mixing the three.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.wowinsider.com/2009/02/04/15-minutes-of-fame-i-play-wow-for-facebook/&quot;&gt;The article&lt;/a&gt; can be found on &lt;a href=&quot;http://www.wowinsider.com/&quot;&gt;their blog&lt;/a&gt;.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Useful Code Coverage Reports with Etap</title>
+   <link href="http://blog.socklabs.com/2009/01/23/useful_code_coverage_reports_with_etap.html"/>
+   <updated>2009-01-23T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/23/useful_code_coverage_reports_with_etap</id>
+   <content type="html">&lt;p&gt;This evening I added the etap_report module to the &lt;a href=&quot;http://github.com/ngerakines/etap&quot;&gt;etap&lt;/a&gt; project. This module can be used to create nice looking, well-formatted html code coverage reports. This is a great way to get a quick view into your project's code coverage and determine what areas need to be focused on when creating test code.&lt;/p&gt;
+
+&lt;p&gt;Using the etap_report module is simple. It exports the create/0 function which is called in the directory that your coverdata files are created in. The process looks something like this.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ~/dev/erlang_protobuffs
+$ COVER=1 make test
+$ erl -eval 'etap_report:create()' -s init stop
+$ open protobuffs_report.html
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;An example can be found here: &lt;a href=&quot;http://ngerakines.github.com/erlang_protobuffs/coverage/protobuffs_report.html&quot;&gt;http://ngerakines.github.com/erlang_protobuffs/coverage/protobuffs_report.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Just remember: &lt;a href=&quot;http://whendoitest.com/&quot;&gt;When do I test?&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Using processes as caches in Erlang</title>
+   <link href="http://blog.socklabs.com/2009/01/18/using_processes_as_caches_in_erlang.html"/>
+   <updated>2009-01-18T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/18/using_processes_as_caches_in_erlang</id>
+   <content type="html">&lt;p&gt;When I'm talking to someone who is new to Erlang, I go out of my way to tell them one very specific thing: Erlang will change the way you write software. I was playing around with a few features in I Play WoW recently, one of which is quasi-dynamic links to wowinsider.com on the My Characters page.&lt;/p&gt;
+
+&lt;p&gt;The feature is relatively simple. On the My Characters page, display links for 3 to 5 of the most recently published articles on WoWInsider. This requires some minor RSS/ATOM parsing and a web request. All-in-all, it's a nice feature and something that I think my users would like.&lt;/p&gt;
+
+&lt;p&gt;The implementation is pretty simple as well. The module exports a few functions that return articles based on a given RSS feed. The content returned is a list of tuples containing the article title and link. The special sauce of the module is the use of a process to store a cache of articles based on fetch time. When articles are requested, a process is queried to determine if it has a cache and, if it does, should the cached list be refreshed.&lt;/p&gt;
+
+&lt;script src=&quot;http://gist.github.com/48763.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;This feature went live last night and although the article cache isn't distributed, the data is small enough to cache on each web interface application.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Code Coverage w/ Etap</title>
+   <link href="http://blog.socklabs.com/2009/01/14/code_coverage_with_etap.html"/>
+   <updated>2009-01-14T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/14/code_coverage_with_etap</id>
+   <content type="html">&lt;p&gt;I added a small, somewhat experimental, feature to &lt;a href=&quot;http://github.com/ngerakines/etap/tree/master&quot;&gt;etap&lt;/a&gt; a few days ago. With etap, you can now use the Erlang cover module to determine how much of your code is being testing by your tests. I've already started using it on several of my modules and projects to enhance the test suites. It's pretty easy to use and in this small demo, I'll run through the basics.&lt;/p&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;http://github.com/ngerakines/erlang_protobuffs/tree/master&quot;&gt;erlang_protobuffs&lt;/a&gt; project I'm using etap to test basic functionality. With code coverage analysis I can increase the module's stability by making sure more of it's functionality is tested.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cd ~/dev/erlang_protobuffs
+$ make test
+... 
+All tests successful.
+Files=8, Tests=35,  5 wallclock secs ( 0.06 usr  0.03 sys +  3.58 cusr  0.67 csys =  4.34 CPU)
+Result: PASS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To enable code coverage analysis, all you have to do is set the COVER=1 environmental variable while running your tests. None of the TAP output will change but it will write a number of .coverdata files, one for each etap test group.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ COVER=1 make test
+... 
+All tests successful.
+Files=8, Tests=35,  5 wallclock secs ( 0.06 usr  0.03 sys +  3.58 cusr  0.67 csys =  4.34 CPU)
+Result: PASS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The .coverdata files hold the exported cover data as per the cover module. With a little bit of Erlang we can aggregate the results from those files and create reports.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ erl
+1&amp;gt; [cover:import(File) || File &amp;lt;- filelib:wildcard(&quot;*coverdata&quot;)].
+[ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok]
+2&amp;gt; Cover = fun(M, Out) -&amp;gt; cover:analyse_to_file(M, Out, []) end.
+#Fun&amp;lt;erl_eval.12.113037538&amp;gt;
+3&amp;gt; Mods = cover:imported_modules().
+[protobuffs_compile,protobuffs]
+4&amp;gt; [Cover(Mod, atom_to_list(Mod) ++ &quot;_coverage.txt&quot;) || Mod &amp;lt;- Mods].
+Analysis includes data from imported files
+[&quot;.../dev/erlang_protobuffs/fc4046de9a9bb3efdf53d1d698797bc.coverdata&quot;,
+ &quot;.../dev/erlang_protobuffs/f27caf5168ce8d77b3fde6a4411cfc11.coverdata&quot;,
+ ... ]
+Analysis includes data from imported files
+[&quot;.../dev/erlang_protobuffs/fc4046de9a9bb3efdf53d1d698797bc.coverdata&quot;,
+ &quot;.../dev/erlang_protobuffs/f27caf5168ce8d77b3fde6a4411cfc11.coverdata&quot;,
+ ... ]
+[{ok,&quot;protobuffs_compile_coverage.txt&quot;},
+ {ok,&quot;protobuffs_coverage.txt&quot;}]
+5&amp;gt; q().
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The files protobuffs_compile_coverage.txt and protobuffs_coverage.txt will breakdown your modules line by line and show how much of the code has been executed and how many times. From this I can see that lines that have &quot;0..|&quot; have code that has never been called, hence there is 0 code coverage there.&lt;/p&gt;
+
+&lt;p&gt;An example can be seen in the protobuffs_coverage.txt file around the encoding of bools.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   |  %% @doc Encode an Erlang data structure into a Protocol Buffers value.
+   |  encode(FieldID, false, bool) -&amp;gt;
+0..|      encode(FieldID, 0, bool);
+   |  encode(FieldID, true, bool) -&amp;gt;
+0..|      encode(FieldID, 1, bool);
+   |  encode(FieldID, Integer, enum) -&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To remedy this I'll create a test that calls this code. As I'm writing this, it turns out that there is actually a bug in my implementation of bools and writing the test for it surfaced that bug.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cat protobuffs_t_009.t &amp;lt;&amp;lt; EOF
+#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -pa ./ebin -sasl errlog_type error -boot start_sasl -noshell
+
+main(_) -&amp;gt;
+    etap:plan(2),
+    etap:is(protobuffs:encode(1, true, bool), [8, 1], &quot;1, true, bool&quot;),
+    etap:is(protobuffs:encode(19, false, bool), [&amp;lt;&amp;lt;129,24&amp;gt;&amp;gt;,0], &quot;19, false, bool&quot;),
+    etap:end_tests().
+EOF
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that the test exists (and the bug fixed!) I'll clear my cover data and reports and generate new reports.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ make clean &amp;amp;&amp;amp; rm -rfv *.coverdata *.txt
+$ COVER=1 make test
+$ erl ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;What's different is that now it is visible that the bool encoding functionality has been executed once (as per the newly created test).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;   |  encode(FieldID, false, bool) -&amp;gt;
+1..|      encode(FieldID, 0, int32);
+   |  encode(FieldID, true, bool) -&amp;gt;
+1..|      encode(FieldID, 1, int32);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Regular code coverage analysis is important to reducing test debt. It helps find bugs and saves you time, effort and energy.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Erlang and Nginx, a proof of concept</title>
+   <link href="http://blog.socklabs.com/2009/01/12/erlang_and_nginx_a_proof_of_concept.html"/>
+   <updated>2009-01-12T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/12/erlang_and_nginx_a_proof_of_concept</id>
+   <content type="html">&lt;p&gt;I was doing some writing this evening and out of the blue, I was struck with the urge to create what would be the &quot;mod_erlang&quot; Apache module. I've heard of several really cool stories of using c/c++ apps as entry points to Erlang grids and it sounded like a really cool idea to pursue.&lt;/p&gt;
+
+&lt;p&gt;Then I remembered what developing Apache modules was like and was immediately discouraged.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, I was also thinking about nginx and the several nginx vs X articles that I've read recently and was curious about nginx's support for plugins and extensions. Low and behold nginx has a pretty nifty extension/module framework and minutes later I was digging through the documentation.&lt;/p&gt;
+
+&lt;p&gt;The idea of using a solid c or c++ application for managing the tear down and build up of HTTP requests and using Erlang to actually process the request sounds like a win. I think Erlang is an ideal language and platform for building back-end minded services and application tiers and have been pushing this belief heavily. Using an application like nginx, apache2 or a home-brew interface to provide an entry/access point into and Erlang grid is what I'm going for with this project.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://github.com/ngerakines/erlang_nginx/tree/master&quot;&gt;http://github.com/ngerakines/erlang_nginx/tree/master&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Right now, it's in the early development stages and exists only as a proof of concept. The features that I'm developing toward include the ability to break down a request into it's URI, headers and body and pass that into an Erlang grid's handler process as defined by a configuration variable. The request would wait for a specific amount of time for a message to be sent back that would include the status code, headers and response body that would be displayed to the user.&lt;/p&gt;
+
+&lt;p&gt;Another interesting path would be to compose whatever body is needed by the cnode/application. An example would be having the response from the grid be a tuple representing the type of response and components of the response and having the cnode/application create the json, xml or protocol buffers response bdoy based on that message.&lt;/p&gt;
+
+&lt;p&gt;I'm open to your thoughts, questions and comments. I don't claim to be a stellar c developer, so please help me and this project by not only taking a look at the code and contributing, but also telling me what I did wrong and why you changed what you did. As development continues, I'll probably use I Play WoW as a guinea pig and will post results as I can.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>I Play WoW hits 100k users</title>
+   <link href="http://blog.socklabs.com/2009/01/11/iplaywow_hits-100k.html"/>
+   <updated>2009-01-11T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/11/iplaywow_hits-100k</id>
+   <content type="html">&lt;p&gt;I'm really really excited to say that I Play WoW has officially crossed the 100,000 user line. I knew it was getting close and have been checking it every few hours, so about 20 minutes ago I hopped onto Facebook and saw that it happened. The official count was at 100,039 as of 11:45. I think it is the only Facebook application out there with over 100,000 users that is 100% Erlang. Go Erlang!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/sock/3186530389/&quot; title=&quot;100,000! by nickgerakines, on Flickr&quot;&gt;&lt;img src=&quot;http://farm4.static.flickr.com/3428/3186530389_f34ce71e54_o.png&quot; width=&quot;197&quot; height=&quot;19&quot; alt=&quot;100,000!&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Erlang Library Best Practices</title>
+   <link href="http://blog.socklabs.com/2009/01/10/erlang_library_best_practices.html"/>
+   <updated>2009-01-10T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/10/erlang_library_best_practices</id>
+   <content type="html">&lt;p&gt;&lt;a href=&quot;http://www.joeandmotorboat.com/&quot;&gt;Joe Williams&lt;/a&gt; wrote a pretty nifty &lt;a href=&quot;http://github.com/joewilliams/merle/tree/master&quot;&gt;Erlang memcached client&lt;/a&gt; recently and posted it to GitHub. I sent him some pointers and after writing it, decided it was worth posting.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If you've got a library dedicated to interfacing with a particular service, keep the function names simple and direct. Instead of having merle:memcached_set/2, keep it at merle:set/2.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;In most cases, it's best to directly interact with the target service as opposed to providing an additional layer such as a gen_server or process. This is something I did with the couchdb, twitter and facebook client libraries. There are some situations where you do want to allow for things like throttling, server settings storage, etc in your client library, but I really don't think that you'll have one of those situations with this one. I'd much rather make a call like merle:set(Server, Key, Value) that directly hits the memcached server than something that may have to sit in a gen_server message inbox/queue before being executed.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Write tests! This sort of thing really needs a test suite. You may even want to investigate creating a mock memcached server that your test suite runs and can push requests against.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Define a good license and add it to the top of each of your source files. I recommend either the MIT or the Mozilla.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use edoc. At the very least add @doc for public functions and @private for internal functions. It only takes about 5 minutes to set one line descriptions for a module and about 20 functions. With GitHub you can publish all of the docs for the project using the gh-pages branch (see &lt;a href=&quot;http://ngerakines.github.com/erlang_facebook&quot;&gt;http://ngerakines.github.com/erlang_facebook&lt;/a&gt; as an example).&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;For official releases, publish dist-src packages in your gh-pages branch. I keep source tarballs in the &quot;/sources&quot; for all of the packages that I do that with. Makes it really easy to have your packages integrated in system packages like gentoo ebuilds, rpms or debian packages.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Use a Makefile or Rakefile to make it easy for people to build and install the package. This is a good practice and enables more wide-spread adoption of your library.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;There were some other notes but they were specific to the merle library. All of this got me thinking about putting together a Best Practices wiki or git repository where people can contribute their knowledge and snippets.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Welcoming Toby</title>
+   <link href="http://blog.socklabs.com/2009/01/04/welcoming_toby.html"/>
+   <updated>2009-01-04T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/04/welcoming_toby</id>
+   <content type="html">&lt;p&gt;Over the holiday break, Carolyn and I decided that we'd like to adopt another cat. When Picasso first arrived, he came with another cat, Melee, that died soon afterward from FIP. It was kind of rough, especially with Carolyn being pregnant at the time, and we've been a one cat household since then.&lt;/p&gt;
+
+&lt;p&gt;On Friday we went to the &lt;a href=&quot;http://www.hssv.org/&quot;&gt;Silicon Valley Human Society&lt;/a&gt; and looked around. We had a good time, although it was slightly depressing to see how many animals go through the place. There was a Volunteer cat petter (what a title eh?) that showed us around and let us interact with some of the cats that were in the cages. While we were looking around there were two that caught my eye. Toby was one and a cat named Artimas was another. We got to hold and pet both with Tom there. Vanessa really loved it.&lt;/p&gt;
+
+&lt;p&gt;While we were in the cages, we found out that black cats get adopted far less than other cats. It struck me as really odd but the guy continued to say that a lot of people just don't adopt black cats. Some out of superstition, others for weirder reasons.&lt;/p&gt;
+
+&lt;p&gt;I certainly didn't have any reservations going into the place about the type or color of cat that I'd like to adopt. I'm pretty sure that Carolyn didn't either. Our only concern was that it would coexist well with Picasso and Vanessa.&lt;/p&gt;
+
+&lt;p&gt;Before we left, we made an appointment for Sunday to come in and interview. When we came in we found that Artimas was being adopted right then. He really is a beautiful cat and we were both happy to see him leave. Thankfully Toby was still there. The entire process took about 2 hours and before we knew it, we were on our way home.&lt;/p&gt;
+
+&lt;p&gt;I suspect it'll be a little while before Picasso and Toby start to get along. Right now we have Toby in our bedroom and plan on having him there for a week or so before we start to let him see the rest of the house. Sadly, Toby was brought to the SVHS from a San Jose shelter and has spent most of his life in cages. It might take them some getting used to having each other around and determining territories.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/sock/3168422769/&quot; title=&quot;IMG_3659 by nickgerakines, on Flickr&quot;&gt;&lt;img src=&quot;http://farm2.static.flickr.com/1157/3168422769_665e78c191.jpg&quot; width=&quot;500&quot; height=&quot;333&quot; alt=&quot;IMG_3659&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.flickr.com/photos/sock/3169228752/&quot; title=&quot;IMG_3695 by nickgerakines, on Flickr&quot;&gt;&lt;img src=&quot;http://farm2.static.flickr.com/1195/3169228752_0df0051d64.jpg&quot; width=&quot;500&quot; height=&quot;333&quot; alt=&quot;IMG_3695&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>2008 in Review &amp; 2009 Goals</title>
+   <link href="http://blog.socklabs.com/2009/01/02/2008_in_review_and_2009_goals.html"/>
+   <updated>2009-01-02T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com/2009/01/02/2008_in_review_and_2009_goals</id>
+   <content type="html">&lt;p&gt;2008 was a great year of activity and excitement. I've got the sneaking suspicion that 2009 is going to be no less busy.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Finished and published my first book!&lt;/li&gt;
+&lt;li&gt;Spoke at CUFP and met a lot of really smart people.&lt;/li&gt;
+&lt;li&gt;Gave several tech-talks and presentations.&lt;/li&gt;
+&lt;li&gt;Learned how to develop apps for the iPhone.&lt;/li&gt;
+&lt;li&gt;Migrated I Play WoW from a Perl app to an Erlang app.&lt;/li&gt;
+&lt;li&gt;Learned about CouchDB.&lt;/li&gt;
+&lt;li&gt;Learned Git.&lt;/li&gt;
+&lt;li&gt;Accepted a lead position at EA.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;This is what I'd like to accomplish in 2009.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Finish my second book.&lt;/li&gt;
+&lt;li&gt;Do more tech-talks and presentations.&lt;/li&gt;
+&lt;li&gt;Have a 100 day streak of open source commits on GitHub.&lt;/li&gt;
+&lt;li&gt;Write more technical articles and entries.&lt;/li&gt;
+&lt;li&gt;Learn Python.&lt;/li&gt;
+&lt;li&gt;Hit level 80 with Korale and get into tier 9.&lt;/li&gt;
+&lt;li&gt;Grow I Play WoW to 75,000 monthly active users.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Using Test::Harness with etap</title>
+   <link href="http://blog.socklabs.com/2008/12/30/using_test_harness_and_etap.html"/>
+   <updated>2008-12-30T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com2008123001</id>
+   <content type="html">&lt;p&gt;This isn't a beginner's walk through. It assumes you know how to use and read Erlang as well as install Erlang and Perl libraries&lt;/p&gt;
+
+&lt;p&gt;I love &lt;a href=&quot;http://search.cpan.org/dist/TAP/&quot;&gt;TAP&lt;/a&gt;. TAP is a protocol used to create and interact with testing frameworks. The general idea is that your unit tests interact with a TAP client which outputs the TAP protocol that is then consumed by a TAP server. What it boils down to is a really simple text based structure used to convey unit test results, with a few added bonuses here and there.&lt;/p&gt;
+
+&lt;p&gt;With &lt;a href=&quot;http://github.com/ngerakines/etap/tree/master&quot;&gt;etap&lt;/a&gt; and Perl's &lt;a href=&quot;http://search.cpan.org/~andya/Test-Harness/&quot;&gt;TAP::Harness&lt;/a&gt; we can create really slick test result output and move closer to having a continuous integration build environment. Before you get ahead of yourself, you'll need to make sure that you've got etap downloaded and in your Erlang lib path. You'll also have to install TAP::Harness and it's dependancies.&lt;/p&gt;
+
+&lt;p&gt;To demonstrate how this is done, we'll use the &lt;a href=&quot;http://github.com/ngerakines/erlang_protobuffs/tree/master&quot;&gt;erlang_protobuffs&lt;/a&gt; library. This library is composed of two modules that provide functionality through direct interaction with their exported functions. They don't extend any OTP behaviors and have very few side effects. The project's sources are contained in the &lt;code&gt;src&lt;/code&gt; directory and it's tests in the &lt;code&gt;t&lt;/code&gt; directory. There is also a support directory that provides the Makefile include for building the actual modules.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;test&lt;/code&gt; target in the root Makefile calls the &lt;code&gt;prove&lt;/code&gt; command with the verbose flag and a glob of the *.t files in the &lt;code&gt;t&lt;/code&gt; diretory.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;test: all
+    prove -v t/*.t
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The actual tests for the project are &lt;a href=&quot;http://erlang.org/doc/man/escript.html&quot;&gt;escript&lt;/a&gt; files with the .t extension. Using the escript hash bang lets us treat each file as it's own complete unit test. They can be run in any order and have their own configuration and directives. Below is the protobuffs_t_001.t file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -pa ./ebin -sasl errlog_type error -boot start_sasl -noshell
+
+main(_) -&amp;gt;
+    etap:plan(8),
+    etap_can:loaded_ok(protobuffs, &quot;module 'protobuffs' loaded&quot;),
+    etap_can:can_ok(protobuffs, encode),
+    etap_can:can_ok(protobuffs, encode, 3),
+    etap_can:can_ok(protobuffs, decode),
+    etap_can:can_ok(protobuffs, decode, 2),
+    etap_can:loaded_ok(protobuffs_compile, &quot;module 'protobuffs_compile' loaded&quot;),
+    etap_can:can_ok(protobuffs_compile, scan_file),
+    etap_can:can_ok(protobuffs_compile, scan_file, 1),
+    etap:end_tests().
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Lines 1, 2 and 3 are used by the shell and escript command to set any Erlang vm options necessary. In this case we want to include the &lt;code&gt;ebin&lt;/code&gt; directory, start sasl with minimal logging and disable the shell.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;main/0&lt;/code&gt; function is called escript with whatever relevant arguments that may apply, but we don't care about them so we ignore them for now. Here we perform several tests to assert that the project's modules load and export the proper functions.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;etap:plan/1&lt;/code&gt; and &lt;code&gt;etap:end_tests/0&lt;/code&gt; functions wrap the &lt;code&gt;etap*:*&lt;/code&gt; function calls and is used to define the test plan. At this point etap is not designed to work without finite plans.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -pa ./ebin -sasl errlog_type error -boot start_sasl -noshell
+
+-record(person, {name, address, phone_number, age, location}).
+
+main(_) -&amp;gt;
+    etap:plan(1),
+    etap:is(protobuffs_compile:scan_file(&quot;t/simple.proto&quot;), ok, &quot;simple.proto compiled&quot;),
+    compile:file(&quot;simple_pb.erl&quot;),
+    Data = [{1, &amp;lt;&amp;lt;&quot;Nick&quot;&amp;gt;&amp;gt;, string}, {2, &amp;lt;&amp;lt;&quot;Mountain View&quot;&amp;gt;&amp;gt;, string}, {3, &amp;lt;&amp;lt;&quot;+1 (000) 555-1234&quot;&amp;gt;&amp;gt;, string}, {4, 25, int32}],
+    BinData = erlang:iolist_to_binary([protobuffs:encode(Pos, Value, Type) || {Pos, Value, Type} &amp;lt;- Data]),
+    #person{ name = &amp;lt;&amp;lt;&quot;Nick&quot;&amp;gt;&amp;gt;, address = &amp;lt;&amp;lt;&quot;Mountain View&quot;&amp;gt;&amp;gt;, phone_number = &amp;lt;&amp;lt;&quot;+1 (000) 555-1234&quot;&amp;gt;&amp;gt;, age = 25} = simple_pb:decode_person(BinData),
+    BinData = simple_pb:encode_person(#person{ name = &amp;lt;&amp;lt;&quot;Nick&quot;&amp;gt;&amp;gt;, address = &amp;lt;&amp;lt;&quot;Mountain View&quot;&amp;gt;&amp;gt;, phone_number = &amp;lt;&amp;lt;&quot;+1 (000) 555-1234&quot;&amp;gt;&amp;gt;, age = 25}),
+    etap:end_tests().
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In the protobuffs_t_005.t file you see that you can do things like define records. In this test unit we call several of the library's exported functions and test some of the more complex functionality. The &lt;code&gt;protobuffs_compile:scan_file/1&lt;/code&gt; function actually writes several files which are then compiled by &lt;code&gt;compile:file/1&lt;/code&gt; and used by subsequent test unit function calls.&lt;/p&gt;
+
+&lt;p&gt;The output of the &lt;code&gt;make test&lt;/code&gt; command, as processed by the TAP::Harness perl module, is very clean.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mbp:erlang_protobuffs ngerakines$ make test
+mkdir -p ebin/
+(cd src;make)
+erlc -W -I ../include  +debug_info -o ../ebin protobuffs.erl
+erlc -W -I ../include  +debug_info -o ../ebin protobuffs_compile.erl
+prove t/*.t
+t/protobuffs_t_001....ok   
+t/protobuffs_t_002....ok   
+t/protobuffs_t_003....ok   
+t/protobuffs_t_004....ok   
+t/protobuffs_t_005....ok   
+t/protobuffs_t_006....ok   
+All tests successful.
+Files=6, Tests=17,  1 wallclock secs ( 0.04 usr  0.02 sys +  0.97 cusr  0.27 csys =  1.30 CPU)
+Result: PASS
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Depending on the error and severity, failed tests will either output in a similarly clean fashion or stop the entire suite from processing.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mbp:erlang_protobuffs ngerakines$ make test
+mkdir -p ebin/
+(cd src;make)
+erlc -W -I ../include  +debug_info -o ../ebin protobuffs.erl
+erlc -W -I ../include  +debug_info -o ../ebin protobuffs_compile.erl
+prove t/*.t
+t/protobuffs_t_001....ok   
+t/protobuffs_t_002....ok   
+t/protobuffs_t_003.... Failed 1/3 subtests 
+t/protobuffs_t_004....ok   
+t/protobuffs_t_005....ok   
+t/protobuffs_t_006....ok   
+
+Test Summary Report
+-------------------
+t/protobuffs_t_003 (Wstat: 0 Tests: 3 Failed: 1)
+  Failed test:  2
+Files=6, Tests=17,  2 wallclock secs ( 0.04 usr  0.02 sys +  0.96 cusr  0.26 csys =  1.28 CPU)
+Result: FAIL
+make: *** [test] Error 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The prove command has a number of options and arguments that augment test execution. Please refer to &lt;code&gt;prove --help&lt;/code&gt; or the documentation available on CPAN for more information.&lt;/p&gt;
+
+&lt;p&gt;There are a few things to take note of. All of the paths to included and referenced files, such as the &lt;code&gt;simple.proto&lt;/code&gt; file, are relative to where the &lt;code&gt;prove&lt;/code&gt; command is called. In this case it's in the root directory as part of the &lt;code&gt;test&lt;/code&gt; target. Also, for some more complex and lengthy tests, please read up on the escript documentation. The compile mode can be used to pre-compile the file before being called but has a few caveats that you should be aware of.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>I Play WoW Monthly Active Users</title>
+   <link href="http://blog.socklabs.com/2008/12/24/iplaywow_monthly_actives.html"/>
+   <updated>2008-12-24T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com200812401</id>
+   <content type="html">&lt;p&gt;&lt;img src=&quot;/images/iplaywow_actives.jpg&quot; alt=&quot;I Play WoW monthly active users&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I guess the changes that I made back in November have had a positive impact.&lt;/p&gt;
+
+&lt;p&gt;In late October / early November I ported over the very last perl piece of the &lt;a href=&quot;http://www.facebook.com/apps/application.php?id=2359644980&quot;&gt;I Play WoW Facebook Application&lt;/a&gt; into the Erlang application set. I'm thrilled with the results that I'm seeing. The idea of using Erlang to power a web service has been reaffirmed as a great idea time after time now. The application is supporting well over 100,000 total users and just under 40,000 monthly active users. The system knows about 175,000 unique characters.&lt;/p&gt;
+
+&lt;p&gt;I've been telling &lt;a href=&quot;http://twitter.com/janl&quot;&gt;Janl&lt;/a&gt; for a while now that I'd post some stats and information about the app and it's usage patterns. Here you go.&lt;/p&gt;
+
+&lt;p&gt;Before I go any further, I want to state the primary and driving reason for doing all of the changes that I've made. &lt;strong&gt;The goal was to lower the cost per user.&lt;/strong&gt; This cost means time developing features, fixing bugs, interacting with user data (storing, fetching, aggregating, crawling, etc) and supporting users.&lt;/p&gt;
+
+&lt;p&gt;The application is powered by Erlang, CouchDB, MySQL, &lt;a href=&quot;http://xapian.org/&quot;&gt;Xapian&lt;/a&gt; and Amazon S3. Erlang powers the web interface, the interaction with the Facebook API as well as the other services. CouchDB acts as a primary database with writes and updates still being sent to MySQL. For what it's worth, the application entirely relies on CouchDB for document reads and aggregates, but realistically CouchDB is still being developed and there are changes from time to time that warrant not depending on it alone.&lt;/p&gt;
+
+&lt;p&gt;Xapian is used internally for a search feature that I'm testing. I decided to go with xapian instead of Lucene because it has a smaller footprint and I don't need anything big and bulky at this point. Amazon S3 is used for image and file storage. Using Amazon S3 was much cheaper (time and money) than rolling my own file storage system.&lt;/p&gt;
+
+&lt;p&gt;I Play WoW started as a Perl application using the &lt;a href=&quot;http://www.catalystframework.org/&quot;&gt;Catalyst framework&lt;/a&gt; using MySQL and Memcached. Since then it's evolved quite a bit. The Erlang component of the application is really a cluster of applications.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ipwapp handles CouchDB, MySQL and Facebook Platform interfacing. This is where the bulk of application's core functionality and features exist.&lt;/li&gt;
+&lt;li&gt;ipwweb provides the web interface that the Facebook Platform makes requests to for canvas page content.&lt;/li&gt;
+&lt;li&gt;ipwcache provides a write-through cache and storage system for crawled data. This includes World of Warcraft characters, guilds, etc.&lt;/li&gt;
+&lt;li&gt;ipwsearch provides the xapian search interface and rebuilds the index from time to time.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Although these applications aren't open source, there are a lot of pieces that are. The &lt;a href=&quot;http://www.github.com/ngerakines/erlang_couchdb/&quot;&gt;erlang_couchdb&lt;/a&gt;, &lt;a href=&quot;http://www.github.com/ngerakines/erlang_facebook/&quot;&gt;erlang_facebook&lt;/a&gt;, &lt;a href=&quot;http://www.github.com/ngerakines/erlang_wowarmory/&quot;&gt;erlang_wowarmory&lt;/a&gt; and &lt;a href=&quot;http://www.github.com/ngerakines/etap/&quot;&gt;etap&lt;/a&gt; projects available on GitHub (open source with the MIT license) are all actively used and developed by I Play WoW. This project also uses the extremely powerful MochiWeb application.&lt;/p&gt;
+
+&lt;p&gt;There are currently three Erlang nodes running this application. Each node runs one of the services and the other nodes are set as fallback nodes using  distributed Erlang configuration. The erlang_wowarmory module is running on all nodes to distributed World of Warcraft Armory crawling evenly. The database, search&lt;/p&gt;
+
+&lt;p&gt;The CouchDB data store currently has 537,248 documents. Most of those documents are either character or guild documents. There is one primary document per character, guild and realm as well as a number of supportive documents for storing all sorts of other things. The MySQL database has around 383,000 rows. There are 5 design documents being used and about 25 views. This number has grown and shrunk over the past few months as I've learned to use documents more efficiently with the data structures the contain. It really has been a trial-and-error process with it's ups and downs, but ultimately it's worked out very well for me and I'm very satisfied with the results.&lt;/p&gt;
+
+&lt;p&gt;The one thing that I do slightly differently with CouchDB is actively track many document versions. For World of Warcraft characters I don't just keep one document per character, I keep one document per version of a character. This means that document ids are completely arbitrary and aren't used to identify characters unlike guilds and realms in the system. This is done to let me track different configurations of a given character over time and activity. This done through creating a hash of several mutable and immutable fields that represent a character and when that hash changes, track the information separately in a new or different document. This makes me rely very heavily on views to retrieve character documents from the system but it hasn't translated into &quot;more work&quot; yet.&lt;/p&gt;
+
+&lt;p&gt;The results of rewriting it have been great. I use fewer servers that cost less to support a larger number of users. At first I had three machines with either one or two gigs of ram as well as one database machine. Now I've got 4 machines with either 256 or 512 megs of ram, one of them still dedicated to MySQL, CouchDB and Xapian. The three nodes on the application grid average about 10% of memory and about 1% CPU. Some simple load tests show that it can sustain an increase of 9x without having to expand, and even at that point expanding is just adding another node to the grid. I'm effectively serving 3x the traffic at a third of the cost. Making changes to the application has been simplified with less downtime and the time to debug and fix errors has decreased.&lt;/p&gt;
+
+&lt;p&gt;Message me through Facebook, &lt;a href=&quot;mailto:nick+blog@gerakines.net&quot;&gt;email&lt;/a&gt; or &lt;a href=&quot;http://twitter.com/ngerakines&quot;&gt;twitter&lt;/a&gt; if you've got questions or want to know more about a specific subject.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Protocol Buffers and Pygments</title>
+   <link href="http://blog.socklabs.com/2008/12/23/protocol_buffers_and_pygments.html"/>
+   <updated>2008-12-23T00:00:00-08:00</updated>
+   <id>http://blog.socklabs.com200812301</id>
+   <content type="html">&lt;p&gt;I've been working on a small Protocol Buffers definition file parser for &lt;a href=&quot;http://pygments.org/&quot;&gt;Pygments&lt;/a&gt;. It's a work in progress and at this point it only supports a very limited number of tokens and features. This is being developed to help the documentation effort for a Protocol Buffers based API that I've been working on.&lt;/p&gt;
+
+&lt;script src=&quot;http://gist.github.com/39440.js&quot;&gt;&lt;/script&gt;
+
+</content>
+ </entry>
+ 
+</feed>

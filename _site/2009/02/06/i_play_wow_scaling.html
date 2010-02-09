@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | I Play WoW Scaling</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="I Play WoW Scaling" href="/2009/02/06/i_play_wow_scaling.html">I Play WoW Scaling</a></h2>
+			<em id="sub_h2">06 February 2009</em>
+		 	<p>Having too much traffic is a great problem and I'm fortunate enough to be facing it at the moment. Over the past few weeks, thanks in part to <a href="http://www.wowinsider.com/2009/01/16/i-play-wow-facebook-app-reaches-100-000-users/">several really</a> <a href="http://www.wowinsider.com/2009/02/04/15-minutes-of-fame-i-play-wow-for-facebook/">great articles</a> on <a href="http://www.wowinsider.com/">WoW Insider</a> about I Play WoW, <a href="http://www.facebook.com/apps/application.php?id=2359644980">I Play WoW</a> traffic and use has been increasing significantly and I've been starting to notice that increase in traffic in a few different ways.</p>
+
+<p>The first has been in queue length. The big feature of the site is the ability to import your World of Warcraft characters and display them on your profile. After you've done that, actions like "dinging" and refreshing your character's data become available. All of these operations require requests to be made to fetch data from the World of Warcraft Armory.</p>
+
+<p>What's great is that this information is freely available and I applaud and thank Blizzard for making it so. What isn't so great is that this can be a lot of traffic coming from my servers to theirs and it often comes in spikes and bursts. To avoid hammering them and drastically reducing my karma, I've implemented queues and throttling when fetching data. Using the <a href="http://github.com/ngerakines/erlang_wowarmory">erlang_wowarmory</a> module, items consisting of the request type and meta-data about the request get stuffed into request queues that exist on all of the nodes used by the Facebook application. This works really well and has saved me lots of time, money and energy by having a stable and reliable armory data processing system. The caveat with this is that with lots of traffic come large queues.</p>
+
+<p>The issue that I'm seeing is that during peak traffic hours, I may see the queues go up to 2,000+ items. Around the time of the first WoW Insider post the queues got up to 6,000+ items. These queues get processed and in due time everything resolves itself without issue. The real problem is three-fold.</p>
+
+<ul>
+<li>User's data doesn't get processed immediately and they complain. (Rightfully so, in my opinion)</li>
+<li>When a user's data doesn't get processed immediately then they tend to think something went wrong (regardless of how clear your messaging is) and try it again, adding more data to the queue.</li>
+<li>Some requests are more important than others. Characters should always be processed first, regardless of how large the queue is. Next come guilds, followed by everything else.</li>
+</ul>
+
+
+<p>There are two, complimenting, solutions to this problem that I've got my eye on. The first is to implement a better queueing system that is less tolerant of duplicate items. The second is to add more crawling capacity to the system.</p>
+
+<p>The first solution can be seen through the development of the <a href="http://github.com/ngerakines/erlang_wowarmory/tree/master/src/armory2.erl">armory2 module</a> as part of the <a href="http://github.com/ngerakines/erlang_wowarmory">erlang_wowarmory project</a>. What I've done here is taken what I've learned about how things are queued and made several key changes. The first big change is the actual queue data structure itself. At first, I was using the 'queue' module that comes in the standard library to manage the FIFO queue. It worked really well and efficiently for small queues but as they start to hit 3,000 to 5,000 items, I'm concerned about efficiency.</p>
+
+<p>Now and ets table is used to manage the queue. The queue manager creates and owns an ordered_set ets table that operates as a first-in/first-out queue based on the item type. When an item is dequeued, it attempts to find character items first, then guilds and then everything else ordered by when it was inserted into the queue. This is working really well so far and I'm pleased with the results.</p>
+
+<p>Another change in the armory2 module is the way queues are distributed. In the armory module, each node would start a gen_server process that would store a local queue and would have a linked process that dequeues items and processes them. I'm experimenting with a different model right now that uses the global module to have a single queue manager that owns the ets table used to keep the entire queue. If at any point a crawler attempts to dequeue something and discovers that the master isn't running, it will attempt to start the master on the local node and the queue is recreated.</p>
+
+<p>The second solution to the problem is essentially "grow with hardware". The reason that this applies here is that I can't increase the actual number of networks requests currently being made on each node. The current throttling model prevents each IP address (slice) from making more than one request against the World of Warcraft Armory per second. There isn't anything that I can do to resolve this. The only real solution here is to add more nodes and crawlers to the grid. Thankfully, Erlang makes this <strong>stupid</strong> simple. I found this out the hard [read as: easy] way when the WoW Insider article was published.</p>
+
+<p>I'm using <a href="https://manage.slicehost.com/customers/new?referrer=16c66b4122426a4a3a8c27e2495c20ff">SliceHost</a> to host my application and two of the nodes have regular backups made daily and weekly. Each of my slices are the most basic available which keeps cost down for me. When I needed to bring the additional nodes to handle the increase in traffic, it was just a matter of creating new slices based on the backups (saves time in configuration) and running <code>/etc/init.d/ipwcore start</code> and <code>/etc/init.d/ipwfbfe start</code>. When the nodes came up they detected the other nodes using <code>net_adm:world()</code> and starting taking traffic on immediately. I should mention that I also added them to pound, the load balancer that I use.</p>
+
+<p>My experiences scaling the I Play WoW Erlang Facebook application have been great. With good design and a little bit of homework it's easy to take on problems that have traditionally been show stoppers. All of the crawling code that I've referenced in this entry is open source under the MIT license and can be found on GitHub. With the 3 additional slices/nodes (I run both an ipwcore and ipwfbfe node on each slice) things have been running very smoothly.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

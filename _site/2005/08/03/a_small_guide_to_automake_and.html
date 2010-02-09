@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | A small guide to automake and autoconf
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="A small guide to automake and autoconf
+" href="/2005/08/03/a_small_guide_to_automake_and.html">A small guide to automake and autoconf
+</a></h2>
+			<em id="sub_h2">03 August 2005</em>
+		 	<p>Recently I've been doing some c/c++ development at work. Its a pretty small project but we are using c++ because its speed over perl. I don't think anyone is really going to argue that point out. Instead of using anything bulky and bloated like KDevelop or the Eclipse I decided to stick wtih vim and make for my compiling needs.</p>
+
+<p>Once I started getting deeper into the project it came to be that I needed a more flexible compiling solution, so I started looking into automake and autoconf. After some googling and alot of trial and error, I found a solution that works well for me. The project consists of building a few libraries and then compiling them into a single executable. It took more effort than it was worth with automake and autoconf but I finally got it working and the results are below.</p>
+
+<p>Hopefully, this step by step guide on using automake and autoconf can help shed some light on any problems you are having. If you have any questions please feel free to leave a comment or something.</p>
+
+<p>I'll start with project layout. Take a look at the following layout and make note of a few things. The sources and headers are branched out in the <code>src</code> directory. Note that every directory that has something to do with source code has an associated <em>Makefile.am</em> contained within. These will be explained down the line. The src directory has 2 sub directories, libapple and libpear, that both contain sources of there own. These are going to be static objects that are compiled into the main project.</p>
+
+<p><code>
+configure.ac
+Makefile.am
+src
+src/Makefile.am
+src/main.cpp
+src/libapple
+src/libapple/Makefile.am
+src/libapple/libapple.cpp
+src/libapple/libapple.hpp
+src/libpear
+src/libpear/Makefile.am
+src/libpear/libpear.cpp
+src/libpear/libpear.hpp
+docs/
+</code></p>
+
+<p>This example project has 4 goals. The first is to produce an executable that works. The second is to create libraries that the executable will use, aka libapple and libpear. The third is to automate the build process and check for requirements along the way. The fourth goal is to allow easy documentation generation based on the sources.</p>
+
+<p>The base files of automake and autoconf are <code>Makefile.am</code> and <code>configure.ac</code>. First lets take a look at configure.ac and see what makes it tick. This the the configure.ac file used in our example project and the comments should make it self explanitory.</p>
+
+<p><code>
+dnl Init with a project name and version
+AC_INIT(myproject, 1.0)</p>
+
+<p>dnl Init automake with a version
+AM_INIT_AUTOMAKE([foreign 1.9.4])</p>
+
+<p>dnl We will be using g++
+AC_PROG_CXX
+dnl We will be using libtool
+AC_PROG_LIBTOOL</p>
+
+<p>dnl Do a check for stdio.h and friends
+AC_CHECK_HEADER([stdio.h])
+AC_CHECK_HEADER([math.h])
+dnl ...</p>
+
+<p>dnl Check for malloc functionality
+AC_FUNC_MALLOC
+dnl ...</p>
+
+<p>dnl Do some very basic typechecks
+AC_CHECK_TYPES([unsigned long, int, float])</p>
+
+<p>dnl Check for const functionality
+AC_C_CONST</p>
+
+<p>dnl Write our files
+AC_OUTPUT([Makefile
+src/Makefile
+src/libapple/Makefile
+src/libpear/Makefile]
+)
+</code></p>
+
+<p>Next take a look at <code>Makefile.am</code>.</p>
+
+<p><code>
+SUBDIRS = src
+</code></p>
+
+<p>Those two files alone won't do it though. If you run <code>automake</code> right now you'll get a few errors about missing files. Luckily we can simply run <code>automake --add-missing</code> and the missing files will be copied over, or sym linked.</p>
+
+<p>Now that we've run <code>automake --add-missing</code> as well as <code>aclocal</code> we are in good shape, but we aren't ready quite yet. Enter into the src directory and open Makefile.am. Inside you should put the following.</p>
+
+<p><code></p>
+
+<h1>We have 2 sub directories that we want to check</h1>
+
+<p>SUBDIRS = libapple libpear</p>
+
+<h1>The namespace for our project, aka bin output</h1>
+
+<p>bin_PROGRAMS = myproject</p>
+
+<h1>Our project depends on the following libraries</h1>
+
+<p>myproject_DEPENDENCIES = libapple/libapple.la libpear/libpear.la</p>
+
+<h1>The main sources for this project</h1>
+
+<p>myproject_SOURCES = main.cpp</p>
+
+<h1>Include these during compile</h1>
+
+<h1>INCLUDES = -I./libapple -I./libpear</h1>
+
+<h1>These libraries are going to be used</h1>
+
+<p>myproject_LDADD =</p>
+
+<pre><code>    libapple/libapple.o 
+    libpear/libpear.o
+</code></pre>
+
+<p></code></p>
+
+<p>As you can see what we do is point the the two sub directories, ala libapple and libpear, and define the dependancies that we have. Next lets look at the <code>Makefile.am</code> files in libapple and libpear.</p>
+
+<p><code></p>
+
+<h1>libapple/Makefile.am</h1>
+
+<p>AUTOMAKE_OPTIONS = foreign
+INCLUDES = -I../
+noinst_LTLIBRARIES = libapple.la
+libapple_la_SOURCES = libapple.cpp
+</code></p>
+
+<p><code></p>
+
+<h1>libpear/Makefile.am</h1>
+
+<p>AUTOMAKE_OPTIONS = foreign
+INCLUDES = -I../
+noinst_LTLIBRARIES = libpear.la
+libpear_la_SOURCES = libpear.cpp
+</code></p>
+
+<p>Building these sub objects is very simple as we layout what needs to be done. Now lets look at the sources for libapple.</p>
+
+<p><code>
+//! file src/libapple/libapple.hpp</p>
+
+<h1>ifndef LIBAPPLE_HPP</h1>
+
+<h1>define LIBAPPLE_HPP</h1>
+
+<h1>include <string></h1>
+
+<h1>include <iostream></h1>
+
+<p>using namespace std;</p>
+
+<p>//! The Apple Class
+/<em>!
+ * This is the apple class. Add more attributes as needed.
+ </em>/
+class Apple {</p>
+
+<pre><code>    private:
+            string mycolor;
+    public:
+            Apple()  { mycolor = "red"; }
+            ~Apple() {}
+            string color (string newcolor);
+            string color ();
+</code></pre>
+
+<p>};</p>
+
+<h1>endif</h1>
+
+<p></code></p>
+
+<p><code>
+//! file src/libapple/libapple.cpp</p>
+
+<h1>include "libapple.hpp"</h1>
+
+<h1>include <string></h1>
+
+<p>string Apple::color (string newcolor) {</p>
+
+<pre><code>    mycolor = newcolor;
+    return mycolor;
+</code></pre>
+
+<p>}</p>
+
+<p>string Apple::color () {</p>
+
+<pre><code>    return mycolor;
+</code></pre>
+
+<p>}
+</code></p>
+
+<p>The last file to be covered is the main application to be built. As can be seen below.</p>
+
+<p><code></p>
+
+<h1>include "libapple/libapple.hpp"</h1>
+
+<h1>include "libpear/libpear.hpp"</h1>
+
+<h1>include <string></h1>
+
+<h1>include <iostream></h1>
+
+<p>using namespace std;</p>
+
+<p>int main() {</p>
+
+<pre><code>    Apple myapple;
+    Pear mypear;
+    string pear_color, apple_color;
+
+     apple_color = myapple.color();
+     pear_color = mypear.color();
+
+    cout &lt;&lt; "The apple is" &lt;&lt; apple_color &lt;&lt; "." &lt;&lt; endl;
+    cout &lt;&lt; "The pear is" &lt;&lt; pear_color &lt;&lt; "." &lt;&lt; endl;
+
+    mypear.color("yellow-ish");
+
+    pear_color = mypear.color();
+
+    cout &lt;&lt; "If the pear sits out for a month it will be " &lt;&lt; pear_color &lt;&lt; "." &lt;&lt; endl;
+
+    return 0;
+</code></pre>
+
+<p>}
+</code></p>
+
+<p>Now that the basics are covered, it is time to build. Move back to the root directory and perform the following:</p>
+
+<p><code>
+aclocal
+automake --add-missing
+automake
+autoconf
+./configure
+make
+</code></p>
+
+<p>If you did exactly what I told you the build will be break because we didn't do anything about the libpear sources. The entire project is contained in a tgz file attached to this entry. This project should cover the basics and should get you started on your way. Have fun and happy hacking.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

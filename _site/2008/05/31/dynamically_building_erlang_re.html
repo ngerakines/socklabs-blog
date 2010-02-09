@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Dynamically building Erlang release files
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Dynamically building Erlang release files
+" href="/2008/05/31/dynamically_building_erlang_re.html">Dynamically building Erlang release files
+</a></h2>
+			<em id="sub_h2">31 May 2008</em>
+		 	<p>Creating an application release file should be as easy as possible. For the ErlyFlux project I use this little snippet to develop/build/test on my local MacBook Pro and then build/test/deploy on the Debian machine that it runs on. Ideally there are very few differences between the libraries used but in the real world it happens and you have to work around it.</p>
+
+<p>The example below is taken from the <a href="http://github.com/ngerakines/erlyflux/tree/master/fluxhp/src/fluxhp.erl">fluxhp/src/fluxhp.erl</a> module.</p>
+
+<pre><code>%% @spec build_rel() -&gt; ok
+%% @doc Creates a .rel script for the project.
+build_rel() -&gt;
+    {ok, FD} = file:open("fluxhp.rel", [write]),
+    RootDir = code:root_dir(),
+    Patterns = [
+        {RootDir ++ "/", "erts-*"},
+        {RootDir ++ "/lib/", "kernel-*"},
+        {RootDir ++ "/lib/", "stdlib-*"},
+        {RootDir ++ "/lib/", "sasl-*"},
+        {RootDir ++ "/lib/", "crypto-*"},
+        {RootDir ++ "/lib/", "inets-*"},
+        {RootDir ++ "/lib/", "mnesia-*"}
+    ],
+    [Erts, Kerne, Stdl, Sasl, Cryp, Inet, Mnes] = [begin
+        [R | _ ] = filelib:wildcard(P, D),
+        [_ | [Ra] ] = string:tokens(R, "-"),
+        Ra
+    end || {D, P} &lt;- Patterns],
+    RelInfo = {release,
+        {"fluxhp", fluxhp:version()},
+        {erts, Erts}, [
+            {kernel, Kerne},
+            {stdlib, Stdl},
+            {sasl, Sasl},
+            {crypto, Cryp},
+            {inets, Inet},
+            {mnesia, Mnes},
+            {fluxhp, fluxhp:version()}
+        ]
+    },
+    io:format(FD, "~p.", [RelInfo]),
+    file:close(FD),
+    systools:make_script("fluxhp", [local, {path, ["./ebin"]}, {path, ["./src"]}, {path, ["./src/components"]}]),
+    ok.
+</code></pre>
+
+<p>The Makefile has a 'dist' command that executes that function from the command line and prepares the application for deployment.</p>
+
+<pre><code>erl -s make all load -run fluxhp build -run fluxhp build_rel -s init stop
+</code></pre>
+
+<p>Works like a charm.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

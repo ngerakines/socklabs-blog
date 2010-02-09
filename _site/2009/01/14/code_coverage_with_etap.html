@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Code Coverage w/ Etap</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Code Coverage w/ Etap" href="/2009/01/14/code_coverage_with_etap.html">Code Coverage w/ Etap</a></h2>
+			<em id="sub_h2">14 January 2009</em>
+		 	<p>I added a small, somewhat experimental, feature to <a href="http://github.com/ngerakines/etap/tree/master">etap</a> a few days ago. With etap, you can now use the Erlang cover module to determine how much of your code is being testing by your tests. I've already started using it on several of my modules and projects to enhance the test suites. It's pretty easy to use and in this small demo, I'll run through the basics.</p>
+
+<p>In the <a href="http://github.com/ngerakines/erlang_protobuffs/tree/master">erlang_protobuffs</a> project I'm using etap to test basic functionality. With code coverage analysis I can increase the module's stability by making sure more of it's functionality is tested.</p>
+
+<pre><code>$ cd ~/dev/erlang_protobuffs
+$ make test
+... 
+All tests successful.
+Files=8, Tests=35,  5 wallclock secs ( 0.06 usr  0.03 sys +  3.58 cusr  0.67 csys =  4.34 CPU)
+Result: PASS
+</code></pre>
+
+<p>To enable code coverage analysis, all you have to do is set the COVER=1 environmental variable while running your tests. None of the TAP output will change but it will write a number of .coverdata files, one for each etap test group.</p>
+
+<pre><code>$ COVER=1 make test
+... 
+All tests successful.
+Files=8, Tests=35,  5 wallclock secs ( 0.06 usr  0.03 sys +  3.58 cusr  0.67 csys =  4.34 CPU)
+Result: PASS
+</code></pre>
+
+<p>The .coverdata files hold the exported cover data as per the cover module. With a little bit of Erlang we can aggregate the results from those files and create reports.</p>
+
+<pre><code>$ erl
+1&gt; [cover:import(File) || File &lt;- filelib:wildcard("*coverdata")].
+[ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok,ok]
+2&gt; Cover = fun(M, Out) -&gt; cover:analyse_to_file(M, Out, []) end.
+#Fun&lt;erl_eval.12.113037538&gt;
+3&gt; Mods = cover:imported_modules().
+[protobuffs_compile,protobuffs]
+4&gt; [Cover(Mod, atom_to_list(Mod) ++ "_coverage.txt") || Mod &lt;- Mods].
+Analysis includes data from imported files
+[".../dev/erlang_protobuffs/fc4046de9a9bb3efdf53d1d698797bc.coverdata",
+ ".../dev/erlang_protobuffs/f27caf5168ce8d77b3fde6a4411cfc11.coverdata",
+ ... ]
+Analysis includes data from imported files
+[".../dev/erlang_protobuffs/fc4046de9a9bb3efdf53d1d698797bc.coverdata",
+ ".../dev/erlang_protobuffs/f27caf5168ce8d77b3fde6a4411cfc11.coverdata",
+ ... ]
+[{ok,"protobuffs_compile_coverage.txt"},
+ {ok,"protobuffs_coverage.txt"}]
+5&gt; q().
+</code></pre>
+
+<p>The files protobuffs_compile_coverage.txt and protobuffs_coverage.txt will breakdown your modules line by line and show how much of the code has been executed and how many times. From this I can see that lines that have "0..|" have code that has never been called, hence there is 0 code coverage there.</p>
+
+<p>An example can be seen in the protobuffs_coverage.txt file around the encoding of bools.</p>
+
+<pre><code>   |  %% @doc Encode an Erlang data structure into a Protocol Buffers value.
+   |  encode(FieldID, false, bool) -&gt;
+0..|      encode(FieldID, 0, bool);
+   |  encode(FieldID, true, bool) -&gt;
+0..|      encode(FieldID, 1, bool);
+   |  encode(FieldID, Integer, enum) -&gt;
+</code></pre>
+
+<p>To remedy this I'll create a test that calls this code. As I'm writing this, it turns out that there is actually a bug in my implementation of bools and writing the test for it surfaced that bug.</p>
+
+<pre><code>cat protobuffs_t_009.t &lt;&lt; EOF
+#!/usr/bin/env escript
+%% -*- erlang -*-
+%%! -pa ./ebin -sasl errlog_type error -boot start_sasl -noshell
+
+main(_) -&gt;
+    etap:plan(2),
+    etap:is(protobuffs:encode(1, true, bool), [8, 1], "1, true, bool"),
+    etap:is(protobuffs:encode(19, false, bool), [&lt;&lt;129,24&gt;&gt;,0], "19, false, bool"),
+    etap:end_tests().
+EOF
+</code></pre>
+
+<p>Now that the test exists (and the bug fixed!) I'll clear my cover data and reports and generate new reports.</p>
+
+<pre><code>$ make clean &amp;&amp; rm -rfv *.coverdata *.txt
+$ COVER=1 make test
+$ erl ...
+</code></pre>
+
+<p>What's different is that now it is visible that the bool encoding functionality has been executed once (as per the newly created test).</p>
+
+<pre><code>   |  encode(FieldID, false, bool) -&gt;
+1..|      encode(FieldID, 0, int32);
+   |  encode(FieldID, true, bool) -&gt;
+1..|      encode(FieldID, 1, int32);
+</code></pre>
+
+<p>Regular code coverage analysis is important to reducing test debt. It helps find bugs and saves you time, effort and energy.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

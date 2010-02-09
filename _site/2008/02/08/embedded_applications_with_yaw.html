@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Embedded Applications with Yaws
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Embedded Applications with Yaws
+" href="/2008/02/08/embedded_applications_with_yaw.html">Embedded Applications with Yaws
+</a></h2>
+			<em id="sub_h2">08 February 2008</em>
+		 	<p>Much like the previous article about <a href="http://blog.socklabs.com/2008/02/dynamically_sizing_a_fragmente/">dynamically sizing fragmented mnesia tables</a>, this article continues the quest to create examples for things thatI see as lacking in documentation or example.</p>
+
+<p>This is going to be a very brief guide to creating erlang applications that implement an embedded yaws handler. The name of our example application is <strong>yawsapp</strong> and its layout looks something like this:</p>
+
+<pre><code> yawsapp.app
+ yawsapp.hrl
+ yawsapp.erl
+ yawsapp_sup.erl
+ yawsapp_server.erl
+ yawsapp_handler.erlThe process topology looks like this
+
+ yawsapp
+ +- yawsapp_sup
+    +- yawsapp_server
+ yaws
+ +- yawsapp_handler
+</code></pre>
+
+<p>The yawsapp.app and yawsapp.erl files define and implement the basic application behavior. The yawsapp_sup.erl module creates the supervisor tree as part of the application. The yawsapp_server.erl module manages the embedded yaws application and configuration as part of the gen_server behavior.</p>
+
+<p><strong>Listing 1-1: The yawsapp.app application configuration file.</strong></p>
+
+<pre><code>{application, yawsapp,
+ [{description, "An embedded yaws application example."},
+  {vsn, "0.1"},
+  {modules, [yawsapp, yawsapp_sup, yawsapp_server]},
+  {registered, [yawsapp]},
+  {env, [
+    {port, 8006},
+    {working_dir, "/Users/ngerakines/dev/projects/tutorials/yaws_app/"}
+  ]},
+  {applications, [kernel, stdlib, sasl]},
+  {mod, {yawsapp, []}}
+ ]}.
+</code></pre>
+
+<p>The application configure, as seen in listing 1-1, is pretty basic. We define the application, its related modules and set a few environmental variables. The working_dir variable is used to determine where the yaws log and tmp directory will be located.</p>
+
+<p><strong>Listing 1-2: The yawsapp.hrl file.</strong></p>
+
+<pre><code>-define(MAX_RESTART, 5).
+-define(MAX_TIME, 60).
+-define(SHUTDOWN_WAITING_TIME, 2000).
+</code></pre>
+
+<p>The yawsapp.hrl file would be were we defined any records or global constants used by our application. In this application, we have three constants that are used to define the behavior of the supervisor tree.</p>
+
+<p><strong>Listing 1-3: The yawsapp.erl file.</strong></p>
+
+<pre><code>-module(yawsapp).
+-behaviour(application).
+
+-export([start/2, stop/1]).
+
+-include("yawsapp.hrl").
+
+start(_Type, _Args) -&gt;
+    mnesia:start(),
+    application:start(inets),
+    Args = lists:map(
+        fun (Var) -&gt; {ok, Value} = application:get_env(?MODULE, Var), Value end,
+        [port, working_dir]
+    ),
+    yawsapp_sup:start_link(Args).
+
+stop(_State) -&gt; ok.
+</code></pre>
+
+<p>The core yawsapp.erl file provides the yawsapp:start/2 and yawsapp:stop/1 functions as per the application behavior. You'll also note that it pulls the two environmental variables set in the application configuration file. Those values are passed to the yawsapp_sup:start_link/1 function.</p>
+
+<p><strong>Listing 1-4: The yawsapp_sup.erl file.</strong></p>
+
+<pre><code>-module(yawsapp_sup).
+-behaviour(supervisor).
+
+-export([start_link/1, init/1]).
+
+-include("yawsapp.hrl").
+
+start_link(Args) -&gt;
+    supervisor:start_link({local, ?MODULE}, ?MODULE, Args).
+
+init(Args) -&gt;
+    get_init_result(Args).
+
+get_init_result(Args) -&gt;
+    Flags = {one_for_one, 2, 10},
+    Children = [worker_spec(yawsapp_yaws1, yawsapp_server,  [Args])],
+    {ok, {Flags, Children}}.
+
+worker_spec(Id, Module, Args) -&gt;
+    StartFunc = {Module, start_link, Args},
+    {Id, StartFunc, permanent, ?SHUTDOWN_WAITING_TIME, worker, [Module]}.
+</code></pre>
+
+<p>The yawsapp_sup module defines the supervisor tree for the application. The only thing to note here is the use of the get_init_results/1 and worker_spec/3 functions. This module includes no magic.</p>
+
+<p><strong>Listing 1-5: The yawsapp_server.erl file.</strong></p>
+
+<pre><code>-module(yawsapp_server).
+-behaviour(gen_server).
+
+-include("/usr/lib/yaws/include/yaws.hrl").
+-include("yawsapp.hrl").
+
+-export([
+    start_link/1, init/1,
+    handle_call/3, handle_cast/2, handle_info/2,
+    terminate/2, code_change/3
+]).
+
+start_link(Args) -&gt;
+    gen_server:start_link({local, ?MODULE}, ?MODULE, Args, []).
+
+init(Args) -&gt;
+    process_flag(trap_exit, true),
+    case application:start(yaws) of
+        ok -&gt; set_conf(Args);
+        Error -&gt; {stop, Error}
+    end.
+
+set_conf([Port, WorkingDir]) -&gt;
+    GC = #gconf{
+        trace = false,
+        logdir = WorkingDir ++ "/logs",
+        yaws = "YawsApp 1.0",
+        tmpdir = WorkingDir ++ "/.yaws"
+    },
+    SC = #sconf{
+        port = Port,
+        servername = "localhost",
+        listen = {0, 0, 0, 0},
+        docroot = "/tmp",
+        appmods = [{"/", yawsapp_handler}]
+    },
+    case catch yaws_api:setconf(GC, [[SC]]) of
+        ok -&gt; {ok, started};
+        Error -&gt; {stop, Error}
+    end.
+
+handle_call(Request, _From, State) -&gt; {stop, {unknown_call, Request}, State}.
+
+handle_cast(_Message, State) -&gt; {noreply, State}.
+
+handle_info(_Info, State) -&gt; {noreply, State}.
+
+terminate(_Reason, _State) -&gt;
+    application:stop(yaws),
+    ok.
+
+code_change(_OldVsn, State, _Extra) -&gt; {ok, State}.
+</code></pre>
+
+<p>The yawsapp_server module does the bulk of the work involved in setting up and initializing the embedded yaws application and its configuration. This module is called first through the yawsapp_server:start_link/1 function that implements the gen_server behavior of the module.</p>
+
+<p>During the init phase the module attempts to start the yaws application and on success it builds two configuration variables that are then passed to yaws_api:setconf/2. The configuration variables set the standard options, such trace level, log directory, port, docroot, etc. It also sets the appmod configuration option dictating that the "/" request is handled by the yawsapp_handler module.</p>
+
+<p><strong>Listing 1-6: The yawsapp_handler.erl file.</strong></p>
+
+<pre><code>-module(yawsapp_handler).
+
+-include("/usr/lib/yaws/include/yaws.hrl").
+-include("/usr/lib/yaws/include/yaws_api.hrl").
+-include("yawsapp.hrl").
+
+-export([out/1, handle_request/3]).
+
+out(Arg) -&gt;
+  Req = Arg#arg.req,
+  ReqPath = get_path(Arg),
+  handle_request(Req#http_request.method, ReqPath, Arg).
+
+get_path(Arg) -&gt;
+    Req = Arg#arg.req,
+    {abs_path, Path} = Req#http_request.path,
+    Path.
+
+handle_request('GET', [47,97,99,99,111,117,110,116 | _], _Arg) -&gt; % "/account" ...
+    make_response(200, "&lt;p&gt;Please login or logout.&lt;/p&gt;");
+
+handle_request('GET', [47,112,114,111,102,105,108,101 | _], _Arg) -&gt; % "/profile" ...
+    make_response(200, "&lt;p&gt;This is a slick profile.&lt;/p&gt;");
+
+handle_request(_, _, _Arg) -&gt; % catchall
+    make_response(200, "&lt;p&gt;What exactly are you looking for?&lt;/p&gt;").
+
+make_response(Status, Message) -&gt;
+    make_response(Status, "text/html", Message).
+
+make_response(Status, Type, Message) -&gt;
+    make_all_response(Status, make_header(Type), Message).
+
+make_header(Type) -&gt;
+    [{header, ["Content-Type: ", Type]}].
+
+make_all_response(Status, Headers, Message) -&gt;
+    [{status, Status}, {allheaders, Headers}, {html, Message}].
+</code></pre>
+
+<p>The yawsapp_handler module is the module used by yaws to process incoming requests. It provides the yawsapp_handler:out/1 function that Yaws calls with the record that defines the incoming request. From that method we do a very simple dispatch through the yawsapp_handler:handle_request/3 function based on the request method, request path and request argument.</p>
+
+<p>In this example we provide functions to handle /account and /profile locations as well as a function to handle all other requests (a catch-all). This simple application can easily be extended to act as an interface to your erlang applications. You may have to adjust some of the yaws include locations to suite your erlang installation, but its generic enough to work for most people as-is.</p>
+
+<p>I use the following shell command to start the erlang shell when running this application:</p>
+
+<pre><code>erl +A 1 +Ktrue -boot start_sasl +W w -sname yawsappnode -pa /usr/lib/yaws/ebin -yaws embedded true
+</code></pre>
+
+<p>Once in the shell the application can be started with <code>application:start(yawsapp).</code> to get things going.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>

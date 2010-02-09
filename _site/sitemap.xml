@@ -1,0 +1,3349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <url>
+      <loc>http://blog.socklabs.com/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://blog.socklabs.com/projects/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://blog.socklabs.com/photos/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://blog.socklabs.com/archives/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+   <url>
+      <loc>http://blog.socklabs.com/about/index.html</loc>
+      <changefreq>weekly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/12/28/integrating_heman_into_calenderl_about_nothing.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/11/24/lets_create_some_erlang_standards_part_one.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/11/12/EUC2009.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/11/01/calenderl_about_nothing.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/10/26/globally_shared_queues.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/10/16/learning-python.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/10/15/aion-online.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/06/28/sittercity_first_impressions.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/06/11/mochevent.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/05/10/armory3_and_rabbitmq.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/05/01/erlang_factory.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/04/02/whats_been_going_on.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/02/06/i_play_wow_scaling.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/02/05/wowinsiders_15_minutes_of_fame.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/23/useful_code_coverage_reports_with_etap.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/18/using_processes_as_caches_in_erlang.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/14/code_coverage_with_etap.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/12/erlang_and_nginx_a_proof_of_concept.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/11/iplaywow_hits-100k.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/10/erlang_library_best_practices.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/04/welcoming_toby.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2009/01/02/2008_in_review_and_2009_goals.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/30/using_test_harness_and_etap.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/24/iplaywow_monthly_actives.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/23/protocol_buffers_and_pygments.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/21/deciding_on_a_new_phone.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/20/moving_to_jekyll.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/20/january_sf_erlounge.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/12/07/a_quick_and_easy_server_demo_i.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/11/26/erlang_portage_overlay.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/11/25/etap_03.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/11/17/hard_up_for_cash_try_a_verific.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/28/ubiquity_command_to_create_bac.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/23/stop_kindle_time.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/21/time_machine_tweaks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/17/erlang_lists_are_hot.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/14/before_and_after_in_the_big_ea.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/04/erlang_woes.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/10/04/a_small_lru_list_module.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/09/30/erlang_is_delicious_cufp_slide.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/09/27/memoize_erlang_function_calls.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/09/21/upcoming_and_recent_erlang_pre.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/09/21/facebook_wiiinfo_an_open_sourc.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/09/17/reminder_speaking_tomorrow.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/29/rember_82905.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/22/magnolia_goes_open_source_and.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/21/things_rocks_my_socks_off.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/20/yosemite_2008.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/14/erlyflux_going_into_the_freeze.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/14/before_wow_was_around.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/10/erlang_facebook_01r1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/09/updates_to_erlang_twitter.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/06/erlounge_yahoo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/04/presenting_at_cufp.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/08/03/on_the_watch_list.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/31/delicious_is_gone_long_live_de.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/27/more_on_deploying_couchdb_for.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/26/using_erltl_without_erlyweb.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/26/an_erlang_world_of_warcraft_ar.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/22/github_tries_to_copyright_look.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/17/i_play_wow_on_couchdb.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/16/erlang_snippet_remove_stale_ip.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/13/i_play_wow_updated_to_use_s3im.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/10/iphone_app_store_aka_facebook.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/09/s3images_01_released.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/08/friendfeed_backpack_and_identi.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/07/08/erlang_snippet_image_type_dete.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/06/05/a_funeral_is_not_the_place_to.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/06/01/erlang_twitter_client.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/06/01/erlang_geohash_module.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/31/fluxhp_has_a_new_name_and_a_ne.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/31/dynamically_building_erlang_re.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/18/busy_weekend.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/16/wrsd_has_been_released.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/15/no_laptop.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/13/facebook_doesnt_like_battlesta.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/07/life_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/05/07/fluxhp_is_open_source.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/04/28/book_in_hand.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/04/10/tag_clouds_in_erlang_with_erly.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/04/09/a_restful_web_service_demo_in.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/04/09/18_months.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/04/01/restful_services_with_erlang_a.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/30/site_updates_2.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/30/projects.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/30/photos.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/24/thanks_yariv.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/22/san_francisco_zoo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/19/bay_area_facebook_developers_m.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/15/new_camera_great_experience.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/14/moved_to_slicehost.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/14/at_the_park.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/02/its_done_goodbye_tom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/03/01/perlnetgeohash.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/13/tags_by_example.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/12/my_first_book_has_its_own_blog.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/10/anonymous_delivers.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/08/embedded_applications_with_yaw.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/wwwcloudcreator.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/whats_to_come_in_08.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/typepaduploader_release_01.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/site_no_longer_maintained.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/screenshots.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/release_08.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/release_07.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/release_06.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/release_05.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/release_03.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/release_02.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/project_created.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/project_blog_created.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/now_available_for_pluginmanage.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/new_in_07.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/name_change.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/issues_and_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/introducing_mtkeywordextractor.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/how_to_use_this_blog.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/getting_started_with_mtkeyword.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/forums_up.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/fence_08_release_2.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/fence_08_rc3.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/documentation.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/creating_stylesheets_with_clou.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/continued_development_of_relea.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/code_repository.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_release_22.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_31_is_almost_ready.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_31.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_30.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_26.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_25_released.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_24_released.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/cloudnine_21.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/beta_release.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/33_on_its_way.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/07/02_screenshots.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/02/06/dynamically_sizing_a_fragmente.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2008/01/29/facebook_application_developme.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/12/30/ohhh_uhhh_cat_did_it.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/12/19/camera_helper.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/11/30/blizzard_billing_gone_wild.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/31/and_that_one_too.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/30/we_sure_felt_that_one.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/30/multi_user_screen_sessions.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/27/leopard.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/27/importing_feeds_into_mailapp_w.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/11/wow_patch_23_is_on_ptr.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/10/i_play_wow.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/10/enjoy_some_links.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/10/back_in_black_or_green.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/10/10/about.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/29/better_facebook_application_me.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/22/what-is-a-page.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/19/personal_archive_how_to_unpair.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/10/my_itunes_reviews.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/10/my_itunes_favorites.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/07/social_bookmarking_in_plain_en.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/08/01/link_time.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/30/facebook_meet_spam.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/23/todays_links.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/23/harry_potter_and_the_deathly_h.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/22/tags_are_delicious.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/13/iphone_ringtones.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/12/wiimeister.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/05/i_have_an_iphone.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/03/tip_use_color_to_organize_your.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/03/before_youhhhi_buy.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/07/01/not_enough_time.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/29/its_j_day.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/29/happiness_is_folk_rap.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/25/i_play_wow_updates_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/16/i_play_wow_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/13/facebook_is_having_issues.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/12/an_early_fathers_day.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/10/my_third_facebook_app.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/06/05/my_second_facebook_app.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/30/my_first_facebook_app.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/29/mountain_view_has_been_mapped.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/29/blog_redesign.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/25/finger_hurts.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/25/brothers_at_arms.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/13/facebook_marketplace.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/11/wowtiquette_no_loot_for_alts.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/10/lost.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/04/wowserverstatussocklabs_os_x_w.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/05/04/get_on_the_bandwagon.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/04/28/wow_realm_status_server.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/04/25/hit_60_rolling_in_the_outlands.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/04/25/from_perl_to_c.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/04/05/give_me_cred.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/29/disabling_spotlight.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/25/out_for_a_walk.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/18/kids_these_days.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/16/anna_is_coming_over.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/13/google_reader_bugs_me_sometime.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/12/this_weekend_i.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/12/representing_bookmarks_via_ato.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/03/07/waiting_for_the_shuttle.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/25/ding_level_50.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/13/future_os_x_releases.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/13/car_in_the_shop.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/07/woke_up_early_not_my_choice.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/06/plague_ward.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/06/out_of_the_office_down_on_grey.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/02/03/one_year.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/31/of_flickr_and_yahoo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/28/back_status.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/25/hospital_recap.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/21/wow_macros_that_i_use.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/18/catching_up_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/11/not_so_much_wow_lately.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/11/molly_and_jj.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/09/more_sleep_than_usual.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/09/i_want_an_iphone.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/05/doxygen_page_toc_question.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2007/01/03/a_new_year.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/30/christmas_2006_continued.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/30/christmas_2006.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/25/happy_holidays.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/25/christmas_day_is_coming_to_an_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/23/my_bones_are_tired.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/23/carolyn_has_been_moblogging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/21/harry_potter.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/20/delicious_tagometer_badge_type.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/19/at_the_hospital.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/18/i_will_acknowledge_christmas_n.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/14/email_not_working.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/10/getting_ready_for_an_early_mor.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/10/entj_fieldmarshal.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/05/aaron_gerakines.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/12/03/medivh_is_full_thus_i_blog.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/28/not_easy_but_not_bad.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/27/pictures_on_flickr.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/26/on_our_way_home_from_las_vegas.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/21/twitter_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/21/so_much_for_that.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/21/out_of_town_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/21/mt_plugin_idea.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/21/clearing_your_squid_cache.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/17/starcraft_and_the_big_wow.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/17/a_little_extra_sleep.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/11/doing_more_with_catalyst.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/08/mt_hackathon.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/08/minor_downtime.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/06/maid_service.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/04/shoot_yourself_in_the_foot.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/02/reunited.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/02/job_switch.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/01/recently_i_moved_my_blog.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/01/macbook_pro_take_2.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/01/homeward_bound.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/11/01/cloudninedelicious.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/31/happy_halloween.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/30/infanttracker_is_public_kinda.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/27/3_days_no_feeds.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/26/vox_is_out_of_the_closet.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/26/firefox_20_and_delicious.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/26/every_man_for_himself.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/25/the_8lb_milestone.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/22/birthday_celebration.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/20/cooking.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/18/picasso_is_getting_bigger.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/16/back_to_work.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/13/using_google_notebook.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/13/chugging_along.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/11/carolyns_new_toy.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/10/cloudnine_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/10/07/google_reader_and_groups.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/30/home_sweet_home.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/28/a_letter.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/27/last_meal.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/25/painting_pottery.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/25/jackass_2.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/25/car.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/19/pirates_and_programming.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/19/mogilefs_summit.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/19/congratulations_mom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/15/this_weekend_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/15/picassa_web.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/15/locked_out_shut_out.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/15/i_love_tivo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/13/the_late_train_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/12/ipods_and_a_ninja_robbing_bank.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/12/favorite_quote.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/11/battery_recall.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/11/archives.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/10/happy_birthday.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/09/more_cpan.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/06/did_i_lose_that_sweater_or_did.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/01/distributed_web_serving_with_m.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/09/01/carolyns_birthday.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/27/snakes_on_a_plane.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/23/ive_updated_several_of_my.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/20/preparing_for_dadhood.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/18/back_at_work.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/16/crutches.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/14/i_survived.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/10/farewell_my_friend.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/07/playing_catchup.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/08/03/sick_kitten.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/28/google_themes_and_cleanup.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/25/site_cleanup_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/23/and_just_like_that_hes_gone.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/19/forums_back_up.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/19/almost_here.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/13/ruby_on_rails.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/13/catching_up.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/11/the_best_part_of_waking_up.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/10/surprise.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/09/counterspace_makes_all_the_dif.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/07/the_treason_card.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/05/rocketboom_loosing_the_boom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/05/have_pride_with_style.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/03/installing_catalyst_on_mac_os.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/07/02/an_extra_long_weekend.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/28/quick_overview.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/23/wwwsearchodeo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/23/nacho_libre.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/19/fathers_day.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/16/thanks_google_search.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/15/tongue_of_burned.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/15/pronet_interview.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/15/netfeedburner_09_release.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/12/cars.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/11/saturday_in_palo_alto.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/09/masonic_contributions.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/09/feedburning.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/08/almost_late.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/08/a_new_obsession.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/05/foaf_changes.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/01/vox.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/06/01/masonic_blogging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/29/updates_on_fence.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/29/mobile_photoblogging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/28/relaxation.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/28/eyes_on_fire.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/26/passing_the_torch.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/24/a_truly_lost_experience.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/21/this_weekend.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/21/the_da_vinci_code.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/18/the_late_train.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/14/itchy_head.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/12/bittorrent.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/11/mailboxpl.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/10/lost_the_question_mark.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/10/its_going_to_be_a_girl.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/10/atom_feed_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/09/the_atrocity_archives.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/08/batch_blogging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/05/03/tabbed_chat.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/29/we_built_a_robot.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/28/typepaduploader_created.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/26/plugin_repositories.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/26/plugin_development.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/26/perl_module_netfeedburner.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/25/tuesday_ritual.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/25/game_stuff.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/23/maker_faire.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/23/cable.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/23/another_mindnumbing_experience.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/20/sbc_issues.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/19/outlets_on_trains_is_love.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/18/penuts_first_podcast.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/17/movie_review_fun_with_dick_and.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/17/beautiful_evening.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/12/a_quick_update.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/04/mtkeywordextractor_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/04/02/saturday_o_blessed_saturday.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/31/code_release_configbuilder.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/29/videocast_20060329.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/26/flickr_acting_odd_lately.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/25/lazy_saturday.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/25/code_repositories.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/22/movable_type_plugin_mtkeyworde.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/22/ical_backup_applescript.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/21/videocast_20060321.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/21/perl_modules.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/21/gmail_for_gerakinesnet.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/20/webcam.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/19/videocast_videocasting_once_ag.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/19/videocast_20060319.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/19/audio_and_video_posts_in_movab.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/18/v_for_vendetta.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/17/foobar_was_good.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/16/going_mobile.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/14/off_one_goes_over_one_comes.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/13/home_at_last.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/11/its_a_strange_strange_world_we.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/10/on_my_way_out.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/09/everyone_is_leaivng.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/07/mutt.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/07/email_feeds_with_procmail.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/06/good_laughs.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/05/libcaptcha_mod_captcha_mod_ima.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/05/laundry_rain_torrents.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/05/friends_family_and_food.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/03/katrine_bush_and_a_broken_syst.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/02/on_ice.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/01/february_good_bad_and_ugly.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/03/01/and_just_like_that_he_was_gone.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/27/libcaptcha.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/25/librarything.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/24/tom_is_free.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/24/foobar.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/23/apache_development.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/22/add_to_technorati_favorites_fe.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/20/tagging_and_site_organization.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/19/what_another_12_million_for_si.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/19/post_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/19/keeping_organized.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/17/lost_season_2_episode_14_one_o.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/17/all_is_fair.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/16/wwwsearchfeedster_updated.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/15/valentines_day.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/14/yahoo_understands_20.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/14/whats_up.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/14/new_atom_logos.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/12/that_crazy_web_20_thing.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/12/apartment_hunting.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/using_google_analytics_in_type.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/snow_crash.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/red_eye.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/ratings.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/gmail_for_domains.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/delicious_bookmarks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/11/carolyns_new_blog.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/10/tags_categories_and_other_usel.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/10/openid.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/10/gpg_key.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/10/foaf_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/09/perl_for_beginners.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/09/perl_by_example_part_0.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/09/feedburner.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/08/wwwcloudcreator.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/06/unofficial_google_homepage.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/06/analytics_ice_cream_and_supris.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/05/site_cleanup.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/05/request_fulfilled.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/05/poor_poor_rabbit.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/04/cloudnine_project_blog.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/04/cloudnine_21.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/02/5_week_and_a_half_weeks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/01/tagworld.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/02/01/blogalicious.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/31/the_tide_of_information.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/31/request_for_google_analytics_i.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/31/home_sick.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/30/evening_post.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/29/killer_headache.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/29/cloudnine_notes.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/29/a_better_more_machine_friendly.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/28/midday_blogging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/28/cloudnine_20.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/26/site_changes_and_plugins.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/26/once_again_another_lost.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/26/mans_choice_and_power.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/26/category_cloud_12.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/25/friendster_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/25/foaf.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/25/category_cloud.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/22/viva_la_resistance.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/22/tuesday_meeting.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/22/missing_the_war.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/21/tdf_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/21/ilife_06.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/20/good_food_good_company.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/18/wwwblogmove.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/18/the_state_of_linux_gaming.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/18/the-wedding-crashers.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/18/migrating_from_wordpress_to_mo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/18/bloggers_at_work.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/13/not-a-single-picture.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/13/i_just_dont_see_it.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/12/juiceconfusion.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/12/it_just_flippn_works.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/12/iphoto_tagging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/11/the_fairmont_downtown_san_jose.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/11/getting_ready_for_change.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/10/shout_out_to_mighty_corey_jack.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/10/seeing_double.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/08/cars_and_powerbooks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/07/parking_and_power_steering.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/07/new_podcast_feed.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/07/again_the_industry_leads_the_w.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/05/the_spin_on_this_week.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/02/wordpress_20.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/02/wallet_stolen.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/01/putting_camino_to_the_test.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2006/01/01/happy_new_year.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/28/car_wreck_eq_headache.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/27/on_the_road.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/26/houston_tx.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/26/getting_ready_for_the_drive.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/26/bless_this_o_lord.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/24/those_who_are_under_the_radar.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/24/things_and_stuff.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/21/radio_sock_episode_2.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/21/day_6_about_60_miles_away.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/20/or_better_yet_where_the_hell_a.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/20/day_5_really_weird_sex.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/20/day_4_flea_market_shopping.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/18/day_3_clean_enough.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/17/day_2_broken_homes_unbroken_sp.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/17/day_1_the_arrival.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/15/day_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/13/leaving_the_self.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/12/standing_with_giants.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/10/out_of_town.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/09/tor_and_privoxy.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/08/available.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/07/quote_of_the_day.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/07/arrrrrrrrrr_matey.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/06/resume.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/06/christmas_plans.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/05/videocast_3.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/05/ugg_and_once_again_ugg.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/03/using_tinydns.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/02/videocast_2.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/02/pleonast_and_how_much_it_rocks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/12/01/car_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/30/podcasting_101.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/29/radio_sock_episode_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/29/harry_potter_in_perspective.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/28/traveling_yonder.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/28/raining_and_the_dreams_follow.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/28/e1a3.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/26/the_mandatory_thanksgiving_pos.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/22/new_server_gentoo_installation.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/22/feedster_top500_released.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/19/18_million_and_counting.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/16/whew_im_glad_that_is_over.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/16/rachelboltzcom_minipost.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/16/rachelboltzcom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/15/ads_and_badges.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/14/google_analytics.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/13/forums_are_back.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/13/flickr_pro_account.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/13/feedsters_new_widget.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/13/feedster_desktop_widget.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/12/writing_and_reviewing.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/11/writing_mood.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/11/flickerform.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/11/book_review_perl_testing_a_dev.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/11/book_review_mining_the_web.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/11/afternoon_haiku.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/07/sweet_serenity.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/06/yahoo_maps_beta.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/05/another_friday.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/04/podcasts_news_and_a_growing_in.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/11/03/ipod_condom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/31/the_color_of_disease.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/31/machine_learning.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/31/done_with_mac.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/29/fall_rains.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/27/congressional_blogs.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/26/happy_10th_cpan.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/25/welcome_jamesgrosscom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/25/subscribing_to_pandora.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/24/hamorspam.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/19/counting_my_demons.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/18/oh_my_god_spammers_are_using_b.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/14/iaido_class.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/13/regex_tips.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/13/quote_of_the_day_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/11/so_they_say_i_was_interviewed.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/10/wwwsearchisbndb.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/10/thedavidsonfamilyorg.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/10/site_wiki.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/10/more_domains.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/10/lot_of_coding_going_on.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/10/domains_back_up.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/08/what_you_do_and_what_you_dont.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/06/philosophy.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/05/what_i_love_about_san_francisc.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/02/proxylist.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/02/bookmarks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/01/wish_list.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/01/emerging_rss_technologies.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/01/dinner_with_carolyn.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/01/antimmorpg_ads.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/10/01/amazon_wish_list.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/30/socklabs_pastebin.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/29/saying_goodbye_to_brent.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/27/i_need_noise_to_work.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/24/wordpress.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/24/visiting_google.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/24/fighting_machine.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/03/hurricane_relief.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/09/01/looking_better.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/31/owning_a_powerbook.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/31/dealing_with_katrina.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/29/my_first_day_in_san_francisco.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/25/last_day_at_oversee.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/23/flickr.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/22/quite_broken.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/20/pictures_galore.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/14/wedding_parties_birds_in_the_h.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/14/opensuse.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/14/beta_release_of_wwwbookmarks.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/11/getting_ready_to_move.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/09/wwwsearchfeedster_002.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/08/at_home_using_slax.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/05/jabber_server.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/03/feedster_and_development.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/08/03/a_small_guide_to_automake_and.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/19/harry_potter_book_6.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/19/day_four.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/17/day_three.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/16/cpan_additions.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/15/emo.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/12/day_two.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/11/friends_family_and_humidity.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/11/day_one.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/07/preparing_for_the_trip.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/06/hes_back.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/04/fireworks_galore.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/07/01/bookmarkscom_launch_announceme.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/28/the_is_red.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/26/bookmarks_project_goals.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/20/site_addition.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/20/afternoon_nap.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/19/batman_begins.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/16/recent_earthquakes.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/16/google_its_pagerank_and_the_pa.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/15/tsunami_warning.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/15/jabber_server_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/15/all_that_jazz.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/14/site_upgrades.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/12/site_updates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/12/confessions_of_a_level_30_mage.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/10/service_addition_tor.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/09/the_launch_of_blogsource.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/06/09/lithe_is_born.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/30/site_updates_1.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/29/family_in_town.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/23/new_faces_old_ties.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/23/congrats_mom.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/14/something_seems_to_be_missing.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/12/type_something_dumbass.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/01/the_hitchhikers_guide_to_the_g.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/05/01/brief_downage.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/04/20/freakish_amounts_of_spam.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/04/17/sun_and_surf.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2005/04/15/moblogging.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/11/29/pilates.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/11/16/daily_grind.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/11/09/and_now_for_something_differen.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/10/22/rockin_the_suburb_just_like_wi.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/10/14/no_subject.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/10/10/i_love_the_weekend.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/09/17/busy_as_a_bee.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/07/16/birthdays.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/01/11/site_themes.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/01/09/he_finally_ate.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2004/01/06/kim_on_vacation_and_everyone_s.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/12/17/lord_of_the_rings_the_return_o.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/12/06/my_computer_died_and_ive_been.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/11/03/its_getting_cold_outside.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/10/10/about_to_head_out_for_work.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/10/03/mmm_english_midterm.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/10/03/down_one_hill_and_up_another.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/03/01/february_in_a_nutshell.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2003/02/01/january_in_a_nutshell.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2002/10/04/ive_gone_mil.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+   <url>
+      <loc>http://blog.socklabs.com/2002/05/06/crappy_day.html</loc>
+      <changefreq>monthly</changefreq>
+   </url>
+
+</urlset>

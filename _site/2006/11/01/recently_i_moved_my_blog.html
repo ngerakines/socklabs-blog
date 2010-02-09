@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<link href="/css/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <title>Nick's Blog | Perlbal and Apache2 logging
+</title>
+  </head>
+  <body>
+	<a href="/"><h1>Nick's Blog</h1></a>
+	<div id="content">
+		<div id="posts">
+			<h2><a alt="Perlbal and Apache2 logging
+" href="/2006/11/01/recently_i_moved_my_blog.html">Perlbal and Apache2 logging
+</a></h2>
+			<em id="sub_h2">01 November 2006</em>
+		 	<p>Recently I moved my blog over from a hosted server to a <a href="http://dev.socklabs.com/">personal machine</a>. Visitors shouldn't see anything different but the infrastructure has changed. First of all I'm using Apache 2.0 and FastCGI to power Movable Type. <a href="http://www.bradchoate.com/">Brad Choate</a> wrote a <a href="http://www.bradchoate.com/weblog/2005/08/26/mt-32-and-lighttpd-fastcgi">really good article</a> explaining how to do this.</p>
+
+<p>In front of Apache I have a squid server acting as a cache. Among other reasons and webservices on my server, on my blog I use tags pretty heavily and wanted to be able to cache the output of the tag page views. Squid does an excellent job at doing just that.</p>
+
+<p>Finally, the last piece of the puzzle is perlbal. I use <a href="http://www.danga.com/perlbal/">Perlbal</a> to act as a loadbalancer and delegation service to dispatch requests to the right place. It works out great because it lets me run multiple services and webservers (like <a href="http://blog.socklabs.com/">blog.socklabs.com</a> and <a href="http://www.infanttracker.com/">www.infanttracker.com</a>) on the same machine without anyone knowing otherwise.</p>
+
+<p>The issue I had was with the apache log files. I installed <a href="http://awstats.sourceforge.net/">awstats</a> to crunch at the apache logs and give me meaningful information from the mess of data. I noticed pretty quickly that every single request was coming from the same place and quickly realized that this was because apache thought that the request was coming from perlbal or squid, not the outside world. <a href="http://bradfitz.com/">Brad</a> told me about <a href="http://stderr.net/apache/rpaf/">mod_rpaf</a> and in a matter of minutes, after a '<i>make rpaf-2.0</i>' and some apache config + restart, everything worked fine.</p>
+
+		</div>
+		<div id="sidebar">
+	<div class="clear"></div>
+	<div id="sidebar_content">
+		<h2>Recently</h2>
+		
+			<h3 style="padding-top: 10px;"><a alt="Integrating Heman into CalendERL About Nothing" href="/2009/12/28/integrating_heman_into_calenderl_about_nothing.html">Integrating Heman into CalendERL About Nothing</a></h3>
+			<em id="sub_h3">28 December 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Lets create some Erlang standards, part one" href="/2009/11/24/lets_create_some_erlang_standards_part_one.html">Lets create some Erlang standards, part one</a></h3>
+			<em id="sub_h3">24 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="2009 Erlang User Conference" href="/2009/11/12/EUC2009.html">2009 Erlang User Conference</a></h3>
+			<em id="sub_h3">12 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="CalendERL About Nothing" href="/2009/11/01/calenderl_about_nothing.html">CalendERL About Nothing</a></h3>
+			<em id="sub_h3">01 November 2009</em>
+		
+			<h3 style="padding-top: 10px;"><a alt="Globally Shared Queues" href="/2009/10/26/globally_shared_queues.html">Globally Shared Queues</a></h3>
+			<em id="sub_h3">26 October 2009</em>
+		
+		<h2 style="padding-top: 20px;"><a href="/about/">About</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/projects/">Projects</a></h2>
+		<h2 style="padding-top: 20px;"><a href="/archives/">Archives</a></h2>
+	</div>
+</div>
+
+		<div id="disqus_thread"></div>
+	</div>
+	<script type="text/javascript" src="http://disqus.com/forums/socklabs-blog/embed.js"></script>
+<noscript>
+	<a href="http://disqus.com/forums/socklabs-blog/?url=ref">View the discussion thread.</a>
+</noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+	var links = document.getElementsByTagName('a');
+	var query = '?';
+	for(var i = 0; i < links.length; i++) {
+	if(links[i].href.indexOf('#disqus_thread') >= 0) {
+		query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+	}
+	}
+	document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/socklabs-blog/get_num_replies.js' + query + '"></' + 'script>');
+})();
+//]]>
+</script>
+
+	<div class="clear"></div>
+	<div id="footer">
+	<a href="/" alt="blog"><b>Blog</b></a>
+	| <a href="http://socklabs.com">Socklabs</a>
+	| <a href="http://twitter.com/ngerakines" alt="status">On Twitter</a>
+	| <a alt="ngerakines on Facebook" href="http://facebook.com/ngerakines">on Facebook</a>
+</div>
+	</body>
+</html>
