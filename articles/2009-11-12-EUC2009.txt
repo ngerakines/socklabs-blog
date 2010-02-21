@@ -1,7 +1,7 @@
----
+slug: EUC2009
+date: 2009/11/12
 layout: post
 title: 2009 Erlang User Conference
----
 
 I'm currently at the Erlang User Conference in Stockholm, Sweden. Jacob and I arrived pretty late last night from a long 28 hour day, but I'm really excited to be here. Stockholm is a beautiful city and I can't wait to get out there and see some of the sights. There are some really great presentations today and a lot of faces that look familiar.
 

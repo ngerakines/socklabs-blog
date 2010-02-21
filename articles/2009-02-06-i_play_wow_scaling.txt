@@ -1,7 +1,7 @@
----
+slug: i_play_wow_scaling
+date: 2009/02/06
 layout: post
 title: I Play WoW Scaling
----
 
 Having too much traffic is a great problem and I'm fortunate enough to be facing it at the moment. Over the past few weeks, thanks in part to [several really](http://www.wowinsider.com/2009/01/16/i-play-wow-facebook-app-reaches-100-000-users/) [great articles](http://www.wowinsider.com/2009/02/04/15-minutes-of-fame-i-play-wow-for-facebook/) on [WoW Insider](http://www.wowinsider.com/) about I Play WoW, [I Play WoW](http://www.facebook.com/apps/application.php?id=2359644980) traffic and use has been increasing significantly and I've been starting to notice that increase in traffic in a few different ways.
 

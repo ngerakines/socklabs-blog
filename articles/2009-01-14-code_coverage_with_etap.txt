@@ -1,7 +1,7 @@
----
+slug: code_coverage_with_etap
+date: 2009/01/14
 layout: post
 title: Code Coverage w/ Etap
----
 
 I added a small, somewhat experimental, feature to [etap](http://github.com/ngerakines/etap/tree/master) a few days ago. With etap, you can now use the Erlang cover module to determine how much of your code is being testing by your tests. I've already started using it on several of my modules and projects to enhance the test suites. It's pretty easy to use and in this small demo, I'll run through the basics.
 

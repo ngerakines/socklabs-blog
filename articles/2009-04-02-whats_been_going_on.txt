@@ -1,7 +1,7 @@
----
+slug: whats_been_going_on
+date: 2009/04/02
 layout: post
 title: What's been going on lately?
----
 
 Things were getting dusty around here so it's time for me to give a nice life update.
 

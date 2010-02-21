@@ -1,7 +1,7 @@
----
+slug: lets_create_some_erlang_standards_part_one
+date: 2009/11/24
 layout: post
 title: Lets create some Erlang standards, part one
----
 
 Have an open source Erlang project? Is it on GitHub? Jacob and I have been working on a project that aims to make it easier to install, remove and contribute to open source Erlang applications on GitHub. The project is called [epm](http://github.com/JacobVorreuter/epm) and it stands for the Erlang Package Manager. The goal is to create a simple, non-intrusive way to find, view information on, install and remove Erlang applications that are kept in Git repositories. You can read more about epm on the project page for it; this post isn't necessarily about it.
 

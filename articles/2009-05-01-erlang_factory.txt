@@ -1,7 +1,7 @@
----
+slug: erlang_factory
+date: 2009/05/01
 layout: post
 title: Erlang Factory
----
 
 [Erlang-Factory](http://www.erlang-factory.com/) is over and it was great. I'm so happy to see the many project and community leaders coming together to introduce their projects and get involved with each other's work. There were 6 tracks throughout the 2 day conference that included "Erlang Case Studies", "Test-Driven Development", "Enterprise Integration", "Cool Applications and Features", "Give me a break from Erlang" and "Erlang and the Web". My own presentation about test driven development in Erlang went quite well -- I'll post a link to the video once it's up.
 

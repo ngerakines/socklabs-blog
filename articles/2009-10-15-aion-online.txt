@@ -1,7 +1,7 @@
----
+slug: aion-online
+date: 2009/10/15
 layout: post
 title: Aion Online
----
 
 I've been getting a lot of fun out of Aion Online lately. I've got a level [18 Eleyos Cleric](http://na.aiononline.com/characters/Fregion/Korale) on Fregion. The game graphics are amazing and really blow the others out of the water. I think it's built on the CryEngine engine.
 

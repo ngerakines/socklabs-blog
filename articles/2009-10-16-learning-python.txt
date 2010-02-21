@@ -1,7 +1,7 @@
----
+slug: learning-python
+date: 2009/10/16
 layout: post
 title: Learning Python
----
 
 I wrote my first Python/Django app a few days ago, "Top Rupture Games". It was a fun little project for a few reasons. First of all, I've been wanting to play with Rupture data for a little while know and had some time over the weekend to see what I could do with it. Second, I've been itching to play with Python, and subsequently Django, ever since being introduced to it over at Mythic a few months ago. Lastly, I wanted to create a Rupture client library, even if it's just a proof of concept, in Python.
 

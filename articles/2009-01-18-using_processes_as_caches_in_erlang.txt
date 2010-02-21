@@ -1,7 +1,7 @@
----
+slug: using_processes_as_caches_in_erlang
+date: 2009/01/18
 layout: post
 title: Using processes as caches in Erlang
----
 
 When I'm talking to someone who is new to Erlang, I go out of my way to tell them one very specific thing: Erlang will change the way you write software. I was playing around with a few features in I Play WoW recently, one of which is quasi-dynamic links to wowinsider.com on the My Characters page.
 

@@ -1,7 +1,7 @@
----
+slug: erlang_library_best_practices
+date: 2009/01/10
 layout: post
 title: Erlang Library Best Practices
----
 
 [Joe Williams](http://www.joeandmotorboat.com/) wrote a pretty nifty [Erlang memcached client](http://github.com/joewilliams/merle/tree/master) recently and posted it to GitHub. I sent him some pointers and after writing it, decided it was worth posting.
 

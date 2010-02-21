@@ -1,7 +1,7 @@
----
+slug: calenderl_about_nothing
+date: 2009/11/01
 layout: post
 title: CalendERL About Nothing
----
 
 Recently I create a site called [CalendERL About Nothing](http://www.calenderlaboutnothing.com/). I've used the original [Calendar About Nothing](http://www.calendaraboutnothing.com/) for a long time and played with the idea of rewriting it in Erlang. I finally made the leap and as a result the [cerlan](http://github.com/ngerakines/cerlan) and [githubby](http://github.com/ngerakines/githubby) projects were born.
 

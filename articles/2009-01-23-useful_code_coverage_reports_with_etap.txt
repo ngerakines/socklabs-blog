@@ -1,7 +1,7 @@
----
+slug: useful_code_coverage_reports_with_etap
+date: 2009/01/23
 layout: post
 title: Useful Code Coverage Reports with Etap
----
 
 This evening I added the etap\_report module to the [etap](http://github.com/ngerakines/etap) project. This module can be used to create nice looking, well-formatted html code coverage reports. This is a great way to get a quick view into your project's code coverage and determine what areas need to be focused on when creating test code.
 

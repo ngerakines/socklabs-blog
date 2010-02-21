@@ -1,7 +1,7 @@
----
+slug: erlang_and_nginx_a_proof_of_concept
+date: 2009/01/12
 layout: post
 title: Erlang and Nginx, a proof of concept
----
 
 I was doing some writing this evening and out of the blue, I was struck with the urge to create what would be the "mod\_erlang" Apache module. I've heard of several really cool stories of using c/c++ apps as entry points to Erlang grids and it sounded like a really cool idea to pursue.
 

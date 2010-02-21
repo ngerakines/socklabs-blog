@@ -1,7 +1,7 @@
----
+slug: armory3_and_rabbitmq
+date: 2009/05/10
 layout: post
 title: Armory3, a proof of concept RabbitMQ application
----
 
 I've been having a lot of fun with [RabbitMQ](http://www.rabbitmq.com/) lately, the most recent accomplishment being porting the armory2 module to use a RabbitMQ queue instead of an ets table.
 

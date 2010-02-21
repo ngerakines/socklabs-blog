@@ -1,7 +1,7 @@
----
+slug: welcoming_toby
+date: 2009/01/04
 layout: post
 title: Welcoming Toby
----
 
 Over the holiday break, Carolyn and I decided that we'd like to adopt another cat. When Picasso first arrived, he came with another cat, Melee, that died soon afterward from FIP. It was kind of rough, especially with Carolyn being pregnant at the time, and we've been a one cat household since then.
 
