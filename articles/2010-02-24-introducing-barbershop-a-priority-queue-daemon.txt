@@ -1,0 +1,14 @@
+slug: introducing-barbershop-a-priority-queue-daemon
+date: 2010/02/24
+layout: post
+title: Introducing Barbershop, A Priority Queue Daemon
+
+I created a new open source project a few weeks ago called [Barbershop](http://github.com/ngerakines/barbershop). Barbershop is a priority queue daemon in C using libevent. The goal is to create a fast service that allows a queue consumer to get the next highest priority item out of a queue.
+
+In it's current form things are dead simple. There is only one queue per daemon and the items and priorities supported are 32bit integers. The queues are only kept in memory but there is a component that writes the queue to a snapshot and allows you to bootstrap a queue from a snapshot when starting the daemon.
+
+What is this useful for? Well, a lot of things really. The primary use case is when you've got a worker process that maintains and uses a priority queue, either in memory or on a database like MySQL, that needs to be scale to 2 or more workers. You could go the route of using MySQL but can add costly and unnecessary load on your database. RabbitMQ does support changing priorities for items or queue peaking which crosses it from the list. This is where Barbershop comes into the picture.
+
+Your queue loaders and adjusters feed information into Barbershop just like your queue consumers. The producers of queue items don't really care about which workers do actually get the queue item to process. When a worker needs a new item to process, it makes a `next` request.
+
+It's open source under the MIT license and on GitHub. I don't claim to write beautiful C, so if you find something that needs to be improved either let me know or fork it and send me a pull request. There are lots of documentation and a small php extension showing how to use it.
