@@ -11,7 +11,7 @@ end
 toto = Toto::Server.new do
   set :title, "Nick's Blog"
   set :author, 'Nick Gerakines'
-  set :disqus, 'socklabs'
+  set :disqus, 'socklabs-blog'
   set :date, lambda {|now| now.strftime("%B #{now.day.ordinal} %Y") }
 end
 
