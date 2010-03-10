@@ -1,0 +1,15 @@
+slug: creating-priority-influenced-jobs-with-barbershop
+date: 2010/03/10
+layout: post
+title: Creating priority-influenced jobs with Barbershop and Redis
+
+There are lots of projects and systems that use [Redis](http://github.com/antirez/redis), a superb key/value store, as a job management and information system. Out of the box, Redis supports things like lists, hash sets and all sorts of other fancy things that make it what it is.
+
+Recently I had the need to inject the concept of priority into a job distribution and management system and I wasn't pleased with what is out there. I've used [Gearman](http://gearman.org/) before and like the idea that works subscribe to job distribution systems and get notified of work. I also like that with Redis, thanks to [Resque](http://github.com/defunkt/resque), you get lots of flexibility in what task/job meta-data is stored and how. With it if you start to grow dramatically the number of jobs being supported, you can scale and support more tasks/jobs by adding more Redis servers.
+
+So, with that said using a Resque like system is ideal for my needs. But then came the requirement of being able to adjust the priority of tasks. The current Resque implement doesn't really support the concept of some work needing to be done before others which got me thinking about how Barbershop can be used to fill in the missing pieces.
+
+[Barbershop](http://github.com/ngerakines/barbershop) is a simple priority queue daemon written in C using [libevent](http://www.monkey.org/~provos/libevent/) and some well-crafted indexes and reverse indexes. With Barbershop, your created jobs' ids are injected into Barbershop and the clients then query Barbershop for the next task/job to perform. You get the power that is Redis to scale tasks/jobs horizontally and the ability to increment and peak into a priority queue to adjust your application as needed.
+
+Because Barbershop uses the same line-wire protocol as Redis, integration is pretty straight forward.
+
