@@ -6,18 +6,10 @@
     <title><%= title %></title>
   </head>
   <body>
-    <pheader>
-     <ul>
-       <li><a href="/">Home</a></li>
-       <li><a href="/archives">Archives</a></li>
-     </ul>
-    </pheader>
-    <section>
+    <div id="section">
       <%= yield %>
-    </section>
-    <footer>
-      Powered by <a href="http://cloudhead.io/toto">toto</a> and <a href="http://heroku.com/">Heroku</a>.
-    </footer>
+    </div>
+    <p id="footer">Content written by <a href="/about">Nick Gerakines</a>. Powered by <a href="http://cloudhead.io/toto">toto</a> and <a href="http://heroku.com/">Heroku</a> on <a href="http://github.com/ngerakines/socklabs-blog">GitHub</a>.</p>
   <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

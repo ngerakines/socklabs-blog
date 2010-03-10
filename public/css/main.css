@@ -8,7 +8,7 @@ body {
   width: 720px;
 
 }
-header, footer, section, article {
+header, #footer, #section, article {
 	display: block;
 }
 #content {
@@ -42,14 +42,14 @@ h1 a {
 a:hover {
   text-decoration: underline;
 }
-body > header > h1 {
+body > #header > h1 {
 	border-left: 30px solid black;
 	padding-left: 30px;
   font-size: 201px;
   margin: 100px 0 15px 0;
   font-weight: normal;
 }
-.post header {
+.post #header {
 	margin-bottom: 10px;
 }
 .post .body p:first-child {
@@ -77,7 +77,7 @@ body > header > h1 {
   text-decoration: none;
 }
 .more a:hover { text-decoration: underline }
-body > header {
+body > #header {
 	display: block;
 	padding-top: 30px;
 	line-height: 180px;
@@ -94,15 +94,10 @@ code {
 }
 pre { padding: 20px; }
 blockquote { font-style: italic; }
-body > footer {
+body > #footer {
   text-align: left;
   margin-left: 10px;
   font-style: italic;
   font-size: 18px;
   color: #888;
 }
-body > pheader { margin-top: -10px; text-align: left; }
-body > pheader:hover a { color: #3e5d7c; text-decoration: none; }
-body > pheader a:hover { color: #b83000; }
-body > pheader li { display: inline; margin: 0 15px; }
-body > pheader ul { margin: 0; padding: 0; }

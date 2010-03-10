@@ -5,9 +5,9 @@ title: 2009 in Review and 2010 Goals
 
 2009 was a really crazy year. I sold I Play WoW (never really saw that coming), went to the Erlang user conference and wrote a lot of open source code. Following last year's trend, this is my 'in review' post for 2009 and what I'd like to do in 2010.
 
- * Finish my second book. *This really did not work out like I wanted. The book hit the 60% complete mark and stalled. Wiley eventually canceled the contract. There is some good news though; I've got a lot of content on how to create Erlang web services that I'd like to clean up a bit and release under the creative commons. Interested in helping?*
+ * _Finish my second book._ *This really did not work out like I wanted. The book hit the 60% complete mark and stalled. Wiley eventually canceled the contract. There is some good news though; I've got a lot of content on how to create Erlang web services that I'd like to clean up a bit and release under the creative commons. Interested in helping?*
  * <strike>Do more tech-talks and presentations.</strike>
- * Have a 100 day streak of open source commits on GitHub. *Although I've got many thousands of lines of code in GitHub as a result of everything I did in 2009, there isn't a clear 100 day streak. I still feel pretty good about it though.*
+ * _Have a 100 day streak of open source commits on GitHub._ *Although I've got many thousands of lines of code in GitHub as a result of everything I did in 2009, there isn't a clear 100 day streak. I still feel pretty good about it though.*
  * <strike>Write more technical articles and entries.</strike>
  * <strike>Learn Python.</strike>
  * <strike>Hit level 80 with Korale and get into tier 9.</strike>
