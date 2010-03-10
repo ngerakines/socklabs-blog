@@ -1,12 +1,16 @@
-<div class="post">
-  <div class="header">
-    <h1><%= title %></h1>
-    <span class="date"><%= date %></span>
-  </div>
-  <div class="content">
-    <%= body %>
-  </div>
-  <div class="comments">
+<div id="coreContent">
+      <div class="post single hentry">
+        <div class="postContent">
+          <h3 class="entry-title"><%= title %></h3>
+          <h4 class="vcard author">by <span class="fn"><%= author %></span></h4>
+          <div class="entry-content">
+<%= body %>
+          </div>
+        </div>
+	<div class="postMeta">
+	  <div class="postDate"><span>Published:</span> <abbr class="published" title=""><%= date %></abbr></div>
+        </div>
+<div id="comments">
     <% if @config[:disqus] %>
       <div id="disqus_thread"></div>
       <script type="text/javascript" src="http://disqus.com/forums/<%= @config[:disqus] %>/embed.js"> </script>
@@ -14,4 +18,5 @@
       <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
     <% end %>
   </div>
+</div>
 </div>

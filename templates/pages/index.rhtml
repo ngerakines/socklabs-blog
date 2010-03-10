@@ -1,15 +1,13 @@
-<div id="articles">
-  <% for article in articles[0...3] %>
-    <div class="post">
-      <div class="header">
-        <h1><a href="<%= article.path %>"><%= article.title %></a></h1>
-        <span class="date"><%= article.date %></span>
-      </div>
-      <div class="content">
-        <%= article.summary %>
-      </div>
-      <div class="more"><a href="<%= article.path %>">read on &raquo;</a></div>
+<div id="coreContent">
+<% for article in articles[0...3] %>
+<div class="post hentry">
+  <!-- <h5 class="postDate"><abbr class="published"><%= article.date %></abbr></h5> -->
+  <div class="postContent">
+    <h3 class="entry-title"><a href="<%= article.path %>" rel="bookmark"><%= article.title %></a></h3>
+    <div class="entry-content">
+    <%= article.summary %>
     </div>
-  <% end %>
+  </div>
 </div>
-<h1><a href="/archives">Archives ...</a></h1>
+<% end %>
+</div>

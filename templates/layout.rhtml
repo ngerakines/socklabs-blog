@@ -1,15 +1,42 @@
-<!doctype html>
-<html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <link rel="alternate" type="application/atom+xml" title="<%= title %> - feed" href="/index.xml" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <div id="section">
-      <%= yield %>
-    </div>
-    <p id="footer">Content written by <a href="/about">Nick Gerakines</a>. Powered by <a href="http://cloudhead.io/toto">toto</a> and <a href="http://heroku.com/">Heroku</a> on <a href="http://github.com/ngerakines/socklabs-blog">GitHub</a>.</p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Nick's Blog</title>
+  <link rel="stylesheet" href="/css/main.css" type="text/css" media="screen" charset="utf-8" />
+  <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/index.xml" />
+</head>
+<body>
+<div id="siteWrapper">
+  <h1 class="vcard author"><a href="/" title="Home" class="fn">Nick Gerakines</a></h1> 
+  <div id="mainNav">
+    <ul>
+      <li class="page_item page-item-about"><a href="/about" title="About">About</a></li>
+      <li class="page_item page-item-archives"><a href="/archives" title="Archives">Archives</a></li>
+    </ul>
+  </div>
+<%= yield %>
+</div>
+<div id="footer">
+  <h5>Elsewhere</h5>
+  <ul class="elsewhere">
+    <li><a href="http://facebook.com/ngerakines">Facebook</a></li>
+    <li><a href="http://last.fm/ngerakines">Last.fm</a></li>
+    <li><a href="http://delicious.com/snipersock">Deli.icio.us</a></li>
+    <li class="last"><a href="http://twitter.com/ngerakines">Twitter</a></li>
+  </ul>
+  <div class="footerContent">
+<!--
+    <form method="get" id="searchform" action="http://google.com/search">
+      <div id="search">
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="Search" />
+      </div>
+    </form>
+-->
+    <p>&copy; Nick Gerakines. Powered by <a href="http://http://cloudhead.io/toto">toto</a> on <a href="http://heroku.com/">Heroku</a></p>
+  </div>
+</div>
   <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -19,5 +46,5 @@ try {
 var pageTracker = _gat._getTracker("UA-660447-7");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-  </body>
+</body>
 </html>
