@@ -1,0 +1,36 @@
+slug: iplaywow_monthly_actives
+date: 2008/12/24
+title: I Play WoW Monthly Active Users
+
+![I Play WoW monthly active users](/images/iplaywow_actives.jpg)
+
+I guess the changes that I made back in November have had a positive impact.
+
+In late October / early November I ported over the very last perl piece of the [I Play WoW Facebook Application](http://www.facebook.com/apps/application.php?id=2359644980) into the Erlang application set. I'm thrilled with the results that I'm seeing. The idea of using Erlang to power a web service has been reaffirmed as a great idea time after time now. The application is supporting well over 100,000 total users and just under 40,000 monthly active users. The system knows about 175,000 unique characters.
+
+I've been telling [Janl](http://twitter.com/janl) for a while now that I'd post some stats and information about the app and it's usage patterns. Here you go.
+
+Before I go any further, I want to state the primary and driving reason for doing all of the changes that I've made. **The goal was to lower the cost per user.** This cost means time developing features, fixing bugs, interacting with user data (storing, fetching, aggregating, crawling, etc) and supporting users.
+
+The application is powered by Erlang, CouchDB, MySQL, [Xapian](http://xapian.org/) and Amazon S3. Erlang powers the web interface, the interaction with the Facebook API as well as the other services. CouchDB acts as a primary database with writes and updates still being sent to MySQL. For what it's worth, the application entirely relies on CouchDB for document reads and aggregates, but realistically CouchDB is still being developed and there are changes from time to time that warrant not depending on it alone.
+
+Xapian is used internally for a search feature that I'm testing. I decided to go with xapian instead of Lucene because it has a smaller footprint and I don't need anything big and bulky at this point. Amazon S3 is used for image and file storage. Using Amazon S3 was much cheaper (time and money) than rolling my own file storage system.
+
+I Play WoW started as a Perl application using the [Catalyst framework](http://www.catalystframework.org/) using MySQL and Memcached. Since then it's evolved quite a bit. The Erlang component of the application is really a cluster of applications.
+
+ * ipwapp handles CouchDB, MySQL and Facebook Platform interfacing. This is where the bulk of application's core functionality and features exist.
+ * ipwweb provides the web interface that the Facebook Platform makes requests to for canvas page content. 
+ * ipwcache provides a write-through cache and storage system for crawled data. This includes World of Warcraft characters, guilds, etc.
+ * ipwsearch provides the xapian search interface and rebuilds the index from time to time.
+
+Although these applications aren't open source, there are a lot of pieces that are. The [erlang_couchdb](http://www.github.com/ngerakines/erlang_couchdb/), [erlang_facebook](http://www.github.com/ngerakines/erlang_facebook/), [erlang_wowarmory](http://www.github.com/ngerakines/erlang_wowarmory/) and [etap](http://www.github.com/ngerakines/etap/) projects available on GitHub (open source with the MIT license) are all actively used and developed by I Play WoW. This project also uses the extremely powerful MochiWeb application.
+
+There are currently three Erlang nodes running this application. Each node runs one of the services and the other nodes are set as fallback nodes using  distributed Erlang configuration. The erlang_wowarmory module is running on all nodes to distributed World of Warcraft Armory crawling evenly. The database, search
+
+The CouchDB data store currently has 537,248 documents. Most of those documents are either character or guild documents. There is one primary document per character, guild and realm as well as a number of supportive documents for storing all sorts of other things. The MySQL database has around 383,000 rows. There are 5 design documents being used and about 25 views. This number has grown and shrunk over the past few months as I've learned to use documents more efficiently with the data structures the contain. It really has been a trial-and-error process with it's ups and downs, but ultimately it's worked out very well for me and I'm very satisfied with the results.
+
+The one thing that I do slightly differently with CouchDB is actively track many document versions. For World of Warcraft characters I don't just keep one document per character, I keep one document per version of a character. This means that document ids are completely arbitrary and aren't used to identify characters unlike guilds and realms in the system. This is done to let me track different configurations of a given character over time and activity. This done through creating a hash of several mutable and immutable fields that represent a character and when that hash changes, track the information separately in a new or different document. This makes me rely very heavily on views to retrieve character documents from the system but it hasn't translated into "more work" yet.
+
+The results of rewriting it have been great. I use fewer servers that cost less to support a larger number of users. At first I had three machines with either one or two gigs of ram as well as one database machine. Now I've got 4 machines with either 256 or 512 megs of ram, one of them still dedicated to MySQL, CouchDB and Xapian. The three nodes on the application grid average about 10% of memory and about 1% CPU. Some simple load tests show that it can sustain an increase of 9x without having to expand, and even at that point expanding is just adding another node to the grid. I'm effectively serving 3x the traffic at a third of the cost. Making changes to the application has been simplified with less downtime and the time to debug and fix errors has decreased.
+
+Message me through Facebook, [email](mailto:nick+blog@gerakines.net) or [twitter](http://twitter.com/ngerakines) if you've got questions or want to know more about a specific subject.
