@@ -1,0 +1,10 @@
+slug: moving_on
+date: 2010/04/02
+layout: post
+title: Moving on
+
+The fact that I'm moving down to Orange County from the San Francisco bay area is a bittersweet one. I've made a lot of great friends and have had a lot of good memories, but it is time to go.
+
+The reason is a good one, I got a new job and have moved on from Electronics Arts. I'm now at Blizzard entertainment working on some of the products and websites that I've become so familiar with: the World of Warcraft website, the World of Warcraft Armory and the official Facebook application. I'm pretty stoked to be at Blizzard, for all of the obvious reasons, and I think it is safe to say that there are a lot of really fun problems to work on.
+
+So whats next then? Finding some Erlang hackers in the area, finding a good pub and, if Vanessa gets her way, a whole lot of Disneyland.
