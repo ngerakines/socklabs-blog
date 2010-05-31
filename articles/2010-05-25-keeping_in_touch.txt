@@ -1,0 +1,35 @@
+A few people have been asking what I do to keep up with current techs. This is my quick, 15 minute guide.
+
+Pick a decent feed reader, I use Google Reader, and subscribe to:
+* Hacker News, [http://news.ycombinator.com/](http://news.ycombinator.com/)
+* Reddit Programming, [http://www.reddit.com/r/programming/.rss](http://www.reddit.com/r/programming/.rss)
+* Reddit Technology [http://www.reddit.com/r/technology/.rss](http://www.reddit.com/r/technology/.rss)
+* Github Blog, [http://feeds.feedburner.com/github](http://feeds.feedburner.com/github)
+* GitHub Featured Repos, [http://feeds.feedburner.com/thechangelog](http://feeds.feedburner.com/thechangelog)
+* Delicious popular bookmarks, [http://feeds.delicious.com/v2/rss/?count=15](http://feeds.delicious.com/v2/rss/?count=15)
+* If you do go the Google Reader route, sometimes I ‘share’ stuff and if that interests you, here I am: [http://www.google.com/profiles/ngerakines](http://www.google.com/profiles/ngerakines)
+* I tend not to subscribe to specific blogs like TechCrunch, ReadWriteWeb, etc. If anyone interesting does crop up, it’ll do so through reddit or hacker news.
+
+Create an account on GitHub \(friend me while you are there, user [ngerakines](http://github.com/ngerakines)\) and periodically check out [http://github.com/explore](http://github.com/explore) for popular projects and projects that people have recently commit to. GitHub has a really good projects by language page, ie http://github.com/languages/Java. The goal is to find some people on GitHub that are doing things that are interesting to you and follow them. Then subscribe to your GitHub news feed ala your feed reader.
+* Optional, rinse and repeat with bitbucket.org or launchpad.net
+
+Create an account on StackOverflow \(omg me too! [http://stackoverflow.com/users/9532/nick-gerakines](http://stackoverflow.com/users/9532/nick-gerakines)\) and get involved. Great place to see people how ask questions, solve problems and approach difficult tasks. There are a lot of unanswered questions that need attention, but be sure to find topics that interest you and read the questions and answers for questions that have been marked as resolved.
+
+Create a twitter account and find some lists to follow \(why hello [ngerakines](http://twitter.com/ngerakines)\). Most of the figurehead tech people can be found pretty easily, but take some time to find a blogger or evangelist in a tech or field that you are interested in. Quick tip, don’t friend people that tweet more than 5 times a day regularly. If you build up 200ish+ people you follow then your feed will end up being mostly garbage. Also, avoid anyone that mentions ‘social media’. Don’t be afraid to click links that people share on Twitter, just be ready to quickly close your browser in case it is NSFW (I’m not joking).
+* http://twitter.com/ngerakines/nosql -- some nosql folks I’m friends with
+* http://twitter.com/ngerakines/erlangers -- Erlang people I know
+* http://twitter.com/ngerakines/pythoners -- Doing the pythons
+
+Create a delicious.com account if you don’t have one. Delicious is a really great way to save and reference websites (and notes, etc) and share information with other people. Delicious supports groups and aliases (aka http://delicious.com/snipersock is ‘Nick Gerakines’). There are really great Firefox and Chrome extensions too. The way to approach delicious is to keep in mind that sharing is easy and is strongly encouraged. If you find something that is interesting to you or that you think is interesting to someone else, bookmark it and make sure you tag it for the other person. Take comfort in knowing that if they don’t seem interested based on your tags, the url or your behavior then they don’t have to go to it.
+* http://delicious.com/popular/programming
+* http://delicious.com/popular/technology
+* http://delicious.com/popular/development
+* http://delicious.com/popular/java
+
+Read more. There are some great sites like librarything.com and goodreads.com (what what http://www.goodreads.com/author/show/2748201.Nick_Gerakines or http://www.librarything.com/home/ngerakines) that make it easy to find stuff to read and review stuff you’ve read. They’ve got some really cool book clubs (groups) and lists. I wouldn’t be surprised at all if most of the ‘recommended’ reading material is in our very own http://library/.
+* http://www.goodreads.com/shelf/show/programming
+* http://www.librarything.com/groups/purelyprogrammers
+ 
+With all of this, there is one very important part: Participation. Sure, you can lurk and learn a lot about what people are doing and what is trending, but the value in these communities is really in participating and making them grow. All of the above sites are what they are today based on the users that contribute to them. 
+
+Lastly, nothing beats meeting strangers and talking tech. It is important that you find and expose yourself to people outside of work. The truth of the matter is that a) people are mostly boring b) people have conflicting opinions, so once you get over that then talking about what you do and learning about other people is really easy. If you aren’t part of a social group or regularly find tech clubs or groups through sites like meetup.com, you should. I’m still looking for a few myself, so if you find one then please share.
